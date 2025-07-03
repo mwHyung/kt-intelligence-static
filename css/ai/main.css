@@ -1930,6 +1930,7 @@ br {
 
     .sub-banner-section .sub-banner-inner>ul>li .count-up.smallflex>span {
         margin-left: 0.8rem;
+        white-space: nowrap;
     }
 
     .sub-banner-section .sub-banner-inner>ul>li .count-up>span {
