@@ -4443,6 +4443,24 @@
         white-space: unset;
     }
 
+    .tech-detail-article-list .aLinks-wrapper .aLink-flex {
+        margin-left: 2.4rem;
+    }
+
+    .tech-detail-article-list .aLinks-wrapper.aLink-mo-block {
+        display: block;
+    }
+
+    .tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink {
+        margin-left: 1.2rem;
+        padding-left: 1.2rem;
+    }
+
+    .tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink:before {
+        height: 1.4rem;
+    }
+
+
     /* 테이블 스타일 적용 요청 - mo */
     .tech-detail-article .table-wrapper {
         overflow-x: auto;
