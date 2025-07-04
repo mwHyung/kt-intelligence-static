@@ -663,6 +663,32 @@
     letter-spacing: var(--letter-spacing-base);
 }
 
+.tech-detail-article-list .aLinks-wrapper {
+    display: flex;
+}
+
+.tech-detail-article-list .aLinks-wrapper .aLink-flex {
+    margin-left: 1.25rem;
+    display: flex;
+}
+
+.tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink {
+    margin-left: 0.75rem;
+    padding-left: 0.75rem;
+    position: relative;
+}
+
+.tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink:before {
+    display: block;
+    content: '';
+    width: 1px;
+    height: 0.875rem;
+    background-color: #D9D9D9;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+}
+
 .detail-inform {
     display: flex;
     align-items: center;
