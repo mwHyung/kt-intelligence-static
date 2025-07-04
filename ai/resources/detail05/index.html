@@ -51,7 +51,7 @@
             </div>
 
             <!-- 게시글 본문 영역 (관리자 에디터/HTML 입력용) -->
-            <article class="tech-detail-article" id="tech-detail-article">
+            <article class="tech-detail-article mod" id="tech-detail-article">
                 <!--
                       ※ 관리자 페이지에서 등록한 게시글의 본문(HTML)이 이 영역에 삽입됩니다.
                       예시:
@@ -73,7 +73,7 @@
                 <div class="post-custom">
                     <h3>사용 목적</h3>
                     <h4>주요 용도</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>텍스트 생성 모델로 문자열을 입력하여 문자열을 생성하는 용도입니다.</li>
                         <li>다양한 사용자 요청에 대해 유용하고 안전한 답변할 수 있도록 학습된 모델입니다.</li>
                     </ul>
@@ -108,17 +108,17 @@
                 <div class="post-custom">
                     <h3>모델 유형 및 아키텍쳐</h3>
                     <h4>모델 유형</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>텍스트 입력, 텍스트 생성 모델</li>
                     </ul>
 
                     <h4>아키텍처 설명</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>믿:음 2.0 Mini는 Transformer 구조를 활용한 Autoregressive Language Model</li>
                     </ul>
 
                     <h4>모델 크기(파라미터 수)</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>모델 크기(파라미터 수): 2.3B</li>
                         <li>최대 입출력 길이 지원 (Context-Length) : 32K</li>
                     </ul>
@@ -127,7 +127,7 @@
                 <div class="post-custom">
                     <h3>윤리적 고려사항 및 한계</h3>
                     <h4>윤리적 고려사항</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>믿:음 학습 데이터에서 욕설, 비속어, 편견, 차별 등 비윤리적 표현을 제거하려고 노력하였습니다. 그럼에도 불구하고 위와 같은 바람직하지 않은 표현 또는 부정확한
                             사실이 생성될 가능성을 완전히 제거하지 못하였습니다.</li>
                         <li>본 모델을 사용하기 전 이러한 한계를 인식하고 올바른 사용을 위해 필요한 조치를 취하는 것은 사용자의 책임이며, KT는 본 모델의 활용이 야기하는 위험이나 손해에
@@ -135,7 +135,7 @@
                     </ul>
 
                     <h4>위험 완화 조치</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>학습 데이터에서 개인정보 및 욕설, 비속어, 편견, 차별 등 비윤리적 표현을 최대한 제거하여 학습하였습니다.</li>
                         <li>Alignment 학습을 통해 사용자의 응답에 좀 더 안전하게 답변할 수 있도록 응답을 조정하였습니다.</li>
                         <li>편향성을 지속적으로 모니터링하고 편향성 측정 항목 확대 및 필터링 적용을 확대하고 있습니다.</li>
@@ -143,7 +143,7 @@
                     </ul>
 
                     <h4>한계</h4>
-                    <ul class="innerList">
+                    <ul class="innerList nestedList">
                         <li>본 모델은 학습 데이터의 대부분은 한국어와 영어로 구성되어 있습니다. 그 외 언어에 대한 이해와 생성 기능은 제공하지 않습니다.</li>
                         <li>본 모델은 다른 새로운 기술과 마찬가지로 잠재적 위험을 사전에 다 다룰 수 없으며, 경우에 따라 부정확하거나 편향적이고 불편한 응답을 생성할 수 있습니다. 따라서
                             배포 전 개발 목적에 맞게 추가적인 안전 테스트 및 튜닝을 수행해야 합니다.
