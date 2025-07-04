@@ -4435,6 +4435,12 @@
         letter-spacing: 0%;
     }
 
+
+    .tech-detail-article-list .variety-links {
+        margin-top: 0.8rem;
+        gap: 2rem;
+    }
+
     .tech-detail-article-list ul.vertical li {
         font-size: 1.6rem;
     }
@@ -4451,6 +4457,11 @@
         display: block;
     }
 
+    .tech-detail-article-list .aLinks-wrapper.aLink-mo-block .aLink-flex {
+        margin-left: 0;
+        margin-top: 0.6rem;
+    }
+
     .tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink {
         margin-left: 1.2rem;
         padding-left: 1.2rem;
@@ -4458,6 +4469,12 @@
 
     .tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink:before {
         height: 1.4rem;
+    }
+
+    .tech-detail-article-list ul li .detail-inform.top-border {
+        border-top: 1px solid #E8E8E8;
+        padding-top: 3.2rem;
+        margin-top: 1.6rem;
     }
 
 
