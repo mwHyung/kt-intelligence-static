@@ -706,7 +706,7 @@ br {
 }
 
 .list-wrap ul li>span,
- .list-wrap ul li>span>em {
+.list-wrap ul li>span>em {
     color: #a5a5a5;
     font-size: var(--font-size-lg);
     font-weight: 700;
@@ -1454,7 +1454,7 @@ br {
     /* width: max-content; */
     gap: 2rem;
     padding-right: 2rem;
-    animation: customSliderLoop 30s linear infinite;
+    animation: customSliderLoop 50s linear infinite;
 }
 
 .usecase-swiper {

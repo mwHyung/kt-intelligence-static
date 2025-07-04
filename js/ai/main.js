@@ -916,19 +916,27 @@ function initUsecaseSectionAnimation() {
     const track = document.querySelector('.custom-slider-track');
     const slides = Array.from(track.children);
 
-    // 복제하여 자연스럽게 무한 루프 효과
-    slides.forEach((slide) => {
-        const clone = slide.cloneNode(true);
-        track.appendChild(clone);
-    });
+    // 복제하여 자연스럽게 무한 루프 효과 (복제 시점이 화면 바깥에서 일어나도록 개선)
+    const windowWidth = window.innerWidth || 1920; // 기본값 1920
+    let trackWidth = track.scrollWidth;
+    const slideWidth = slides[0].offsetWidth;
+    const minTrackWidth = windowWidth * 2.5;
+    let cloneCount = 0;
+    while (trackWidth < minTrackWidth) {
+        slides.forEach((slide) => {
+            const clone = slide.cloneNode(true);
+            track.appendChild(clone);
+        });
+        cloneCount++;
+        trackWidth += slideWidth * slides.length;
+        if (cloneCount > 10) break; // 무한루프 방지
+    }
 
     // 마우스 호버 시 애니메이션 정지
     const wrapper = document.querySelector('.custom-slider');
-
     wrapper.addEventListener('mouseenter', () => {
         track.style.animationPlayState = 'paused';
     });
-
     wrapper.addEventListener('mouseleave', () => {
         track.style.animationPlayState = 'running';
     });
