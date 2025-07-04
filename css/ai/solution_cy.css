@@ -4469,6 +4469,7 @@
 
     .tech-detail-article-list .aLinks-wrapper .aLink-flex .hasLink:before {
         height: 1.4rem;
+        top: 0.8rem;
     }
 
     .tech-detail-article-list ul li .detail-inform.top-border {
