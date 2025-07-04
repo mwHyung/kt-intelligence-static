@@ -2613,7 +2613,6 @@
     margin-top: 5rem;
 }
 
-
 .openPlannd-gray-big {
     border-radius: 0.625rem;
     background-color: #999999;
@@ -5085,6 +5084,21 @@
         letter-spacing: 0%;
         text-align: center;
     }
+
+    .openPlannd-gray-btn-wrap {
+        margin: 0 auto;
+        width: fit-content;
+        margin-top: 4.8rem;
+    }
+
+    .openPlannd-gray-big {
+        border-radius: 0.8rem;
+        font-size: 1.7rem;
+        letter-spacing: 0px;
+        padding: 1.35rem 2.8rem;
+    }
+
+
 
     .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
         height: auto;
