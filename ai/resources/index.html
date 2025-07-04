@@ -30,6 +30,15 @@
   <link rel="stylesheet" href="/css/ai/solution_cy.css" />
   <!-- Tabs Component (공통) -->
   <script src="/js/ai/sub_cy.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+  <script th:inline="javascript">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', [[${ ga4Id }]]);
+  </script>
+
 </head>
 
 <body>
@@ -315,11 +324,11 @@
           <!-- Technical Report Content Here -->
           <ul class="tech-card-list" aria-label="What's New 목록">
             <!-- 빈공간 -->
-            <div class="empty-content-notice">
+            <!-- <div class="empty-content-notice">
               <img src="/resource/images/ai/resources/empty-img.png" alt="새로운 콘텐츠 업데이트 예정 알림 아이콘" />
               <p>곧 새로운 콘텐츠로 업데이트될 <br class="mo-br">
                 예정입니다.</p>
-            </div>
+            </div> -->
             <!-- // 빈공간 -->
 
             <li class="card tech-card">

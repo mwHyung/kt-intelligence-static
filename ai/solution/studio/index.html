@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO -->
     <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-    <title>K Studio  |  K intelligence</title>
-    <meta name="description" content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
-    <meta name="keywords" content="K Studio, 생성형 AI 플랫폼, KT AI, AI 개발 툴, 노코드 AI, K intelligence, AI 서비스 제작, 인터페이스 스튜디오, 누구나 쓰는 AI, 한국형 AI 플랫폼" />
+    <title>K Studio | K intelligence</title>
+    <meta name="description"
+        content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
+    <meta name="keywords"
+        content="K Studio, 생성형 AI 플랫폼, KT AI, AI 개발 툴, 노코드 AI, K intelligence, AI 서비스 제작, 인터페이스 스튜디오, 누구나 쓰는 AI, 한국형 AI 플랫폼" />
 
     <!-- SNS 공유용 -->
     <meta property="og:title" content="K Studio  |  K intelligence" />
-    <meta property="og:description" content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
+    <meta property="og:description"
+        content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
     <meta property="og:image" content="/resource/images/ai/og-image.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="KT AI" />
@@ -26,6 +29,17 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="/css/ai/solution.css" />
     <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+    <script src="/js/ai/ga.js"></script>
+
 </head>
 
 <body>
@@ -527,7 +541,8 @@ AI Platform LLM AI 모델 개발 및 관리를 위한
                             <div class="table-card-item">
                                 <h3 class="open-wrapper">
                                     <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                                    GPT K <span class="open-planned">가칭 <div class="mid-circle"></div>'25.3Q 공개 예정</span>
+                                    GPT K <span class="open-planned">가칭 <div class="mid-circle"></div>'25.3Q 공개
+                                        예정</span>
                                 </h3>
                                 <p>GPT-4o에 한국 제도와 문화를 이해시킨 한국적 AI 모델</p>
                                 <ul>
@@ -548,7 +563,8 @@ AI Platform LLM AI 모델 개발 및 관리를 위한
                             <div class="table-card-item">
                                 <h3 class="open-wrapper">
                                     <!-- <span>KT Embedding Bi-lingual Model</span> -->
-                                    Llama K <span class="open-planned">가칭 <div class="mid-circle"></div>'25.3Q 공개 예정</span>
+                                    Llama K <span class="open-planned">가칭 <div class="mid-circle"></div>'25.3Q 공개
+                                        예정</span>
                                 </h3>
                                 <p>Meta 오픈소스 모델 기반 한국적 AI 모델</p>
                                 <ul>

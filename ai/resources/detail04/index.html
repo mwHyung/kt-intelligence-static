@@ -25,6 +25,17 @@
     <link rel="stylesheet" href="/css/ai/solution_cy.css" />
     <!-- AOS CSS -->
     <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+    <script src="/js/ai/ga.js"></script>
+
 </head>
 
 <body>
@@ -110,7 +121,7 @@
                             비의도된 사용
                             <ul class="innerList depth2">
                                 <li>
-                                    법률, 의료, 금융 등의 전문 영역에서 사람을 대신할 수
+                                    법률, 의료, 금융 등의 전문 영역에서 사람을 대신하여
                                     전문적인 조언을 할 수 없고 이 경우 모델의 답변에 대해 반드시
                                     추가 검토해야 합니다.
                                 </li>
@@ -134,7 +145,9 @@
 
                 <div class="post-custom">
                     <h3>모델 유형 및 아키텍쳐</h3>
-                    <h4>모델 유형:</h4>
+
+                    <h3>모델 유형 및 아키텍쳐</h3>
+                    <h4>모델 유형</h4>
                     <ul class="innerList nestedList">
                         <li>텍스트 입력, 텍스트 생성 모델</li>
                     </ul>
@@ -142,16 +155,16 @@
                     <h4>아키텍처</h4>
                     <ul class="innerList nestedList">
                         <li>
-                            믿:음 2.0 Base는 Transformer 구조를 활용한 Auto-regressive Language
-                            Model
+                            믿:음 2.0 Base는 Transformer 구조를 활용한 Autoregressive Language Model
                         </li>
                     </ul>
 
-                    <h4>모델 크기(파라미터 수):</h4>
+                    <h4>모델 크기(파라미터 수)</h4>
                     <ul class="innerList nestedList">
                         <li>모델 크기(파라미터 수): 11.5B</li>
                         <li>최대 입출력 길이 지원 (Context-Length) : 32K</li>
                     </ul>
+
 
                     <h4>학습 데이터</h4>
                     <p>
@@ -165,6 +178,7 @@
                         를 사전 학습 단계에서 이용하였습니다. KT가 보유한 고객 데이터는 학습에
                         이용하지 않았습니다.
                     </p>
+
                 </div>
 
                 <div class="post-custom">
@@ -207,7 +221,7 @@
                     <h4>한계</h4>
                     <ul class="innerList nestedList">
                         <li>
-                            본 모델은 학습 데이터의 대부분은 한국어와 영어로 구성되어 있습니다.
+                            본 모델은 학습 데이터의 대부분이 한국어와 영어로 구성되어 있습니다.
                             그 외 언어에 대한 이해와 생성 기능은 제공하지 않습니다.
                         </li>
                         <li>

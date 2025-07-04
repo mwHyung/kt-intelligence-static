@@ -34,6 +34,16 @@
     <link rel="stylesheet" href="/css/ai/main.css" />
     <!-- AOS CSS -->
     <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+    <script src="/js/ai/ga.js"></script>
+
 </head>
 
 <body>

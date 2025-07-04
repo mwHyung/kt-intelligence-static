@@ -26,6 +26,17 @@
     <link rel="stylesheet" href="/css/ai/solution_cy.css" />
     <!-- AOS CSS -->
     <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+    <script src="/js/ai/ga.js"></script>
+
 </head>
 
 <body>
@@ -105,8 +116,12 @@
                         industries, public services, and education, while strengthening the Korean AI developer
                         community and laying the
                         groundwork for the broader vision of Kintelligence. Our models are available via <a
-                            href="https://huggingface.co/K-intelligence" target="_blank">Kintelligence K
-                            intelligence Mi:dm)</a> .
+                            href="https://huggingface.co/K-intelligence" target="_blank"
+                            class="article_in_aLink">Kintelligence K
+                            intelligence Mi:dm)</a>.<br>
+                        For technical inquiries, please contact <a href="mailto:" midm-llm@kt.com"
+                            class="article_in_aLink">midm-llm@kt.com
+                        </a>
                     </P>
                 </div>
 
@@ -114,19 +129,9 @@
 
                 <div class="tech-detail-article-list gap-40">
                     <ul class="pdf-ul">
-                        <li><a href="#">PDF 바로보기</a></li>
-                        <li><a href="#">PDF 다운로드</a></li>
+                        <li><a href="https://github.com/K-intelligence-Midm/Midm-2.0/blob/main/Mi_dm_2_0_technical_report.pdf"
+                                target="_blank">PDF 다운로드</a></li>
                     </ul>
-                    <ul class="gap-12">
-                        <li>
-                            <p>이 보고서가 AI를 활용한 기업의 기술 혁신과 개발자 생태계의 성장에 도움이 되길 바랍니다.</p>
-                        </li>
-                        <li>
-                            <p>(피드백 및 문의: <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a>)</p>
-                        </li>
-                    </ul>
-
-
                 </div>
             </article>
 

@@ -31,6 +31,17 @@
     <!-- Style CSS -->
     <link rel="stylesheet" href="/css/ai/solution.css" />
     <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+    <script src="/js/ai/ga.js"></script>
+
 </head>
 
 <body>
@@ -291,7 +302,7 @@
                                 <span class="open-planned">공개 예정</span>
                             </h3>
                             <p>
-                                사용 목적에 따라 가장 적합한 AI 모델과 자동으로
+                                사용 목적에 따라 가장 적합한 AI 모델을 자동으로
                                 선택해주는 기능으로, <br />
                                 복잡한 설정 없이 최적의 성능을 구현할 수 있도록 지원합니다.
                             </p>
