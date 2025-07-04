@@ -2606,6 +2606,27 @@
     color: #c7c7c7;
 }
 
+
+.openPlannd-gray-btn-wrap {
+    margin: 0 auto;
+    width: fit-content;
+    margin-top: 5rem;
+}
+
+
+.openPlannd-gray-big {
+    border-radius: 0.625rem;
+    background-color: #999999;
+    color: var(--white-color);
+    font-weight: 700;
+    font-style: Bold;
+    font-size: var(--font-size-xl);
+    line-height: 172%;
+    letter-spacing: -0.4px;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
 .solution-model-wrapper .tab-inner-wrapper>#tab-panel-1 {
     background-image: url('/resource/images/ai/solution/model/title-only-bg-01.png');
     background-size: 64.625rem auto;
