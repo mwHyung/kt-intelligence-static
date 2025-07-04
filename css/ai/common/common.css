@@ -145,7 +145,7 @@ body.scroll-lock {
     }
 }
 
-*/ .hide-desc {
+.hide-desc {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1197,7 +1197,7 @@ body.scroll-lock {
         margin: 0 0rem;
         padding: 1.7rem 2rem;
         scrollbar-width: none;
-        -ms-overfl ow-style: none;
+        -ms-overflow-style: none;
         width: 100%;
         padding-left: 2rem;
     }
