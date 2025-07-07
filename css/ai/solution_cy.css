@@ -572,6 +572,7 @@
 
 .tech-detail-article-list.gap-40 {
     gap: 2.5rem;
+    margin-top: 5.75rem;
 }
 
 .tech-detail-article-list h3 {
@@ -712,7 +713,7 @@
 .techDetailPage .tech-detail-article {
     margin-top: 3.75rem;
     border-top: 1px solid var(--gray-200-color);
-    padding-top: 6.25rem;
+    padding-top: 5rem;
 }
 
 .techDetailPage .tech-detail-article img {
@@ -810,7 +811,7 @@
 }
 
 .tech-detail-article .post-custom+.post-custom {
-    margin-top: 6.25rem;
+    margin-top: 5rem;
 }
 
 .tech-detail-article .post-custom:nth-of-type(5) h5 {
@@ -841,7 +842,7 @@
     line-height: 152%;
     /* 28.8px */
     letter-spacing: -0.048rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .tech-detail-article .post-custom h3.fz-sm {
@@ -881,12 +882,20 @@
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
+    margin-bottom: 2.5rem;
 }
 
 .tech-detail-article .post-custom h5>strong,
 .tech-detail-article .post-custom h5>div {
     text-align: left;
     color: var(--gray-600-color);
+}
+
+.tech-detail-article .post-custom h5>div {
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    line-height: 160%;
+    letter-spacing: -0.3px;
 }
 
 .tech-detail-article .post-custom h5.hasLongLink {
@@ -908,6 +917,7 @@
     letter-spacing: -0.17px;
     margin-top: 1.25rem;
 }
+
 
 .tech-detail-article .post-custom p b {
     font-weight: 600;
@@ -973,6 +983,14 @@
     letter-spacing: -0.011rem;
 }
 
+.tech-detail-article .post-custom ul.tatics-con>li.font-sm-17 {
+    font-weight: 700;
+    font-size: 1.0625rem;
+    line-height: 172%;
+    letter-spacing: -0.2px;
+}
+
+
 .tech-detail-article .post-custom ul.tatics-con li:before {
     display: none !important;
     border: 1px solid red;
@@ -994,7 +1012,7 @@
     background-color: var(--gray-900-color);
     border-radius: 100%;
     position: absolute;
-    top: 0.9rem;
+    top: 0.7rem;
     left: 0;
 }
 
@@ -1004,7 +1022,7 @@
 
 /* 테이블 스타일 적용 요청 - pc */
 .tech-detail-article .table-wrapper {
-    margin-top: 3.75rem;
+    margin-top: 2.5rem;
 }
 
 .tech-detail-article .table-wrapper h4 {
