@@ -1821,4 +1821,11 @@ body.scroll-lock {
     .sticky-header-list li {
         font-size: 1.1rem;
     }
+
+    .kt-model-content .section-title {
+        font-size: var(--font-size-7xl);
+    }
+    .kt-model-content .red-point-txt img {
+        width: 23.8rem;
+    }
 }

@@ -3107,7 +3107,7 @@ br {
     }
 
     .component-title h2 {
-        font-size: 5rem;
+        font-size: 4.5rem;
     }
     .component-title p {
         font-size: 1.6rem;
@@ -3204,6 +3204,12 @@ br {
     .kquality-hex-item {
         padding: 1rem 1.25rem;
     }
+    .kquality-list-item h3 {
+        font-size: var(--font-size-3xl);
+    }
+    .kquality-list-item p {
+        font-size: var(--font-size-base);
+    }
     .kquality-hex-label {
         font-size: var(--font-size-xl);
     }
@@ -3229,9 +3235,10 @@ br {
     }
     .kquality-list-item {
         flex-wrap: wrap;
+        gap: 3rem;
     }
     .kquality-bottom {
-        font-size: var(--font-size-4xl);
+        font-size: var(--font-size-3xl);
     }
 
     .eco-inner {
@@ -3242,6 +3249,12 @@ br {
         flex-direction: column;
         align-items: flex-start;
         background-size: cover;
+    }
+    .eco-title {
+        font-size: var(--font-size-4xl);
+    }
+    .eco-title span {
+        font-size: var(--font-size-md);
     }
     .eco-partners {
         flex-wrap: wrap;
@@ -3258,8 +3271,36 @@ br {
         flex: 1 0 25.5rem;
         padding: 2rem 0;
     }
+    .eco-bottom-title {
+        font-size: var(--font-size-4xl);
+    }
+    .eco-bottom-desc {
+        font-size: var(--font-size-md);
+    }
+
+    .section-title {
+        font-size: var(--font-size-8xl);
+    }
+    .section-desc {
+        font-size: var(--font-size-2xl);
+    }
+
+    .usecase-name {
+        font-size: var(--font-size-3xl);
+        margin-bottom: 0.5rem;
+    }
+    .usecase-desc {
+        font-size: var(--font-size-base);
+        margin-bottom: 1rem;
+    }
 
     .news-inner {
         padding: 0 2rem;
+    }
+    .news-title {
+        font-size: var(--font-size-xl);
+    }
+    .news-meta {
+        font-size: var(--font-size-base);
     }
 }
