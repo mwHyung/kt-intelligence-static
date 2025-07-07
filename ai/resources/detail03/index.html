@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,15 +28,13 @@
     <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
     <script th:inline="javascript">
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', [[${ ga4Id }]]);
+        gtag('config', [[${ga4Id}]]);
     </script>
     <script src="/js/ai/ga.js"></script>
 </head>
-
-
 <body>
     <!-- Header -->
     <header id="main-header" class="header">
@@ -361,7 +358,7 @@
             </article>
 
             <div class="tech-detail-bottom">
-                <a href="/ai/resources/">
+                <a href="/resources/">
                     <button type="button" class="basic-bk-btn docs-back">
                         돌아가기
                     </button>

@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO -->
     <link rel="icon" href="/resource/images/ai/KT_48.ico" />
     <title>K SPC | K intelligence</title>
-    <meta name="description"
-        content="데이터는 국내에, 성능은 글로벌 그대로. 보안과 확장성을 갖춘 클라우드로 기업이 규제 부담 없이 클라우드를 자유롭고 안전하게 활용할 수 있도록 지원합니다." />
-    <meta name="keywords"
-        content="K Infra, KT AI, AI 클라우드, AI 인프라, 한국형 AI 클라우드, K intelligence, AI 개발 환경, GPU 클라우드, AI 배포 플랫폼, 기업용 AI 인프라" />
+    <meta name="description" content="데이터는 국내에, 성능은 글로벌 그대로. 보안과 확장성을 갖춘 클라우드로 기업이 규제 부담 없이 클라우드를 자유롭고 안전하게 활용할 수 있도록 지원합니다." />
+    <meta name="keywords" content="K Infra, KT AI, AI 클라우드, AI 인프라, 한국형 AI 클라우드, K intelligence, AI 개발 환경, GPU 클라우드, AI 배포 플랫폼, 기업용 AI 인프라" />
 
     <!-- SNS 공유용 -->
     <meta property="og:title" content="K SPC  |  K intelligence" />
-    <meta property="og:description"
-        content="데이터는 국내에, 성능은 글로벌 그대로. 보안과 확장성을 갖춘 클라우드로 기업이 규제 부담 없이 클라우드를 자유롭고 안전하게 활용할 수 있도록 지원합니다." />
+    <meta property="og:description" content="데이터는 국내에, 성능은 글로벌 그대로. 보안과 확장성을 갖춘 클라우드로 기업이 규제 부담 없이 클라우드를 자유롭고 안전하게 활용할 수 있도록 지원합니다." />
     <meta property="og:image" content="/resource/images/ai/og-image.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="KT AI" />
@@ -37,10 +33,10 @@
     <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
     <script th:inline="javascript">
         window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
+        function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
 
-        gtag('config', [[${ ga4Id }]]);
+        gtag('config', [[${ga4Id}]]);
     </script>
     <script src="/js/ai/ga.js"></script>
 </head>
@@ -259,6 +255,7 @@
 
     <!-- KT Model 체험하기 -->
     <section id="kt-model-section" class="kt-model-section" data-track-section="solution-cloud-ktModel"></section>
+
 
     <!-- Footer -->
     <footer class="footer"></footer>

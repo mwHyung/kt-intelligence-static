@@ -1,46 +1,42 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- SEO -->
+        <link rel="icon" href="/resource/images/ai/KT_48.ico" />
+        <title>K RAG  |  K intelligence</title>
+        <meta name="description" content="KT의 RAG(Retrieval-Augmented Generation) 기술은 AI Agent가 사용자의 질문에 부합되는 정확한 답변을 제공하도록 지원합니다. 이를 통해 고객은 더 빠르게, 더 믿을 수 있는 정보를 실시간으로 얻을 수 있습니다." />
+        <meta name="keywords" content="K RAG, KT AI, 한국적 RAG, RAG 기반 검색, 한국어 특화 RAG, K intelligence, 생성형 AI 검색, 문서 검색 자동화, 기업용 AI 검색" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- SEO -->
-    <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-    <title>K RAG | K intelligence</title>
-    <meta name="description"
-        content="KT의 RAG(Retrieval-Augmented Generation) 기술은 AI Agent가 사용자의 질문에 부합되는 정확한 답변을 제공하도록 지원합니다. 이를 통해 고객은 더 빠르게, 더 믿을 수 있는 정보를 실시간으로 얻을 수 있습니다." />
-    <meta name="keywords"
-        content="K RAG, KT AI, 한국적 RAG, RAG 기반 검색, 한국어 특화 RAG, K intelligence, 생성형 AI 검색, 문서 검색 자동화, 기업용 AI 검색" />
+        <!-- SNS 공유용 -->
+        <meta property="og:title" content="K RAG  |  K intelligence" />
+        <meta property="og:description" content="KT의 RAG(Retrieval-Augmented Generation) 기술은 AI Agent가 사용자의 질문에 부합되는 정확한 답변을 제공하도록 지원합니다. 이를 통해 고객은 더 빠르게, 더 믿을 수 있는 정보를 실시간으로 얻을 수 있습니다." />
+        <meta property="og:image" content="/resource/images/ai/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="KT AI" />
 
-    <!-- SNS 공유용 -->
-    <meta property="og:title" content="K RAG  |  K intelligence" />
-    <meta property="og:description"
-        content="KT의 RAG(Retrieval-Augmented Generation) 기술은 AI Agent가 사용자의 질문에 부합되는 정확한 답변을 제공하도록 지원합니다. 이를 통해 고객은 더 빠르게, 더 믿을 수 있는 정보를 실시간으로 얻을 수 있습니다." />
-    <meta property="og:image" content="/resource/images/ai/og-image.png" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="KT AI" />
+        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="/css/ai/common/aos.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="/css/ai/solution.css" />
+        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+        <!-- Google tag (gtag.js) -->
+        <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+        <script th:inline="javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/solution.css" />
-    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-    <!-- Google tag (gtag.js) -->
-    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
-    <script th:inline="javascript">
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', [[${ ga4Id }]]);
-    </script>
-    <script src="/js/ai/ga.js"></script>
-</head>
+            gtag('config', [[${ga4Id}]]);
+        </script>
+        <script src="/js/ai/ga.js"></script>
+    </head>
 
 <body>
     <!-- Header -->
@@ -49,10 +45,10 @@
     </header>
 
     <!-- Banner Section -->
-    <section id="banner-section" class="banner-section" data-track-section="solution-rag-banner">
+        <section id="banner-section" class="banner-section" data-track-section="solution-rag-banner">
         <img src="/resource/images/ai/solution/RAG/banner-bg.png" alt="banner" width="100%" height="100%"
             class="bg-topBanner" />
-        <img src=" /resource/images/ai/solution/RAG/mo-banner-bg.png" alt="banner" width="100%" height="100%"
+        <img src="/resource/images/ai/solution/RAG/mo-banner-bg.png" alt="banner" width="100%" height="100%"
             class="mo-banner-bg" />
         <div class="banner-inner logo-bk">
             <h2>
@@ -74,7 +70,7 @@
 
     <!-- Content Section -->
     <div class="content-wrapper">
-        <section class="content-section" data-track-section="solution-rag-customerValue">
+            <section class="content-section" data-track-section="solution-rag-customerValue">
             <div class="content-inner">
                 <div class="title-wrapper">
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Customer
@@ -133,7 +129,7 @@
             </div>
         </section>
 
-        <section class="content-section" data-track-section="solution-rag-configuration">
+            <section class="content-section" data-track-section="solution-rag-configuration">
             <div class="content-inner">
                 <div class="title-wrapper">
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Solution</span>
@@ -251,7 +247,7 @@
             </div>
         </section>
 
-        <section class="content-section search-ai-section tech-docu bg-black" data-track-section="solution-rag-docuSee">
+            <section class="content-section search-ai-section tech-docu bg-black" data-track-section="solution-rag-docuSee">
             <div class="content-inner">
                 <div class="title-wrapper">
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Technology
@@ -420,7 +416,7 @@
             </div>
         </section>
 
-        <section class="content-section" data-track-section="solution-rag-intelliSearch">
+            <section class="content-section" data-track-section="solution-rag-intelliSearch">
             <div class="content-inner gap0">
                 <div class="title-wrapper">
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Technology
@@ -632,7 +628,7 @@
             </div>
         </section>
 
-        <section class="content-section" data-track-section="solution-rag-usecase">
+            <section class="content-section" data-track-section="solution-rag-usecase">
             <div class="content-inner overgrid-inner">
                 <div class="title-wrapper">
                     <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K RAG</span>
@@ -749,7 +745,7 @@
                     </div>
 
                     <div class="btnWrap" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                        <a href="/ai/usecase">
+                        <a href="/usecase">
                             <button type="button" class="btn sm">전체보기</button>
                         </a>
                     </div>
@@ -759,7 +755,7 @@
     </div>
 
     <!-- KT Model 체험하기 -->
-    <section id="kt-model-section" class="kt-model-section" data-track-section="solution-rag-ktModel"></section>
+        <section id="kt-model-section" class="kt-model-section" data-track-section="solution-rag-ktModel"></section>
 
     <!-- Footer -->
     <footer class="footer"></footer>

@@ -1,50 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="AI Tech  |  K intelligence" />
+        <meta
+            name="description"
+            content="K intelligence는 KT가 정의한 한국적 AI 브랜드입니다. 그 기술의 특징과 활용 방식을 소개하며, KT AI의 신뢰와 가능성을 소개합니다."
+        />
+        <meta
+            name="keywords"
+            content="한국적 AI, K intelligence, KT AI, RAG, AI Agents, Responsible AI, Studio, AI 모델, AI 솔루션, 한국적 AI"
+        />
+        <meta name="author" content="KT" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="googlebot" content="noindex, nofollow" />
+        <meta name="google" content="notranslate" />
+        <meta name="format-detection" content="telephone=no, email=no, address=no" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="AI Tech  |  K intelligence" />
+        <meta property="og:description" content="K intelligence는 KT가 정의한 한국적 AI 브랜드입니다. 그 기술의 특징과 활용 방식을 소개하며, KT AI의 신뢰와 가능성을 소개합니다." />
+        <meta property="og:image" content="/resource/images/ai/og-image.png" />
+        <!-- <meta property="og:image" content="/resource/images/ai/k-value1.png" /> -->
+        <!-- <meta property="og:url" content="https://www.kt.com/ai" /> -->
+        <title>AI Tech  |  K intelligence</title>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="AI Tech  |  K intelligence" />
-    <meta name="description"
-        content="K intelligence는 KT가 정의한 한국적 AI 브랜드입니다. 그 기술의 특징과 활용 방식을 소개하며, KT AI의 신뢰와 가능성을 소개합니다." />
-    <meta name="keywords"
-        content="한국적 AI, K intelligence, KT AI, RAG, AI Agents, Responsible AI, Studio, AI 모델, AI 솔루션, 한국적 AI" />
-    <meta name="author" content="KT" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="googlebot" content="noindex, nofollow" />
-    <meta name="google" content="notranslate" />
-    <meta name="format-detection" content="telephone=no, email=no, address=no" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="AI Tech  |  K intelligence" />
-    <meta property="og:description"
-        content="K intelligence는 KT가 정의한 한국적 AI 브랜드입니다. 그 기술의 특징과 활용 방식을 소개하며, KT AI의 신뢰와 가능성을 소개합니다." />
-    <meta property="og:image" content="/resource/images/ai/og-image.png" />
-    <!-- <meta property="og:image" content="/resource/images/ai/k-value1.png" /> -->
-    <!-- <meta property="og:url" content="https://www.kt.com/ai" /> -->
-    <title>AI Tech | K intelligence</title>
+        <link rel="icon" href="/resource/images/ai/KT_48.ico" />
 
-    <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-
-    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-    <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/ai/common/reset.css" />
-    <!-- Common CSS -->
-    <link rel="stylesheet" href="/css/ai/common/common.css" />
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="/css/ai/main.css" />
-    <!-- AOS CSS -->
-    <link rel="stylesheet" href="/css/ai/common/aos.css" />
-    <!-- Google tag (gtag.js) -->
-    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
-    <script th:inline="javascript">
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', [[${ ga4Id }]]);
-    </script>
-    <script src="/js/ai/ga.js"></script>
-</head>
-
+        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="/css/ai/main.css" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="/css/ai/common/aos.css" />
+        <!-- Google tag (gtag.js) -->
+        <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+        <script th:inline="javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', [[${ga4Id}]]);
+        </script>
+        <script src="/js/ai/ga.js"></script>
+    </head>
 <body>
     <!-- Header -->
     <header id="main-header" class="header">
@@ -65,7 +66,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero-section" class="hero-section" data-track-section="main-hero">
+        <section id="hero-section" class="hero-section" data-track-section="main-hero">
         <!-- Content -->
         <div class="hero-content">
             <div class="hero-bg">
@@ -83,7 +84,7 @@
     </section>
 
     <!-- Sub Banner Section -->
-    <section id="sub-banner-section" class="sub-banner-section" data-track-section="main-banner">
+        <section id="sub-banner-section" class="sub-banner-section" data-track-section="main-banner">
         <div class="sub-banner-inner">
             <ul>
                 <li class="column">
@@ -120,7 +121,7 @@
     </section>
 
     <!-- Parallax Section -->
-    <section id="parallax-section" class="parallax-section" data-track-section="main-parallax">
+        <section id="parallax-section" class="parallax-section" data-track-section="main-parallax">
         <div class="parallax-inner">
             <div id="parallax-container" class="parallax-container">
                 <ul class="parallax-titles">
@@ -152,7 +153,7 @@
     </section>
 
     <!-- K Data Section -->
-    <section id="kdata-section" class="kdata-section" data-track-section="main-kdata">
+        <section id="kdata-section" class="kdata-section" data-track-section="main-kdata">
         <div class="kdata-inner">
             <div class="kdata-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 한국어의 정서적 맥락까지 학습한<br class="mo-br" />
@@ -188,8 +189,7 @@
     </section>
 
     <!-- 구성요소 영역 -->
-    <section id="parallax-depth-section" class="parallax-depth-section component-section"
-        data-track-section="main-KIntelligenceSuite">
+        <section id="parallax-depth-section" class="parallax-depth-section component-section" data-track-section="main-KIntelligenceSuite">
         <div class="component-inner">
             <div class="component-title">
                 <div class="component-title-inner">
@@ -216,7 +216,7 @@
                                     정체성을 담은 K Model
                                 </p>
                                 <span>KT자체모델, 글로벌 협력모델, 오픈 소스 기반 모델</span>
-                                <a href="/ai/solution/model">
+                                <a href="/solution/model">
                                     <button class="btn main">더보기</button>
                                 </a>
                             </li>
@@ -231,7 +231,7 @@
                                     데이터 처리 및 검색 기술
                                 </p>
                                 <span>DocuSee, IntelliSearch 제공</span>
-                                <a href="/ai/solution/RAG">
+                                <a href="/solution/RAG">
                                     <button class="btn main">더보기</button>
                                 </a>
                             </li>
@@ -246,7 +246,7 @@
                                     에이전트
                                 </p>
                                 <span>고객 맞춤형 에이전트, KT 서비스 에이전트 제공</span>
-                                <a href="/ai/solution/agent">
+                                <a href="/solution/agent">
                                     <button class="btn main">더보기</button>
                                 </a>
                             </li>
@@ -267,7 +267,7 @@
                                     SaaS형 Studio, On-Premise(구축형) Studio 제공
                                     <em>‘25. 3Q 공개 예정</em>
                                 </span>
-                                <a href="/ai/solution/studio">
+                                <a href="/solution/studio">
                                     <button class="btn main">더보기</button>
                                 </a>
                             </li>
@@ -285,7 +285,7 @@
                                     AI 윤리원칙(ASTRI), AI 원칙, 정책, 기술을<br />
                                     수용한 개발 프로세스 및 RAI 문화 조성
                                 </span>
-                                <a href="/ai/solution/RAI">
+                                <a href="/solution/RAI">
                                     <button class="btn main">더보기</button>
                                 </a>
                             </li>
@@ -306,7 +306,7 @@
                                     이중 보호, 국내 법률/규제 준수
                                     <em>‘25. 3Q 공개 예정</em>
                                 </span>
-                                <a href="/ai/solution/cloud">
+                                <a href="/solution/cloud">
                                     <button class="btn main">더보기</button>
                                 </a>
                             </li>
@@ -332,7 +332,7 @@
                                             오픈 소스 기반 모델
                                         </span>
                                     </div>
-                                    <a href="/ai/solution/model">
+                                    <a href="/solution/model">
                                         <button class="btn main">
                                             더보기
                                             <img src="/resource/images/ai/icons/main-more.png" alt="" />
@@ -353,7 +353,7 @@
                                         </p>
                                         <span> DocuSee, IntelliSearch 제공 </span>
                                     </div>
-                                    <a href="/ai/solution/RAG">
+                                    <a href="/solution/RAG">
                                         <button class="btn main">
                                             더보기
                                             <img src="/resource/images/ai/icons/main-more.png" alt="" />
@@ -376,7 +376,7 @@
                                             에이전트 제공
                                         </span>
                                     </div>
-                                    <a href="/ai/solution/agent">
+                                    <a href="/solution/agent">
                                         <button class="btn main">
                                             더보기
                                             <img src="/resource/images/ai/icons/main-more.png" alt="" />
@@ -401,7 +401,7 @@
                                             <em>‘25. 3Q 공개 예정</em>
                                         </span>
                                     </div>
-                                    <a href="/ai/solution/studio">
+                                    <a href="/solution/studio">
                                         <button class="btn main">
                                             더보기
                                             <img src="/resource/images/ai/icons/main-more.png" alt="" />
@@ -426,7 +426,7 @@
                                             및 RAI 문화 조성
                                         </span>
                                     </div>
-                                    <a href="/ai/solution/RAI">
+                                    <a href="/solution/RAI">
                                         <button class="btn main">
                                             더보기
                                             <img src="/resource/images/ai/icons/main-more.png" alt="" />
@@ -451,7 +451,7 @@
                                             <em>‘25. 3Q 공개 예정</em>
                                         </span>
                                     </div>
-                                    <a href="/ai/solution/cloud">
+                                    <a href="/solution/cloud">
                                         <button class="btn main">
                                             더보기
                                             <img src="/resource/images/ai/icons/main-more.png" alt="" />
@@ -500,7 +500,7 @@
     </section>
 
     <!-- K Quality Framework Section -->
-    <section id="kquality-section" class="kquality-section" data-track-section="main-KQualityFramework">
+        <section id="kquality-section" class="kquality-section" data-track-section="main-KQualityFramework">
         <div class="kquality-inner">
             <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 K Quality Framework
@@ -619,7 +619,7 @@
     </section>
 
     <!-- KT ECO Section -->
-    <section id="eco-section" class="eco-section" data-track-section="main-eco">
+        <section id="eco-section" class="eco-section"  data-track-section="main-eco">
         <div class="eco-inner">
             <div class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 ECO
@@ -845,7 +845,7 @@
     </section>
 
     <!-- Use Cases Slider Section (Custom) -->
-    <section id="usecase-section" class="usecase-section" data-track-section="main-usecase">
+        <section id="usecase-section" class="usecase-section"  data-track-section="main-usecase">
         <div class="usecase-inner">
             <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 Use Cases
@@ -1120,7 +1120,7 @@
             </div>
         </div>
         <div class="usecase-btn">
-            <a href="/ai/usecase"><button class="btn sm" data-aos="fade-up" data-aos-duration="800"
+            <a href="/usecase"><button class="btn sm" data-aos="fade-up" data-aos-duration="800"
                     data-aos-easing="ease-out-cubic">
                     전체보기
                 </button></a>
@@ -1128,7 +1128,7 @@
     </section>
 
     <!-- News Section  -->
-    <section id="news-section" class="news-section" data-track-section="main-news">
+        <section id="news-section" class="news-section" data-track-section="main-news">
         <div class="news-inner">
             <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                 새로운 소식
@@ -1140,7 +1140,7 @@
                 <li class="hasNew">
                     <div class="news-content">
                         <div class="news-title">
-                            <a href="/ai/resources/detail06">KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다.</a>
+                            <a href="/resources/detail06">KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다.</a>
                         </div>
                         <div class="news-meta">2025.07.04</div>
                     </div>
@@ -1149,7 +1149,7 @@
                 <li class="hasNew">
                     <div class="news-content">
                         <div class="news-title">
-                            <a href="/ai/resources/detail01">KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.
+                            <a href="/resources/detail01">KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.
                             </a>
                         </div>
                         <div class="news-meta">2025.07.03</div>
@@ -1158,7 +1158,7 @@
                 <li>
                     <div class="news-content">
                         <div class="news-title">
-                            <a href="/ai/resources/detail04">믿:음 2.0 Base의 모델카드를 공개합니다.</a>
+                            <a href="/resources/detail04">믿:음 2.0 Base의 모델카드를 공개합니다.</a>
                         </div>
                         <div class="news-meta">2025.07.03</div>
                     </div>
@@ -1166,7 +1166,7 @@
                 <li>
                     <div class="news-content">
                         <div class="news-title">
-                            <a href="/ai/resources/detail05">믿:음 2.0 Mini의 모델카드를 공개합니다.</a>
+                            <a href="/resources/detail05">믿:음 2.0 Mini의 모델카드를 공개합니다.</a>
                         </div>
                         <div class="news-meta">2025.07.03</div>
                     </div>
@@ -1175,7 +1175,7 @@
                 <li>
                     <div class="news-content">
                         <div class="news-title">
-                            <a href="/ai/resources/detail03">KT Voice AI를 소개합니다.</a>
+                            <a href="/resources/detail03">KT Voice AI를 소개합니다.</a>
                         </div>
                         <div class="news-meta">2025.07.03</div>
                     </div>
@@ -1183,14 +1183,14 @@
                 <!-- <li>
                     <div class="news-content">
                         <div class="news-title">
-                            <a href="/ai/resources/detail02">KT가 개발한 K intelligence 기술에 대한 Technical Report v1.0을
+                            <a href="/resources/detail02">KT가 개발한 K intelligence 기술에 대한 Technical Report v1.0을
                                 발간합니다.</a>
                         </div>
                         <div class="news-meta">2025.07.03</div>
                     </div>
                 </li> -->
             </ul>
-            <a href="/ai/resources/">
+            <a href="/resources/">
                 <button class="btn sm news-btn" data-aos="fade-up" data-aos-duration="800"
                     data-aos-easing="ease-out-cubic">
                     전체보기
@@ -1200,7 +1200,7 @@
     </section>
 
     <!-- KT Model 체험하기 -->
-    <section id="kt-model-section" class="kt-model-section" data-track-section="main-ktModel"></section>
+        <section id="kt-model-section" class="kt-model-section" data-track-section="main-ktModel"></section>
 
     <!-- Footer -->
     <footer class="footer"></footer>

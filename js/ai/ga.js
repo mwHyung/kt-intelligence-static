@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // gtag 이벤트 전송
     function sendSectionEvent(id, durationMs) {
         const durationSec = Math.round(durationMs / 1000);
-        console.log('sendSectionEvent', id, durationSec);
+        //console.log('sendSectionEvent', id, durationSec);
         gtag('event', 'page_section_view', {
             section_id: id,
             section_time_sec: durationSec
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isSectionVisible(el)) {
                 enterTimes.set(el, performance.now());
                 isTracking.set(el, true);
-                console.log('INITIAL ENTER', id);
+                //console.log('INITIAL ENTER', id);
             }
         });
     }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (!isTracking.get(el)) {
                     enterTimes.set(el, performance.now());
                     isTracking.set(el, true);
-                    console.log('ENTER', id);
+                    //console.log('ENTER', id);
                 }
             } else if (isTracking.get(el) && !isSectionVisible(el)) {
                 // 화면에서 완전히 사라졌을 때
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const dur = performance.now() - enter;
                 enterTimes.delete(el);
                 isTracking.set(el, false);
-                console.log('LEAVE', id, dur);
+                //console.log('LEAVE', id, dur);
                 if (dur >= MIN_DURATION_SEC * 1000) sendSectionEvent(id, dur);
             }
         });
@@ -107,13 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
             if (visible && !tracking) {
                 enterTimes.set(el, performance.now());
                 isTracking.set(el, true);
-                console.log('POLL ENTER', id);
+                //console.log('POLL ENTER', id);
             } else if (!visible && tracking) {
                 const enter = enterTimes.get(el);
                 const dur = performance.now() - enter;
                 enterTimes.delete(el);
                 isTracking.set(el, false);
-                console.log('POLL LEAVE', id, dur);
+                //console.log('POLL LEAVE', id, dur);
                 if (dur >= MIN_DURATION_SEC * 1000) sendSectionEvent(id, dur);
             }
         });
@@ -148,7 +148,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = el.dataset.trackSection;
             const dur = now - enter;
             if (dur >= MIN_DURATION_SEC * 1000) {
-                console.log('UNLOAD', id, dur);
+                //console.log('UNLOAD', id, dur);
+                if(id.includes('solution') && id.includes('banner')) return;
                 sendSectionEvent(id, dur);
             }
         });
