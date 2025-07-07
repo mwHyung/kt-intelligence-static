@@ -248,9 +248,6 @@ function initIntroSectionAnimation() {
     });
 }
 
-
-
-
 function initParallaxSectionAnimation() {
     const section = document.querySelector('.parallax-section');
     if (!section || !window.gsap || !window.ScrollTrigger) return;
@@ -277,7 +274,8 @@ function initParallaxSectionAnimation() {
     });
 
     // iOS 크롬에서만 부드러운 scrub 값 적용
-    const isIOSChrome = /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const isIOSChrome =
+        /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
     const scrubValue = isIOSChrome ? 0.3 : 1; // iOS 크롬에서만 부드럽게
 
     gsap.fromTo(
@@ -763,8 +761,19 @@ class WheelNavigation {
         this.currentIndex = startIndex;
         this.isAnimating = false;
         this.boundHandleWheel = this.handleWheel.bind(this);
+        this.boundHandleTouchStart = this.handleTouchStart.bind(this);
+        this.boundHandleTouchMove = this.handleTouchMove.bind(this);
+        this.boundHandleTouchEnd = this.handleTouchEnd.bind(this);
         this.lastScrollTime = 0;
         this.scrollCooldown = 100; // 100ms 쿨다운
+
+        // 터치 이벤트 관련 변수
+        this.touchStartY = 0;
+        this.touchCurrentY = 0;
+        this.touchStartTime = 0;
+        this.isTouching = false;
+        this.touchThreshold = 50; // 최소 터치 이동 거리
+        this.touchTimeThreshold = 300; // 최대 터치 시간 (ms)
 
         this.init();
     }
@@ -796,11 +805,80 @@ class WheelNavigation {
             initialCubeImg.src = imagePaths[this.currentIndex].active;
         }
 
+        // 마우스 휠 이벤트 (데스크톱)
         window.addEventListener('wheel', this.boundHandleWheel, { passive: false });
+
+        // 터치 이벤트 (모바일/테블릿)
+        window.addEventListener('touchstart', this.boundHandleTouchStart, { passive: false });
+        window.addEventListener('touchmove', this.boundHandleTouchMove, { passive: false });
+        window.addEventListener('touchend', this.boundHandleTouchEnd, { passive: false });
     }
 
     destroy() {
         window.removeEventListener('wheel', this.boundHandleWheel, { passive: false });
+        window.removeEventListener('touchstart', this.boundHandleTouchStart, { passive: false });
+        window.removeEventListener('touchmove', this.boundHandleTouchMove, { passive: false });
+        window.removeEventListener('touchend', this.boundHandleTouchEnd, { passive: false });
+    }
+
+    handleTouchStart(e) {
+        if (this.isAnimating) {
+            e.preventDefault();
+            return;
+        }
+
+        this.touchStartY = e.touches[0].clientY;
+        this.touchCurrentY = this.touchStartY;
+        this.touchStartTime = Date.now();
+        this.isTouching = true;
+    }
+
+    handleTouchMove(e) {
+        if (!this.isTouching || this.isAnimating) {
+            return;
+        }
+
+        this.touchCurrentY = e.touches[0].clientY;
+
+        // 터치 이동 중 기본 스크롤 방지
+        const st = ScrollTrigger.getById('depth-pin');
+        const scrollY = window.scrollY || window.pageYOffset;
+        const isInPinRange = st && scrollY >= st.start && scrollY <= st.end;
+
+        if (isInPinRange) {
+            e.preventDefault();
+        }
+    }
+
+    handleTouchEnd(e) {
+        if (!this.isTouching || this.isAnimating) {
+            return;
+        }
+
+        const currentTime = Date.now();
+        const touchDuration = currentTime - this.touchStartTime;
+        const touchDistance = this.touchStartY - this.touchCurrentY;
+
+        this.isTouching = false;
+
+        // 쿨다운 체크
+        if (currentTime - this.lastScrollTime < this.scrollCooldown) {
+            e.preventDefault();
+            return;
+        }
+
+        // 터치 거리와 시간 체크
+        if (
+            Math.abs(touchDistance) < this.touchThreshold ||
+            touchDuration > this.touchTimeThreshold
+        ) {
+            return;
+        }
+
+        this.lastScrollTime = currentTime;
+        const direction = touchDistance > 0 ? 1 : -1; // 위로 스와이프시 1, 아래로 스와이프시 -1
+
+        this.handleNavigation(direction, e);
     }
 
     handleWheel(e) {
@@ -818,6 +896,10 @@ class WheelNavigation {
         this.lastScrollTime = currentTime;
         const direction = e.deltaY > 0 ? 1 : -1;
 
+        this.handleNavigation(direction, e);
+    }
+
+    handleNavigation(direction, e) {
         const st = ScrollTrigger.getById('depth-pin');
         const scrollY = window.scrollY || window.pageYOffset;
         const isInPinRange = st && scrollY >= st.start && scrollY <= st.end;
