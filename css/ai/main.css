@@ -1738,7 +1738,7 @@ br {
 }
 
 .kdata-icon-group.infinite-slide {
-    animation: infiniteKdataSlide 20s linear infinite;
+    animation: infiniteKdataSlide 10s linear infinite;
 }
 .kdata-icon-group img {
     width: 11.5rem;
