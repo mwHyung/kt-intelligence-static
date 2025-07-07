@@ -5669,6 +5669,11 @@
         overflow: hidden;
         overflow-x: auto;
         white-space: nowrap;
+        flex-wrap: wrap;
+        padding: 1rem 2rem;
+    }
+    .cloud-arch-layer {
+        flex: 1;
     }
 
     .studio-lineUp .table-card-list.text > li .table-card-item {
@@ -5679,5 +5684,45 @@
         overflow: hidden;
         overflow-x: auto;
         white-space: nowrap;
+    }
+
+    .sub-title-sm {
+        font-size: var(--font-size-xl);
+    }
+
+    .sub-title-wrap .sub-title {
+        font-size: var(--font-size-7xl);
+    }
+    .sub-title-wrap p {
+        font-size: var(--font-size-xl);
+    }
+
+    .techPage .tabs {
+        margin-bottom: 1rem;
+    }
+    .techPage .tabs__tab {
+        font-size: var(--font-size-xl);
+    }
+    .tabs__panel {
+        padding-top: 1rem;
+    }
+
+    .diamond-wrapper .box-item {
+        padding: 1rem;
+    }
+
+    .diamond-wrapper .box-list li {
+        width: fit-content;
+    }
+
+    .agent-graph-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .agent-pattern-diagram {
+        flex-wrap: wrap;
+    }
+    .agent-pattern-diagram .diagram-row {
+        width: auto;
     }
 }
