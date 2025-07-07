@@ -4242,7 +4242,7 @@
 
     .techDetailPage .tech-detail-article {
         margin-top: 4.8rem;
-        padding-top: 6.9rem;
+        padding-top: 2rem;
     }
 
     .techDetailPage .tech-detail-article .tech-detail-header .card-tags {
@@ -4365,10 +4365,16 @@
         line-height: 180%;
         /* 29.24px */
         letter-spacing: 0px;
+        margin-top: 4rem;
+    }
+
+    .tech-detail-article .post-custom h4+p,
+    .tech-detail-article .post-custom h3+p {
         margin-top: 2.8rem;
     }
 
-    .tech-detail-article .post-custom ul.innerList li {
+    .tech-detail-article .post-custom ul.innerList li,
+    .tech-detail-article .post-custom ul.tatics-con>li.font-sm-17 {
         color: var(--gray-900-color);
         font-size: 1.6rem;
         font-style: normal;
@@ -4378,6 +4384,10 @@
         /* 29.24px */
         letter-spacing: 0px;
         margin-top: 1.2rem;
+    }
+
+    .tech-detail-article .post-custom ul.tatics-con>li.font-sm-17 {
+        font-weight: bold;
     }
 
     .tech-detail-article .post-custom ul {
