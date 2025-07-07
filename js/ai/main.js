@@ -1024,29 +1024,6 @@ function initUsecaseSectionAnimation() {
     });
 }
 
-function initKdataSectionAnimation() {
-    const section = document.querySelector('.kdata-section');
-    if (!section) return;
-
-    const track = document.querySelector('.kdata-icon-group');
-    if (!track) return;
-    const slides = Array.from(track.children);
-    const windowWidth = window.innerWidth || 1920;
-    let trackWidth = track.scrollWidth;
-    const slideWidth = slides[0].offsetWidth;
-    const minTrackWidth = windowWidth * 2.5;
-    let cloneCount = 0;
-    while (trackWidth < minTrackWidth) {
-        slides.forEach((slide) => {
-            const clone = slide.cloneNode(true);
-            track.appendChild(clone);
-        });
-        cloneCount++;
-        trackWidth += slideWidth * slides.length;
-    }
-    track.classList.add('infinite-slide');
-}
-
 function initMobileMenu() {
     const usecaseSection = document.querySelector('.usecase-section .usecase-swiper');
 
@@ -1077,7 +1054,6 @@ window.addEventListener('load', function () {
     initParallaxDepthSectionAnimation();
     initMobileMenu();
     initUsecaseSectionAnimation();
-    initKdataSectionAnimation();
 });
 
 // Ensure GSAP ScrollToPlugin is registered

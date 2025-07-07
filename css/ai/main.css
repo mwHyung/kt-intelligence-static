@@ -1734,7 +1734,6 @@ br {
     display: flex;
     gap: 4rem;
     justify-content: center;
-    /* margin-left: 4rem; */
 }
 
 .kdata-icon-group.infinite-slide {
@@ -1779,7 +1778,7 @@ br {
     }
 
     100% {
-        transform: translateX(-67.4%);
+        transform: translateX(-50.78%);
     }
 }
 
