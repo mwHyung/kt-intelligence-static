@@ -440,6 +440,7 @@ function initParallaxDepthSectionAnimation() {
 
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
+            gsap.set('.cube-last-text', { zIndex: -1 });
             let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
@@ -460,11 +461,11 @@ function initParallaxDepthSectionAnimation() {
                     duration: 0.4,
                     stagger: 0.2,
                     onStart: () => {
-                        gsap.set('.cube-wrapper', { xPercent: 0 });
+                        gsap.set('.cube-wrapper', { xPercent: -30 });
                     },
                 },
             )
-                .fromTo('.cube-wrapper', { xPercent: 0 }, { xPercent: 34, duration: 0.3 })
+                .fromTo('.cube-wrapper', { xPercent: -30 }, { xPercent: 0, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -631,9 +632,9 @@ function initParallaxDepthSectionAnimation() {
             tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
                 .fromTo(
                     '.cube-wrapper',
-                    { xPercent: 34 },
+                    { xPercent: 0 },
                     {
-                        xPercent: 0,
+                        xPercent: -30,
                         duration: 0.5,
                         ease: 'power2.inOut',
                     },
@@ -661,6 +662,12 @@ function initParallaxDepthSectionAnimation() {
                 );
         },
         '(max-width: 768px)': function () {
+            enableScroll();
+            if (wheelNavInstance) {
+                wheelNavInstance.destroy();
+                wheelNavInstance = null;
+            }
+
             // Swiper 인스턴스 생성 (모바일 메뉴용)
             var pdsSwiper = null;
             var section = document.querySelector('.parallax-depth-section .component-content');
@@ -972,6 +979,7 @@ class WheelNavigation {
         this.listItems[oldIndex].classList.remove('active');
         tl.to(this.listItems[oldIndex], {
             opacity: 0,
+            zIndex: -1,
             duration: 0.3, // 애니메이션 시간 단축
             ease: 'power2.inOut',
             zIndex: -1,
@@ -982,6 +990,7 @@ class WheelNavigation {
             this.listItems[newIndex],
             {
                 opacity: 1,
+                zIndex: 1,
                 duration: 0.3, // 애니메이션 시간 단축
                 ease: 'power2.inOut',
                 zIndex: 1,
