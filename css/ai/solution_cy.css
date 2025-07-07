@@ -859,6 +859,7 @@
 
 .tech-detail-article .post-custom h3.ta-center {
     margin-bottom: 2.5rem;
+    margin-top: 0 !important;
 }
 
 .tech-detail-article .post-custom .img {
@@ -948,7 +949,7 @@
 
 .tech-detail-article .post-custom:nth-child(1) h3,
 .tech-detail-article .post-custom:nth-child(1) h4 {
-    margin-top: 4rem;
+    margin-top: 0rem;
 }
 
 .tech-detail-article .post-custom ul.innerList li {
@@ -4343,6 +4344,12 @@
         line-height: 160%;
         letter-spacing: -0.24px;
     }
+
+    .tech-detail-article .post-custom:nth-child(1) h3,
+    .tech-detail-article .post-custom:nth-child(1) h4 {
+        margin-top: 4rem !important;
+    }
+
 
     .tech-detail-article .post-custom h3.fz-sm {
         font-size: 2rem;
