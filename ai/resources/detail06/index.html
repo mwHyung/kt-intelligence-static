@@ -1,75 +1,67 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- SEO -->
-        <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-        <title>믿:음 2.0 Mini의 모델카드를 공개합니다.</title>
-        <meta
-            name="description"
-            content="이해관계자와의 투명한 커뮤니케이션을 위해 공개하는 모델카드"
-        />
-        <meta name="keywords" content="Language, Model, 믿:음 2.0, 믿:음 2.0 Mini, Model Card" />
 
-        <!-- SNS 공유용 -->
-        <meta property="og:title" content="믿:음 2.0 Mini의 모델카드를 공개합니다." />
-        <meta
-            property="og:description"
-            content="이해관계자와의 투명한 커뮤니케이션을 위해 공개하는 모델카드"
-        />
-        <meta property="og:image" content="/resource/images/ai/og-image.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="KT AI" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <link rel="icon" href="/resource/images/ai/KT_48.ico" />
+    <title>믿:음 2.0 Mini의 모델카드를 공개합니다.</title>
+    <meta name="description" content="이해관계자와의 투명한 커뮤니케이션을 위해 공개하는 모델카드" />
+    <meta name="keywords" content="Language, Model, 믿:음 2.0, 믿:음 2.0 Mini, Model Card" />
 
-        <!-- Common CSS -->
-        <link rel="stylesheet" href="/css/ai/common/common.css" />
-        <!-- Reset CSS -->
-        <link rel="stylesheet" href="/css/ai/common/reset.css" />
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-        <!-- AOS CSS -->
-        <link rel="stylesheet" href="/css/ai/common/aos.css" />
-        <!-- Google tag (gtag.js) -->
-        <script
-            th:async="async"
-            th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"
-        ></script>
-        <script th:inline="javascript">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+    <!-- SNS 공유용 -->
+    <meta property="og:title" content="믿:음 2.0 Mini의 모델카드를 공개합니다." />
+    <meta property="og:description" content="이해관계자와의 투명한 커뮤니케이션을 위해 공개하는 모델카드" />
+    <meta property="og:image" content="/resource/images/ai/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KT AI" />
 
-            gtag('config', [[${ga4Id}]]);
-        </script>
-        <script src="/js/ai/ga.js"></script>
-    </head>
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/ai/common/common.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/css/ai/common/reset.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-    <body>
-        <!-- Header -->
-        <header id="main-header" class="header">
-            <div class="header-inner"></div>
-        </header>
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+    <script src="/js/ai/ga.js"></script>
+</head>
 
-        <div class="sub-content techDetailPage">
-            <div class="sub-inner">
-                <div class="tech-detail-header">
-                    <span class="tech-detail-category">Technical Report</span>
-                    <h1 class="tech-detail-title">
-                        KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다.
-                    </h1>
-                    <div class="card-tags">
-                        <span>Technical Report</span>
-                        <span>K Model</span>
-                        <span>믿:음 2.0</span>
-                        <span>Mi:dm 2.0</span>
-                    </div>
-                    <time class="tech-detail-date" datetime="2025-05-16">2025.07.04</time>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="header-inner"></div>
+    </header>
+
+    <div class="sub-content techDetailPage">
+        <div class="sub-inner">
+            <div class="tech-detail-header">
+                <span class="tech-detail-category">Technical Report</span>
+                <h2 class="tech-detail-title">
+                    KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다.
+                </h2>
+                <div class="card-tags">
+                    <span>Technical Report</span>
+                    <span>K Model</span>
+                    <span>믿:음 2.0</span>
+                    <span>Mi:dm 2.0</span>
                 </div>
+                <time class="tech-detail-date" datetime="2025-05-16">2025.07.04</time>
+            </div>
 
-                <!-- 게시글 본문 영역 (관리자 에디터/HTML 입력용) -->
-                <article class="tech-detail-article" id="tech-detail-article">
-                    <!--
+            <!-- 게시글 본문 영역 (관리자 에디터/HTML 입력용) -->
+            <article class="tech-detail-article" id="tech-detail-article">
+                <!--
                       ※ 관리자 페이지에서 등록한 게시글의 본문(HTML)이 이 영역에 삽입됩니다.
                       예시:
                       <h2>본문 제목</h2>
@@ -78,98 +70,91 @@
                       ...
                     -->
 
-                    <!-- 작업요청 -->
-                    <div class="post-custom">
-                        <h3 class="ta-center">KT 기술혁신부문</h3>
-                        <p>
-                            K Intelligence의 K Model 중 KT가 자체 기술로 개발한 ‘믿:음 2.0'에 대한
-                            Technical Report(이하 기술 보고서)를 발간했습니다.
-                        </p>
-                        <p>
-                            본 기술 보고서는 믿:음 2.0의 주요 특징, 한국적 AI 개발을 위한 고품질
-                            학습데이터 확보 방법 및 사전/사후 학습 방식, 그리고 성능 및 안정성 등의
-                            벤치마크 결과를 소개하는 자료입니다.
-                        </p>
-                        <p>
-                            공개된 믿:음 2.0 모델과 기술 보고서가 AI를 활용한 기업의 기술 혁신과
-                            개발자 생태계의 성장에 도움이 되길 바랍니다.
-                        </p>
-                    </div>
-
-                    <div class="post-custom">
-                        <h3>Abstract</h3>
-                        <p>
-                            We introduce Mi:dm 2.0, a bilingual large language model LLM)
-                            specifically engineered to advance KOREACENTRIC AI. This model goes
-                            beyond Korean text processing by integrating the values, reasoning
-                            patterns, and commonsense knowledge inherent to Korean society, enabling
-                            nuanced understanding of cultural contexts, emotional subtleties, and
-                            realworld scenarios to generate reliable, culturally appropriate
-                            responses. To address limitations of existing LLMs—often caused by
-                            insufficient or low-quality Korean data and lack of cultural
-                            alignment—Mi:dm 2.0 emphasizes robust data quality through a
-                            comprehensive pipeline that includes proprietary data cleansing,
-                            high-quality synthetic data generation, strategic data mixing with
-                            curriculum learning, and a custom Korean-optimized tokenizer to improve
-                            efficiency and coverage. To realize this vision, we offer two
-                            complementary configurations: Mi:dm 2.0 Base 11.5B parameters), built
-                            with a Depth-up Scaling strategy for general-purpose use, and Mi:dm 2.0
-                            Mini 2.3B parameters), optimized for resource-constrained environments
-                            and specialized tasks. Mi:dm 2.0 achieves state-of-the-art performance
-                            in Korean-specific benchmarks, with top-tier zero-shot results on KMMLU
-                            and strong results in internal evaluations across language, humanities,
-                            and social science tasks. The Mi:dm 2.0 lineup is released under the MIT
-                            license supporting extensive research and commercial use. By offering
-                            these accessible and high-performance Korea-centric LLMs, KT aims to
-                            accelerate AI adoption across Korean industries, public services, and
-                            education, while strengthening the Korean AI developer community and
-                            laying the groundwork for the broader vision of Kintelligence. Our
-                            models are available via
-                            <a
-                                href="https://huggingface.co/K-intelligence"
-                                target="_blank"
-                                class="article_in_aLink"
-                                >K intelligence Mi:dm</a
-                            >.<br />
-                            For technical inquiries, please contact
-                            <a href="mailto:midm-llm@kt.com" class="article_in_aLink"
-                                >midm-llm@kt.com
-                            </a>
-                        </p>
-                    </div>
-
-                    <!-- //작업요청 -->
-
-                    <div class="tech-detail-article-list gap-40">
-                        <ul class="pdf-ul">
-                            <li>
-                                <a
-                                    href="https://github.com/K-intelligence-Midm/Midm-2.0/blob/main/Mi_dm-2_0_technical_report.pdf"
-                                    target="_blank"
-                                    >PDF 바로보기</a
-                                >
-                            </li>
-                        </ul>
-                    </div>
-                </article>
-
-                <div class="tech-detail-bottom">
-                    <a href="/ai/resources/">
-                        <button type="button" class="basic-bk-btn docs-back">돌아가기</button>
-                    </a>
-                    <div class="tech-banner-sec"></div>
+                <!-- 작업요청 -->
+                <div class="post-custom">
+                    <h3 class="ta-center">KT 기술혁신부문</h3>
+                    <p>
+                        K Intelligence의 K Model 중 KT가 자체 기술로 개발한 ‘믿:음 2.0'에 대한
+                        Technical Report(이하 기술 보고서)를 발간했습니다.
+                    </p>
+                    <p>
+                        본 기술 보고서는 믿:음 2.0의 주요 특징, 한국적 AI 개발을 위한 고품질
+                        학습데이터 확보 방법 및 사전/사후 학습 방식, 그리고 성능 및 안정성 등의
+                        벤치마크 결과를 소개하는 자료입니다.
+                    </p>
+                    <p>
+                        공개된 믿:음 2.0 모델과 기술 보고서가 AI를 활용한 기업의 기술 혁신과
+                        개발자 생태계의 성장에 도움이 되길 바랍니다.
+                    </p>
                 </div>
+
+                <div class="post-custom">
+                    <h3>Abstract</h3>
+                    <p>
+                        We introduce Mi:dm 2.0, a bilingual large language model LLM)
+                        specifically engineered to advance KOREACENTRIC AI. This model goes
+                        beyond Korean text processing by integrating the values, reasoning
+                        patterns, and commonsense knowledge inherent to Korean society, enabling
+                        nuanced understanding of cultural contexts, emotional subtleties, and
+                        realworld scenarios to generate reliable, culturally appropriate
+                        responses. To address limitations of existing LLMs—often caused by
+                        insufficient or low-quality Korean data and lack of cultural
+                        alignment—Mi:dm 2.0 emphasizes robust data quality through a
+                        comprehensive pipeline that includes proprietary data cleansing,
+                        high-quality synthetic data generation, strategic data mixing with
+                        curriculum learning, and a custom Korean-optimized tokenizer to improve
+                        efficiency and coverage. To realize this vision, we offer two
+                        complementary configurations: Mi:dm 2.0 Base 11.5B parameters), built
+                        with a Depth-up Scaling strategy for general-purpose use, and Mi:dm 2.0
+                        Mini 2.3B parameters), optimized for resource-constrained environments
+                        and specialized tasks. Mi:dm 2.0 achieves state-of-the-art performance
+                        in Korean-specific benchmarks, with top-tier zero-shot results on KMMLU
+                        and strong results in internal evaluations across language, humanities,
+                        and social science tasks. The Mi:dm 2.0 lineup is released under the MIT
+                        license supporting extensive research and commercial use. By offering
+                        these accessible and high-performance Korea-centric LLMs, KT aims to
+                        accelerate AI adoption across Korean industries, public services, and
+                        education, while strengthening the Korean AI developer community and
+                        laying the groundwork for the broader vision of Kintelligence. Our
+                        models are available via
+                        <a href="https://huggingface.co/K-intelligence" target="_blank" class="article_in_aLink">K
+                            intelligence Mi:dm</a>.<br />
+                        For technical inquiries, please contact
+                        <a href="mailto:midm-llm@kt.com" class="article_in_aLink">midm-llm@kt.com
+                        </a>
+                    </p>
+                </div>
+
+                <!-- //작업요청 -->
+
+                <div class="tech-detail-article-list gap-40">
+                    <ul class="pdf-ul">
+                        <li>
+                            <a href="https://github.com/K-intelligence-Midm/Midm-2.0/blob/main/Mi_dm-2_0_technical_report.pdf"
+                                target="_blank">PDF 바로보기</a>
+                        </li>
+                    </ul>
+                </div>
+            </article>
+
+            <div class="tech-detail-bottom">
+                <a href="/ai/resources/">
+                    <button type="button" class="basic-bk-btn docs-back">돌아가기</button>
+                </a>
+                <div class="tech-banner-sec"></div>
             </div>
         </div>
+    </div>
 
-        <!-- Footer -->
-        <footer class="footer"></footer>
+    <!-- Footer -->
+    <footer class="footer"></footer>
 
-        <!-- Script -->
-        <script src="/js/ai/solution.js"></script>
-        <script src="/js/ai/common/common.js"></script>
-        <script>
-            includeCommonLayout({ skipKtModel: true });
-        </script>
-    </body>
+    <!-- Script -->
+    <script src="/js/ai/solution.js"></script>
+    <script src="/js/ai/common/common.js"></script>
+    <script>
+        includeCommonLayout({ skipKtModel: true });
+    </script>
+</body>
+
 </html>
