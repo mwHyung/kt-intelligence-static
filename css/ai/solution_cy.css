@@ -4346,6 +4346,8 @@
         padding: 0 0rem;
     }
 
+    .tech-detail-article .post-custom .img:nth-last-child(1) {}
+
     .tech-detail-article .post-custom h5 {
         color: var(--gray-600-color);
         text-align: center;
@@ -4388,6 +4390,7 @@
 
     .tech-detail-article .post-custom ul.tatics-con>li.font-sm-17 {
         font-weight: bold;
+        margin-top: 0;
     }
 
     .tech-detail-article .post-custom ul {
@@ -4506,6 +4509,14 @@
         margin-top: 1.6rem;
     }
 
+    .tech-detail-article .post-custom h5>strong,
+    .tech-detail-article .post-custom h5>div {
+        font-size: 1.6rem;
+    }
+
+    .tech-detail-article .post-custom ul.tatics-con {
+        padding: 2.4rem 2rem;
+    }
 
     /* 테이블 스타일 적용 요청 - mo */
     .tech-detail-article .table-wrapper {
@@ -4558,7 +4569,6 @@
     }
 
     .tech-detail-article.mod .table-wrapper h4 {
-        /* font-size: 18px; */
         font-size: 1.8rem;
     }
 
