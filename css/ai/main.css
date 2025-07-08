@@ -1458,7 +1458,7 @@ br {
     /* width: max-content; */
     gap: 2rem;
     padding-right: 2rem;
-    animation: customSliderLoop 50s linear infinite;
+    animation: customSliderLoop 20s linear infinite;
 }
 
 .usecase-swiper {
