@@ -1,679 +1,496 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- SEO -->
-        <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-        <title>KT가 개발한 K intelligence 기술에 대한 Technical Report v1.0을 발간합니다.</title>
-        <meta
-            name="description"
-            content="K intelligence 핵심영역인 K Model, K RAG, K Agent, K RAI 기술 개발 배경과 경과, 성과 소개"
-        />
-        <meta
-            name="keywords"
-            content="Technical Report, K intelligence, K Model, K Agent, K RAG, K RAI, 믿:음 2.0, Llama K, Search AI, Document AI, Agent Pattern, Orchestrator"
-        />
 
-        <!-- SNS 공유용 -->
-        <meta
-            property="og:title"
-            content="KT가 개발한 K intelligence 기술에 대한 Technical Report v1.0을 발간합니다."
-        />
-        <meta
-            property="og:description"
-            content="K intelligence 핵심영역인 K Model, K RAG, K Agent, K RAI 기술 개발 배경과 경과, 성과 소개"
-        />
-        <meta property="og:image" content="/resource/images/ai/og-image.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="KT AI" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- SEO -->
+    <link rel="icon" href="/resource/images/ai/KT_48.ico" />
+    <title>KT가 개발한 K intelligence 기술에 대한 Technical Report v1.0을 발간합니다.</title>
+    <meta name="description" content="K intelligence 핵심영역인 K Model, K RAG, K Agent, K RAI 기술 개발 배경과 경과, 성과 소개" />
+    <meta name="keywords"
+        content="Technical Report, K intelligence, K Model, K Agent, K RAG, K RAI, 믿:음 2.0, Llama K, Search AI, Document AI, Agent Pattern, Orchestrator" />
 
-        <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
-        <!-- Common CSS -->
-        <link rel="stylesheet" href="/css/ai/common/common.css" />
-        <!-- Reset CSS -->
-        <link rel="stylesheet" href="/css/ai/common/reset.css" />
-        <!-- AOS CSS -->
-        <link rel="stylesheet" href="/css/ai/common/aos.css" />
-        <!-- Style CSS -->
-        <link rel="stylesheet" href="/css/ai/solution.css" />
-        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
-        <!-- Tabs Component (공통) -->
-        <script src="/js/ai/sub_cy.js"></script>
-        <!-- Google tag (gtag.js) -->
-        <script
-            th:async="async"
-            th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"
-        ></script>
-        <script th:inline="javascript">
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', [[${ga4Id}]]);
-        </script>
-    </head>
+    <!-- SNS 공유용 -->
+    <meta property="og:title" content="KT가 개발한 K intelligence 기술에 대한 Technical Report v1.0을 발간합니다." />
+    <meta property="og:description" content="K intelligence 핵심영역인 K Model, K RAG, K Agent, K RAI 기술 개발 배경과 경과, 성과 소개" />
+    <meta property="og:image" content="/resource/images/ai/og-image.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="KT AI" />
 
-    <body>
-        <!-- Header -->
-        <header id="main-header" class="header">
-            <div class="header-inner"></div>
-        </header>
+    <link rel="stylesheet" href="/css/ai/common/swiper-bundle.min.css" />
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="/css/ai/common/common.css" />
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="/css/ai/common/reset.css" />
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="/css/ai/common/aos.css" />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/css/ai/solution.css" />
+    <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+    <!-- Tabs Component (공통) -->
+    <script src="/js/ai/sub_cy.js"></script>
+    <!-- Google tag (gtag.js) -->
+    <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+    <script th:inline="javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', [[${ ga4Id }]]);
+    </script>
+</head>
 
-        <div class="sub-content techPage">
-            <div class="sub-inner">
-                <div class="sub-title-wrap">
-                    <h2 class="sub-title">Resources</h2>
-                    <p>K intelligence의 핵심 기술과 다양한 활용 사례를 함께 소개합니다.</p>
+<body>
+    <!-- Header -->
+    <header id="main-header" class="header">
+        <div class="header-inner"></div>
+    </header>
+
+    <div class="sub-content techPage">
+        <div class="sub-inner">
+            <div class="sub-title-wrap">
+                <h2 class="sub-title">Resources</h2>
+                <p>K intelligence의 핵심 기술과 다양한 활용 사례를 함께 소개합니다.</p>
+            </div>
+
+            <div class="js-tab-group">
+                <nav class="tabs" role="tablist" aria-label="Tech& 탭">
+                    <button class="tabs__tab tabs__tab--active" role="tab" aria-selected="true"
+                        aria-controls="tab-panel-1" id="tab-1">
+                        All
+                    </button>
+                    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-2" id="tab-2">
+                        What's New
+                    </button>
+                    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-3" id="tab-3">
+                        Model Card
+                    </button>
+                    <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-4" id="tab-4">
+                        Technical Report
+                    </button>
+                </nav>
+
+                <!-- Tab Component (공통) -->
+                <div class="tabs__panel tabs__panel--active" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1">
+                    <!-- All Content Here -->
+                    <ul class="tech-card-list" aria-label="What's New 목록">
+                        <li class="card tech-card hasNew">
+                            <a href="/ai/resources/detail06"
+                                aria-label="KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">Technical Report</span>
+                                    <h3 class="card-title">
+                                        KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical
+                                        Report를 발간합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        믿:음 2.0 모델의 특징, 고품질 학습 데이터 확보 및
+                                        사전/사후 학습방식, 주요 벤치마크 결과 등 소개
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Technical Report</span>
+                                        <span>K Model</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>Mi:dm 2.0</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom05.png"
+                                        alt="GPT-K 출시 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="card tech-card hasNew">
+                            <a href="/ai/resources/detail01"
+                                aria-label="KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.  상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">What's New</span>
+                                    <h3 class="card-title">
+                                        KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로
+                                        공개합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        한국 AI 생태계와 개발자 커뮤니티를 지원하기 위해, 국내
+                                        최초 11B 규모의 상업적 활용 가능한 모델을 오픈소스로
+                                        공개
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Language</span>
+                                        <span>Model</span>
+                                        <span>믿:음</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>믿:음 2.0 Base</span>
+                                        <span>믿:음 2.0 Mini</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom01.png"
+                                        alt="미드엠 2.1 공개 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="card tech-card">
+                            <a href="/ai/resources/detail04" aria-label="믿:음 2.0 Base의 모델카드를 공개합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">Model Card</span>
+                                    <h3 class="card-title">
+                                        믿:음 2.0 Base의 모델카드를 공개합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
+                                        모델카드
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Model Card</span>
+                                        <span>Language</span>
+                                        <span>Model</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>믿:음 2.0 Base</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom03.png"
+                                        alt="GPT-K 출시 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card tech-card">
+                            <a href="/ai/resources/detail05" aria-label="믿:음 2.0 Mini의 모델카드를 공개합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">Model Card</span>
+                                    <h3 class="card-title">
+                                        믿:음 2.0 Mini의 모델카드를 공개합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
+                                        모델카드
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Model Card</span>
+                                        <span>Language</span>
+                                        <span>Model</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>믿:음 2.0 Mini</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom04.png"
+                                        alt="GPT-K 출시 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+
+                        <li class="card tech-card">
+                            <a href="/ai/resources/detail03" aria-label="KT Voice AI를 소개합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">What's New</span>
+                                    <h3 class="card-title">KT Voice AI를 소개합니다.</h3>
+                                    <p class="sub-desc">
+                                        듣고, 말하고, 이해하는 Voice AI 전 영역을 자체 기술로
+                                        제공
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>음성기술</span>
+                                        <span>음성인식</span>
+                                        <span>음성합성</span>
+                                        <span>화자인식</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom02.png"
+                                        alt="KT Voice 관련 추상적 이미지 - 아직 없습니다." />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="js-tab-group">
-                    <nav class="tabs" role="tablist" aria-label="Tech& 탭">
-                        <button
-                            class="tabs__tab tabs__tab--active"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="tab-panel-1"
-                            id="tab-1"
-                        >
-                            All
-                        </button>
-                        <button
-                            class="tabs__tab"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="tab-panel-2"
-                            id="tab-2"
-                        >
-                            What's New
-                        </button>
-                        <button
-                            class="tabs__tab"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="tab-panel-3"
-                            id="tab-3"
-                        >
-                            Model Card
-                        </button>
-                        <button
-                            class="tabs__tab"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="tab-panel-4"
-                            id="tab-4"
-                        >
-                            Technical Report
-                        </button>
-                        <!-- <button class="tabs__tab" role="tab" aria-selected="false" aria-controls="tab-panel-5" id="tab-5">
-            Publications
-          </button> -->
-                    </nav>
+                <div class="tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+                    <!-- What's New Content Here -->
+                    <!-- All Content Here -->
+                    <ul class="tech-card-list" aria-label="What's New 목록">
+                        <li class="card tech-card hasNew">
+                            <a href="/ai/resources/detail01"
+                                aria-label="KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.  상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">What's New</span>
+                                    <h3 class="card-title">
+                                        KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로
+                                        공개합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        한국 AI 생태계와 개발자 커뮤니티를 지원하기 위해, 국내
+                                        최초 11B 규모의 상업적 활용 가능한 모델을 오픈소스로
+                                        공개
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Language</span>
+                                        <span>Model</span>
+                                        <span>믿:음</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>믿:음 2.0 Base</span>
+                                        <span>믿:음 2.0 Mini</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom01.png"
+                                        alt="미드엠 2.1 공개 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
 
-                    <!-- Tab Component (공통) -->
-                    <div
-                        class="tabs__panel tabs__panel--active"
-                        id="tab-panel-1"
-                        role="tabpanel"
-                        aria-labelledby="tab-1"
-                    >
-                        <!-- All Content Here -->
-                        <ul class="tech-card-list" aria-label="What's New 목록">
-                            <li class="card tech-card hasNew">
-                                <a
-                                    href="/ai/resources/detail06"
-                                    aria-label="KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">Technical Report</span>
-                                        <h3 class="card-title">
-                                            KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical
-                                            Report를 발간합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            믿:음 2.0 모델의 특징, 고품질 학습 데이터 확보 및
-                                            사전/사후 학습방식, 주요 벤치마크 결과 등 소개
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Technical Report</span>
-                                            <span>K Model</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>Mi:dm 2.0</span>
-                                        </div>
+                        <li class="card tech-card">
+                            <a href="/ai/resources/detail03" aria-label="KT Voice AI를 소개합니다.">
+                                <div class="card-txts">
+                                    <span class="card-category">What's New</span>
+                                    <h3 class="card-title">KT Voice AI를 소개합니다.</h3>
+                                    <p class="sub-desc">
+                                        듣고, 말하고, 이해하는 Voice AI 전 영역을 자체 기술로
+                                        제공
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>음성기술</span>
+                                        <span>음성인식</span>
+                                        <span>음성합성</span>
+                                        <span>화자인식</span>
                                     </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom05.png"
-                                            alt="GPT-K 출시 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="card tech-card hasNew">
-                                <a
-                                    href="/ai/resources/detail01"
-                                    aria-label="KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.  상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">What's New</span>
-                                        <h3 class="card-title">
-                                            KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로
-                                            공개합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            한국 AI 생태계와 개발자 커뮤니티를 지원하기 위해, 국내
-                                            최초 11B 규모의 상업적 활용 가능한 모델을 오픈소스로
-                                            공개
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Language</span>
-                                            <span>Model</span>
-                                            <span>믿:음</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>믿:음 2.0 Base</span>
-                                            <span>믿:음 2.0 Mini</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom01.png"
-                                            alt="미드엠 2.1 공개 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-
-                            <!-- <li class="card tech-card">
-              <a href="/ai/resources/detail02" aria-label="글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시합니다. 상세페이지로 이동">
-                <div class="card-txts">
-                  <span class="card-category">What's New</span>
-                  <h3 class="card-title">글로벌 최고 성능의 한국적 AI 모델, GPT-K를 출시</h3>
-                  <p class="sub-desc">
-                    GPT-4o 레퍼런스모델에 KT의 소비자 데이터셋을 학습하여, 한국어 이해와 생성 능력 대폭 향상
-                  </p>
-                  <div class="card-tags">
-                    <span>Llama-K</span>
-                    <span>Midm</span>
-                    <span>GPT-K</span>
-                  </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom02.png"
+                                        alt="KT Voice 관련 추상적 이미지 - 아직 없습니다." />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="card-img">
-                  <img src="/resource/images/ai/resources/sub-resources-img03.png" alt="GPT-K 출시 관련 추상적 이미지" />
+
+                <div class="tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" hidden>
+                    <!-- model card Content Here -->
+                    <ul class="tech-card-list" aria-label="What's New 목록">
+                        <li class="card tech-card">
+                            <a href="/ai/resources/detail04" aria-label="믿:음 2.0 Base의 모델카드를 공개합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">Model Card</span>
+                                    <h3 class="card-title">
+                                        믿:음 2.0 Base의 모델카드를 공개합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
+                                        모델카드
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Model Card</span>
+                                        <span>Language</span>
+                                        <span>Model</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>믿:음 2.0 Base</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom03.png"
+                                        alt="GPT-K 출시 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+                        <li class="card tech-card">
+                            <a href="/ai/resources/detail05" aria-label="믿:음 2.0 Mini의 모델카드를 공개합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">Model Card</span>
+                                    <h3 class="card-title">
+                                        믿:음 2.0 Mini의 모델카드를 공개합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
+                                        모델카드
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Model Card</span>
+                                        <span>Language</span>
+                                        <span>Model</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>믿:음 2.0 Mini</span>
+                                    </div>
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom04.png"
+                                        alt="GPT-K 출시 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-              </a>
-            </li> -->
+                <div class="tabs__panel" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" hidden>
+                    <!-- Technical Report Content Here -->
+                    <ul class="tech-card-list" aria-label="What's New 목록">
 
-                            <li class="card tech-card">
-                                <a
-                                    href="/ai/resources/detail04"
-                                    aria-label="믿:음 2.0 Base의 모델카드를 공개합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">Model Card</span>
-                                        <h3 class="card-title">
-                                            믿:음 2.0 Base의 모델카드를 공개합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
-                                            모델카드
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Model Card</span>
-                                            <span>Language</span>
-                                            <span>Model</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>믿:음 2.0 Base</span>
-                                        </div>
+                        <li class="card tech-card hasNew">
+                            <a href="/ai/resources/detail06"
+                                aria-label="KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다. 상세페이지로 이동">
+                                <div class="card-txts">
+                                    <span class="card-category">Technical Report</span>
+                                    <h3 class="card-title">
+                                        KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical
+                                        Report를 발간합니다.
+                                    </h3>
+                                    <p class="sub-desc">
+                                        믿:음 2.0 모델의 특징, 고품질 학습 데이터 확보 및
+                                        사전/사후 학습방식, 주요 벤치마크 결과 등 소개
+                                    </p>
+                                    <div class="card-tags">
+                                        <span>Technical Report</span>
+                                        <span>K Model</span>
+                                        <span>믿:음 2.0</span>
+                                        <span>Mi:dm 2.0</span>
                                     </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom03.png"
-                                            alt="GPT-K 출시 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="card tech-card">
-                                <a
-                                    href="/ai/resources/detail05"
-                                    aria-label="믿:음 2.0 Mini의 모델카드를 공개합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">Model Card</span>
-                                        <h3 class="card-title">
-                                            믿:음 2.0 Mini의 모델카드를 공개합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
-                                            모델카드
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Model Card</span>
-                                            <span>Language</span>
-                                            <span>Model</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>믿:음 2.0 Mini</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom04.png"
-                                            alt="GPT-K 출시 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="card tech-card">
-                                <a
-                                    href="/ai/resources/detail03"
-                                    aria-label="KT Voice AI를 소개합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">What's New</span>
-                                        <h3 class="card-title">KT Voice AI를 소개합니다.</h3>
-                                        <p class="sub-desc">
-                                            듣고, 말하고, 이해하는 Voice AI 전 영역을 자체 기술로
-                                            제공
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>음성기술</span>
-                                            <span>음성인식</span>
-                                            <span>음성합성</span>
-                                            <span>화자인식</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom02.png"
-                                            alt="KT Voice 관련 추상적 이미지 - 아직 없습니다."
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div
-                        class="tabs__panel"
-                        id="tab-panel-2"
-                        role="tabpanel"
-                        aria-labelledby="tab-2"
-                        hidden
-                    >
-                        <!-- What's New Content Here -->
-                        <!-- All Content Here -->
-                        <ul class="tech-card-list" aria-label="What's New 목록">
-                            <li class="card tech-card hasNew">
-                                <a
-                                    href="/ai/resources/detail01"
-                                    aria-label="KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.  상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">What's New</span>
-                                        <h3 class="card-title">
-                                            KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로
-                                            공개합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            한국 AI 생태계와 개발자 커뮤니티를 지원하기 위해, 국내
-                                            최초 11B 규모의 상업적 활용 가능한 모델을 오픈소스로
-                                            공개
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Language</span>
-                                            <span>Model</span>
-                                            <span>믿:음</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>믿:음 2.0 Base</span>
-                                            <span>믿:음 2.0 Mini</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom01.png"
-                                            alt="미드엠 2.1 공개 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-
-                            <li class="card tech-card">
-                                <a
-                                    href="/ai/resources/detail03"
-                                    aria-label="KT Voice AI를 소개합니다."
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">What's New</span>
-                                        <h3 class="card-title">KT Voice AI를 소개합니다.</h3>
-                                        <p class="sub-desc">
-                                            듣고, 말하고, 이해하는 Voice AI 전 영역을 자체 기술로
-                                            제공
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>음성기술</span>
-                                            <span>음성인식</span>
-                                            <span>음성합성</span>
-                                            <span>화자인식</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom02.png"
-                                            alt="KT Voice 관련 추상적 이미지 - 아직 없습니다."
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div
-                        class="tabs__panel"
-                        id="tab-panel-3"
-                        role="tabpanel"
-                        aria-labelledby="tab-3"
-                        hidden
-                    >
-                        <!-- model card Content Here -->
-                        <ul class="tech-card-list" aria-label="What's New 목록">
-                            <!-- 빈공간 -->
-                            <!-- <div class="empty-content-notice">
-              <img src="/resource/images/ai/resources/empty-img.png" alt="새로운 콘텐츠 업데이트 예정 알림 아이콘" />
-              <p>곧 새로운 콘텐츠로 업데이트될 <br class="mo-br">
-                예정입니다.</p>
-            </div> -->
-                            <!-- // 빈공간 -->
-                            <li class="card tech-card">
-                                <a
-                                    href="/ai/resources/detail04"
-                                    aria-label="믿:음 2.0 Base의 모델카드를 공개합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">Model Card</span>
-                                        <h3 class="card-title">
-                                            믿:음 2.0 Base의 모델카드를 공개합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
-                                            모델카드
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Model Card</span>
-                                            <span>Language</span>
-                                            <span>Model</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>믿:음 2.0 Base</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom03.png"
-                                            alt="GPT-K 출시 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="card tech-card">
-                                <a
-                                    href="/ai/resources/detail05"
-                                    aria-label="믿:음 2.0 Mini의 모델카드를 공개합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">Model Card</span>
-                                        <h3 class="card-title">
-                                            믿:음 2.0 Mini의 모델카드를 공개합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            이해관계자와의 투명한 커뮤니케이션을 위해 공개하는
-                                            모델카드
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Model Card</span>
-                                            <span>Language</span>
-                                            <span>Model</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>믿:음 2.0 Mini</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom04.png"
-                                            alt="GPT-K 출시 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-                        class="tabs__panel"
-                        id="tab-panel-4"
-                        role="tabpanel"
-                        aria-labelledby="tab-4"
-                        hidden
-                    >
-                        <!-- Technical Report Content Here -->
-                        <ul class="tech-card-list" aria-label="What's New 목록">
-                            <!-- 빈공간 -->
-                            <!-- <div class="empty-content-notice">
-              <img src="/resource/images/ai/resources/empty-img.png" alt="새로운 콘텐츠 업데이트 예정 알림 아이콘" />
-              <p>곧 새로운 콘텐츠로 업데이트될 <br class="mo-br">
-                예정입니다.</p>
-            </div> -->
-                            <!-- // 빈공간 -->
-
-                            <li class="card tech-card hasNew">
-                                <a
-                                    href="/ai/resources/detail06"
-                                    aria-label="KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical Report를 발간합니다. 상세페이지로 이동"
-                                >
-                                    <div class="card-txts">
-                                        <span class="card-category">Technical Report</span>
-                                        <h3 class="card-title">
-                                            KT가 자체 기술로 개발한 AI 모델, 믿:음 2.0 Technical
-                                            Report를 발간합니다.
-                                        </h3>
-                                        <p class="sub-desc">
-                                            믿:음 2.0 모델의 특징, 고품질 학습 데이터 확보 및
-                                            사전/사후 학습방식, 주요 벤치마크 결과 등 소개
-                                        </p>
-                                        <div class="card-tags">
-                                            <span>Technical Report</span>
-                                            <span>K Model</span>
-                                            <span>믿:음 2.0</span>
-                                            <span>Mi:dm 2.0</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-img">
-                                        <img
-                                            src="/resource/images/ai/resources/sub-resources-img-custom05.png"
-                                            alt="GPT-K 출시 관련 추상적 이미지"
-                                        />
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div
-                        class="tabs__panel"
-                        id="tab-panel-5"
-                        role="tabpanel"
-                        aria-labelledby="tab-5"
-                        hidden
-                    >
-                        <!-- Publications Content Here -->
-
-                        <!-- 빈공간 -->
-                        <!-- <div class="empty-content-notice">
-            <img src="/resource/images/ai/resources/empty-img.png" alt="새로운 콘텐츠 업데이트 예정 알림 아이콘" />
-            <p>곧 새로운 콘텐츠로 업데이트될 <br class="mo-br">
-              예정입니다.</p>
-          </div> -->
-                        <!-- // 빈공간 -->
-                    </div>
-
-                    <!-- Pagination (공통) -->
-                    <!-- <nav class="pagination" aria-label="페이지네이션">
-          <button class="pagination__arrow pagination__arrow--prev pagination__arrow--disabled" aria-label="이전 페이지"
-            disabled>
-            <span class="visually-hidden">이전</span>
-          </button>
-          <button class="pagination__item pagination__item--active" aria-current="page">1</button>
-          <button class="pagination__item">2</button>
-          <button class="pagination__item">3</button>
-          <button class="pagination__item">4</button>
-          <button class="pagination__item">5</button>
-          <button class="pagination__arrow pagination__arrow--next" aria-label="다음 페이지">
-            <span class="visually-hidden">다음</span>
-          </button>
-        </nav> -->
-                    <!-- 모바일에서만 노출되는 더보기 버튼 -->
-                    <!-- <div class="mb-moreBtn">
-          <button type="button" class="moreBtn basicBtn" aria-label="더 많은 콘텐츠 불러오기"
-            aria-controls="usecase-card-list-horizontal" aria-live="polite">
-            <span aria-hidden="true">+</span>
-            <span class="visually-hidden">더보기</span>
-          </button>
-        </div> -->
+                                </div>
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/resources/sub-resources-img-custom05.png"
+                                        alt="GPT-K 출시 관련 추상적 이미지" />
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Footer -->
-        <footer class="footer"></footer>
+    <!-- Footer -->
+    <footer class="footer"></footer>
 
-        <!-- Script -->
-        <script src="/js/ai/solution.js"></script>
-        <script src="/js/ai/common/common.js"></script>
-        <script>
-            includeCommonLayout({ skipKtModel: true });
-        </script>
+    <!-- Script -->
+    <script src="/js/ai/solution.js"></script>
+    <script src="/js/ai/common/common.js"></script>
+    <script>
+        includeCommonLayout({ skipKtModel: true });
+    </script>
 
-        <script>
-            // resources 탭 내 게시글 접속 시 뒤로가기 해도 탭 활성화 유지 + 모바일 자동 스크롤
-            (function () {
-                const TAB_KEY = 'resourcesTabActive';
-                const tabPrefix = 'tab-';
-                const tabGroupSelector = '.js-tab-group .tabs__tab';
-                const panelGroupSelector = '.js-tab-group .tabs__panel';
+    <script>
+        // resources 탭 내 게시글 접속 시 뒤로가기 해도 탭 활성화 유지 + 모바일 자동 스크롤
+        (function () {
+            const TAB_KEY = 'resourcesTabActive';
+            const tabPrefix = 'tab-';
+            const tabGroupSelector = '.js-tab-group .tabs__tab';
+            const panelGroupSelector = '.js-tab-group .tabs__panel';
 
-                function getTabNameById(tabId) {
-                    switch (tabId) {
-                        case 'tab-1':
-                            return 'all';
-                        case 'tab-2':
-                            return 'whatsnew';
-                        case 'tab-3':
-                            return 'modelcard';
-                        case 'tab-4':
-                            return 'techreport';
-                        case 'tab-5':
-                            return 'publications';
-                        default:
-                            return 'all';
+            function getTabNameById(tabId) {
+                switch (tabId) {
+                    case 'tab-1':
+                        return 'all';
+                    case 'tab-2':
+                        return 'whatsnew';
+                    case 'tab-3':
+                        return 'modelcard';
+                    case 'tab-4':
+                        return 'techreport';
+                    case 'tab-5':
+                        return 'publications';
+                    default:
+                        return 'all';
+                }
+            }
+            function getTabIdByName(tabName) {
+                switch (tabName) {
+                    case 'all':
+                        return 'tab-1';
+                    case 'whatsnew':
+                        return 'tab-2';
+                    case 'modelcard':
+                        return 'tab-3';
+                    case 'techreport':
+                        return 'tab-4';
+                    case 'publications':
+                        return 'tab-5';
+                    default:
+                        return 'tab-1';
+                }
+            }
+
+            function activateTab(tabId, scrollToTab = false) {
+                const tabBtns = document.querySelectorAll(tabGroupSelector);
+                const tabPanels = document.querySelectorAll(panelGroupSelector);
+                tabBtns.forEach((btn) => {
+                    const isActive = btn.id === tabId;
+                    btn.classList.toggle('tabs__tab--active', isActive);
+                    btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    // 모바일: 활성화된 탭 자동 스크롤
+                    if (isActive && scrollToTab && window.innerWidth <= 767) {
+                        const tabsContainer = btn.parentNode;
+                        const containerRect = tabsContainer.getBoundingClientRect();
+                        const tabRect = btn.getBoundingClientRect();
+                        const scrollLeft = tabRect.left - containerRect.left - 20; // 1.25rem = 20px
+                        tabsContainer.scrollTo({
+                            left: tabsContainer.scrollLeft + scrollLeft,
+                            behavior: 'smooth',
+                        });
                     }
-                }
-                function getTabIdByName(tabName) {
-                    switch (tabName) {
-                        case 'all':
-                            return 'tab-1';
-                        case 'whatsnew':
-                            return 'tab-2';
-                        case 'modelcard':
-                            return 'tab-3';
-                        case 'techreport':
-                            return 'tab-4';
-                        case 'publications':
-                            return 'tab-5';
-                        default:
-                            return 'tab-1';
-                    }
-                }
-
-                function activateTab(tabId, scrollToTab = false) {
-                    const tabBtns = document.querySelectorAll(tabGroupSelector);
-                    const tabPanels = document.querySelectorAll(panelGroupSelector);
-                    tabBtns.forEach((btn) => {
-                        const isActive = btn.id === tabId;
-                        btn.classList.toggle('tabs__tab--active', isActive);
-                        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-                        // 모바일: 활성화된 탭 자동 스크롤
-                        if (isActive && scrollToTab && window.innerWidth <= 767) {
-                            const tabsContainer = btn.parentNode;
-                            const containerRect = tabsContainer.getBoundingClientRect();
-                            const tabRect = btn.getBoundingClientRect();
-                            const scrollLeft = tabRect.left - containerRect.left - 20; // 1.25rem = 20px
-                            tabsContainer.scrollTo({
-                                left: tabsContainer.scrollLeft + scrollLeft,
-                                behavior: 'smooth',
-                            });
-                        }
-                    });
-                    tabPanels.forEach((panel) => {
-                        const isActive = panel.getAttribute('aria-labelledby') === tabId;
-                        panel.classList.toggle('tabs__panel--active', isActive);
-                        panel.hidden = !isActive;
-                    });
-                }
-
-                function saveTab(tabId) {
-                    localStorage.setItem(TAB_KEY, tabId);
-                }
-                function getSavedTab() {
-                    return localStorage.getItem(TAB_KEY);
-                }
-
-                function setHash(tabId) {
-                    const tabName = getTabNameById(tabId);
-                    if (location.hash !== '#' + tabName) {
-                        history.replaceState(null, '', '#' + tabName);
-                    }
-                }
-                function getTabIdFromHash() {
-                    const hash = location.hash.replace('#', '');
-                    if (!hash) return null;
-                    return getTabIdByName(hash);
-                }
-
-                function handleTabClick(e) {
-                    if (!e.target.classList.contains('tabs__tab')) return;
-                    const tabId = e.target.id;
-                    setHash(tabId);
-                    saveTab(tabId);
-                    // 모바일: 클릭 시 자동 스크롤
-                    if (window.innerWidth <= 767) {
-                        activateTab(tabId, true);
-                    }
-                }
-
-                function handleHashChange() {
-                    const tabId = getTabIdFromHash();
-                    if (tabId) {
-                        // 뒤로가기/앞으로가기 시 해시 변경 시에도 모바일 자동 스크롤
-                        activateTab(tabId, window.innerWidth <= 767);
-                        saveTab(tabId);
-                    }
-                }
-
-                // 초기 진입 시: 해시 → localStorage → 기본값 순으로 탭 활성화
-                document.addEventListener('DOMContentLoaded', function () {
-                    const tabIdFromHash = getTabIdFromHash();
-                    const tabIdFromStorage = getSavedTab();
-                    let tabIdToActivate = tabIdFromHash || tabIdFromStorage || 'tab-1';
-                    // 모바일: 진입 시 자동 스크롤
-                    activateTab(tabIdToActivate, window.innerWidth <= 767);
-                    setHash(tabIdToActivate);
-                    // 탭 클릭 시 해시/스토리지 동기화
-                    const tabBtns = document.querySelectorAll(tabGroupSelector);
-                    tabBtns.forEach((btn) => {
-                        btn.addEventListener('click', handleTabClick);
-                    });
                 });
-                // 뒤로가기/앞으로가기 시 해시 변경 감지
-                window.addEventListener('hashchange', handleHashChange);
-            })();
-        </script>
-    </body>
+                tabPanels.forEach((panel) => {
+                    const isActive = panel.getAttribute('aria-labelledby') === tabId;
+                    panel.classList.toggle('tabs__panel--active', isActive);
+                    panel.hidden = !isActive;
+                });
+            }
+
+            function saveTab(tabId) {
+                localStorage.setItem(TAB_KEY, tabId);
+            }
+            function getSavedTab() {
+                return localStorage.getItem(TAB_KEY);
+            }
+
+            function setHash(tabId) {
+                const tabName = getTabNameById(tabId);
+                if (location.hash !== '#' + tabName) {
+                    history.replaceState(null, '', '#' + tabName);
+                }
+            }
+            function getTabIdFromHash() {
+                const hash = location.hash.replace('#', '');
+                if (!hash) return null;
+                return getTabIdByName(hash);
+            }
+
+            function handleTabClick(e) {
+                if (!e.target.classList.contains('tabs__tab')) return;
+                const tabId = e.target.id;
+                setHash(tabId);
+                saveTab(tabId);
+                // 모바일: 클릭 시 자동 스크롤
+                if (window.innerWidth <= 767) {
+                    activateTab(tabId, true);
+                }
+            }
+
+            function handleHashChange() {
+                const tabId = getTabIdFromHash();
+                if (tabId) {
+                    // 뒤로가기/앞으로가기 시 해시 변경 시에도 모바일 자동 스크롤
+                    activateTab(tabId, window.innerWidth <= 767);
+                    saveTab(tabId);
+                }
+            }
+
+            // 초기 진입 시: 해시 → localStorage → 기본값 순으로 탭 활성화
+            document.addEventListener('DOMContentLoaded', function () {
+                const tabIdFromHash = getTabIdFromHash();
+                const tabIdFromStorage = getSavedTab();
+                let tabIdToActivate = tabIdFromHash || tabIdFromStorage || 'tab-1';
+                // 모바일: 진입 시 자동 스크롤
+                activateTab(tabIdToActivate, window.innerWidth <= 767);
+                setHash(tabIdToActivate);
+                // 탭 클릭 시 해시/스토리지 동기화
+                const tabBtns = document.querySelectorAll(tabGroupSelector);
+                tabBtns.forEach((btn) => {
+                    btn.addEventListener('click', handleTabClick);
+                });
+            });
+            // 뒤로가기/앞으로가기 시 해시 변경 감지
+            window.addEventListener('hashchange', handleHashChange);
+        })();
+    </script>
+</body>
+
 </html>
