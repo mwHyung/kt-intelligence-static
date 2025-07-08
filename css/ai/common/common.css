@@ -1665,6 +1665,10 @@ body.scroll-lock {
     transform: rotate(0deg);
 }
 
+.mobile-menu-item.active > a {
+    color: var(--primary-color);
+}
+
 .mobile-sub-menu {
     display: none;
     background: #fafafa;
@@ -1698,6 +1702,10 @@ body.scroll-lock {
     font-weight: 600;
     line-height: 1.56;
     text-decoration: none;
+}
+
+.mobile-sub-menu li.active a {
+    color: var(--primary-color);
 }
 
 .mobile-menu-link img {

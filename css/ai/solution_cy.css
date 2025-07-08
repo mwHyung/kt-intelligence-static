@@ -719,7 +719,7 @@
 .techDetailPage .tech-detail-article {
     margin-top: 3.75rem;
     border-top: 1px solid var(--gray-200-color);
-    padding-top: 5rem;
+    padding-top: 6.25rem;
 }
 
 .techDetailPage .tech-detail-article img {
@@ -817,11 +817,11 @@
 }
 
 .tech-detail-article .post-custom + .post-custom {
-    margin-top: 5rem;
+    margin-top: 6.25rem;
 }
 
 .tech-detail-article .post-custom:nth-of-type(5) h5 {
-    margin-top: 2.25rem;
+    margin-top: 0.75rem;
 }
 
 .tech-detail-article .post-custom h3 {
@@ -892,6 +892,14 @@
     margin-bottom: 2.5rem;
 }
 
+.tech-detail-article.mod .post-custom .img:nth-last-child(1) h5 {
+    margin-bottom: 0;
+}
+
+.tech-detail-article.mod .post-custom .img:nth-last-child(1) h5 {
+    margin-bottom: 0;
+}
+
 .tech-detail-article .post-custom h5 > strong,
 .tech-detail-article .post-custom h5 > div {
     text-align: left;
@@ -923,6 +931,10 @@
     /* 29.24px */
     letter-spacing: -0.17px;
     margin-top: 1.25rem;
+}
+
+.tech-detail-article .post-custom:nth-child(1) p {
+    margin-top: 0;
 }
 
 .tech-detail-article .post-custom p b {
@@ -1203,6 +1215,7 @@
 /* sticky */
 .sticky-header.tab-sticky-header.black-style {
     background: var(--black-color);
+    border: 0 !important;
 }
 
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li.active {
@@ -1213,6 +1226,10 @@
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li:hover {
     color: var(--white-color);
     border-bottom: 2px solid var(--white-color);
+}
+
+.sticky-header.tab-sticky-header .sticky-header-inner:hover {
+    border: 0 !important;
 }
 
 /* title */
@@ -4268,6 +4285,16 @@
         padding-top: 9.4rem;
     }
 
+    .tech-detail-bottom {
+        margin-top: 8rem;
+        padding-top: 6rem;
+    }
+
+    .tech-detail-bottom {
+        margin-top: 8rem;
+        padding-top: 6rem;
+    }
+
     .techDetailPage .tech-detail-article img + img {
         margin-top: 2.4rem;
     }
@@ -4301,7 +4328,7 @@
 
     .techDetailPage .tech-detail-article {
         margin-top: 4.8rem;
-        padding-top: 2rem;
+        padding-top: 6rem;
     }
 
     .techDetailPage .tech-detail-article .tech-detail-header .card-tags {
@@ -4384,6 +4411,10 @@
         margin-top: 8rem;
     }
 
+    .tech-detail-article .post-custom + .post-custom.mb-mt40 {
+        margin-top: 4rem;
+    }
+
     .tech-detail-article .post-custom h3 {
         font-size: 2.4rem;
         font-weight: 700;
@@ -4393,7 +4424,7 @@
 
     .tech-detail-article .post-custom:nth-child(1) h3,
     .tech-detail-article .post-custom:nth-child(1) h4 {
-        margin-top: 4rem !important;
+        margin-top: 0rem !important;
     }
 
     .tech-detail-article .post-custom h3.fz-sm {
@@ -4406,7 +4437,7 @@
 
     .tech-detail-article .post-custom .img {
         /* margin: 0rem 0; */
-        margin: 2.5rem 0;
+        margin: 5rem 0 4rem;
         padding: 0 0rem;
     }
 
@@ -4465,7 +4496,7 @@
     .tech-detail-article.mod .post-custom h3 {
         margin-bottom: 3.2rem;
         font-size: 3rem;
-        line-height: 148%;
+        line-height: 1.48;
         letter-spacing: -0.3px;
     }
 
@@ -4488,6 +4519,15 @@
 
     .tech-detail-article .post-custom ul.innerList li:before {
         top: 1.2rem;
+    }
+
+    .tech-detail-article-list {
+        margin-top: 8rem;
+        gap: 2.8rem;
+    }
+
+    .tech-detail-article-list ul {
+        gap: 1.2rem;
     }
 
     .tech-detail-article-list ul li.has-icon {
@@ -4576,17 +4616,20 @@
 
     .tech-detail-article .post-custom h5 > strong,
     .tech-detail-article .post-custom h5 > div {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 160%;
     }
 
     .tech-detail-article .post-custom ul.tatics-con {
         padding: 2.4rem 2rem;
+        margin-top: 4rem;
     }
 
     /* 테이블 스타일 적용 요청 - mo */
     .tech-detail-article .table-wrapper {
         overflow-x: auto;
-        padding-bottom: 1rem;
+        padding-bottom: 0rem;
     }
 
     .tech-detail-article .table-wrapper::-webkit-scrollbar {
@@ -4643,7 +4686,7 @@
     }
 
     .tech-detail-article .post-custom .nestedList {
-        margin-top: 1.2rem;
+        margin-top: 2.8rem;
     }
 
     .tech-detail-article .post-custom .nestedList > li {
