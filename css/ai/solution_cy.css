@@ -4346,6 +4346,10 @@
         margin-top: 8rem;
     }
 
+    .tech-detail-article .post-custom+.post-custom.mb-mt40 {
+        margin-top: 4rem;
+    }
+
     .tech-detail-article .post-custom h3 {
         font-size: 2.4rem;
         font-weight: 700;
@@ -4544,12 +4548,13 @@
 
     .tech-detail-article .post-custom ul.tatics-con {
         padding: 2.4rem 2rem;
+        margin-top: 4rem;
     }
 
     /* 테이블 스타일 적용 요청 - mo */
     .tech-detail-article .table-wrapper {
         overflow-x: auto;
-        padding-bottom: 1rem;
+        padding-bottom: 0rem;
     }
 
     .tech-detail-article .table-wrapper::-webkit-scrollbar {
