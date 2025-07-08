@@ -4263,7 +4263,7 @@
 
     .techDetailPage .tech-detail-article {
         margin-top: 4.8rem;
-        padding-top: 2rem;
+        padding-top: 6rem;
     }
 
     .techDetailPage .tech-detail-article .tech-detail-header .card-tags {
@@ -4355,7 +4355,7 @@
 
     .tech-detail-article .post-custom:nth-child(1) h3,
     .tech-detail-article .post-custom:nth-child(1) h4 {
-        margin-top: 4rem !important;
+        margin-top: 0rem !important;
     }
 
 
