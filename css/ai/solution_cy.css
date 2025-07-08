@@ -5722,7 +5722,4 @@
     .agent-pattern-diagram {
         flex-wrap: wrap;
     }
-    .agent-pattern-diagram .diagram-row {
-        width: auto;
-    }
 }
