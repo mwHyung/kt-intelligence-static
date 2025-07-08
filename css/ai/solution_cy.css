@@ -811,11 +811,11 @@
 }
 
 .tech-detail-article .post-custom+.post-custom {
-    margin-top: 5rem;
+    margin-top: 6.25rem;
 }
 
 .tech-detail-article .post-custom:nth-of-type(5) h5 {
-    margin-top: 2.25rem;
+    margin-top: 0.75rem;
 }
 
 .tech-detail-article .post-custom h3 {
@@ -4456,6 +4456,15 @@
         top: 1.2rem;
     }
 
+    .tech-detail-article-list {
+        margin-top: 8rem;
+        gap: 2.8rem;
+    }
+
+    .tech-detail-article-list ul {
+        gap: 1.2rem;
+    }
+
     .tech-detail-article-list ul li.has-icon {
         display: block;
     }
@@ -4612,7 +4621,7 @@
 
 
     .tech-detail-article .post-custom .nestedList {
-        margin-top: 1.2rem;
+        margin-top: 2.8rem;
     }
 
     .tech-detail-article .post-custom .nestedList>li {
