@@ -4519,7 +4519,7 @@
 
 
     .tech-detail-article-list .variety-links {
-        margin-top: 0.8rem;
+        margin-top: 0rem;
         gap: 2rem;
     }
 
@@ -4570,6 +4570,7 @@
     .tech-detail-article .post-custom ul.tatics-con {
         padding: 2.4rem 2rem;
         margin-top: 4rem;
+        border-radius: 1.2rem;
     }
 
     /* 테이블 스타일 적용 요청 - mo */
