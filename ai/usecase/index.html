@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO -->
     <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-    <title>Use Cases  |  K intelligence</title>
+    <title>Use Cases | K intelligence</title>
     <meta name="description" content="K intelligence의 핵심 기술과 다양한 활용 사례를 소개합니다." />
-    <meta name="keywords" content="KT AI 활용 사례, K intelligence, AI 유스케이스, 생성형 AI 사례, 기업용 AI 도입, 한국형 AI 적용 사례, KT AI 고객 사례, AI 성공 사례, AI 현장 적용" />
+    <meta name="keywords"
+        content="KT AI 활용 사례, K intelligence, AI 유스케이스, 생성형 AI 사례, 기업용 AI 도입, 한국형 AI 적용 사례, KT AI 고객 사례, AI 성공 사례, AI 현장 적용" />
 
     <!-- SNS 공유용 -->
     <meta property="og:title" content="Use Cases  |  K intelligence" />
@@ -30,12 +32,13 @@
     <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
     <script th:inline="javascript">
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', [[${ga4Id}]]);
+        gtag('config', [[${ ga4Id }]]);
     </script>
 </head>
+
 <body>
     <!-- Header -->
     <header id="main-header" class="header">
@@ -52,24 +55,28 @@
             <div class="sub-conSec">
                 <ul class="card-list-horizontal">
                     <li class="card">
-                        <div class="card-inner">
-                            <div class="card-img">
-                                <img src="/resource/images/ai/usecase/image02.png" alt="" />
-                            </div>
-                            <div class="card-txts">
-                                <h3 class="sub-title-sm open-wrapper">지니 TV <span class="open-planned">공개 예정</span></h3>
-                                <p class="sub-desc">
-                                    지니 TV에 대형 언어모델(LLM) 기반 미디어 특화 <br>AI 에이전트 탑재
-                                </p>
-                                <div class="card-tags">
-                                    <span class="card-tag">KT사례</span>
-                                    <span class="card-tag">Agent (예정)</span>
-                                    <span class="card-tag">음성인식</span>
-                                    <span class="card-tag">음성합성</span>
-                                    <!-- <span class="card-tag">음성합성</span> -->
+                        <a data-pc="https://gigagenie.kt.com/whyGenie.do"
+                            data-mo="https://gigagenie.kt.com/m/whyGenie.do" class="genieTv" target="_blank">
+                            <div class="card-inner">
+                                <div class="card-img">
+                                    <img src="/resource/images/ai/usecase/image02.png" alt="" />
+                                </div>
+                                <div class="card-txts">
+                                    <h3 class="sub-title-sm open-wrapper">지니 TV
+                                    </h3>
+                                    <p class="sub-desc">
+                                        지니 TV에 대형 언어모델(LLM) 기반 미디어 특화 <br>AI 에이전트 탑재
+                                    </p>
+                                    <div class="card-tags">
+                                        <span class="card-tag">KT사례</span>
+                                        <span class="card-tag">Agent (예정)</span>
+                                        <span class="card-tag">음성인식</span>
+                                        <span class="card-tag">음성합성</span>
+                                        <!-- <span class="card-tag">음성합성</span> -->
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </li>
                     <li class="card">
                         <a data-pc="https://product.kt.com/wDic/soho/marketing.do?itemCode=sajangeasy"
