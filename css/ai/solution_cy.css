@@ -4242,7 +4242,6 @@
         padding-top: 6rem;
     }
 
-
     .techDetailPage .tech-detail-article img+img {
         margin-top: 2.4rem;
     }
@@ -4581,6 +4580,15 @@
     .tech-detail-article .table-wrapper {
         overflow-x: auto;
         padding-bottom: 0rem;
+        margin-top: 4rem;
+    }
+
+    .tech-detail-article .table-wrapper+.table-wrapper {
+        margin-top: 4rem;
+    }
+
+    .tech-detail-article.mod .table-wrapper table {
+        margin-top: 0;
     }
 
     .tech-detail-article .table-wrapper::-webkit-scrollbar {
@@ -4622,7 +4630,7 @@
     }
 
     .tech-detail-article .table-wrapper .table-info h5 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         white-space: initial;
     }
 
