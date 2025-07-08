@@ -327,7 +327,10 @@ if (stickyHeaderList && componentSections.length > 0) {
                     const containerRect = container.getBoundingClientRect();
                     const tabRect = tabElement.getBoundingClientRect();
                     const scrollLeft = tabRect.left - containerRect.left - 0;
-                    container.scrollTo({ left: container.scrollLeft + scrollLeft, behavior: 'smooth' });
+                    container.scrollTo({
+                        left: container.scrollLeft + scrollLeft,
+                        behavior: 'smooth',
+                    });
                 }
             } else {
                 li.classList.remove('active');
@@ -372,13 +375,47 @@ if (stickyHeaderList && componentSections.length > 0) {
 
     window.addEventListener('scroll', function () {
         if (window.innerWidth <= 768 && manualActive) {
-            const stickyHeaderList = document.querySelector('.sticky-header-list.main-sticky-header');
+            const stickyHeaderList = document.querySelector(
+                '.sticky-header-list.main-sticky-header',
+            );
             if (stickyHeaderList) {
-                stickyHeaderList.querySelectorAll('li.active').forEach(li => {
+                stickyHeaderList.querySelectorAll('li.active').forEach((li) => {
                     li.classList.remove('active');
                 });
             }
             manualActive = false;
+        }
+    });
+})();
+
+// 현재 페이지 URL 기반으로 dropdown menu active 처리
+(function () {
+    const currentPath = window.location.pathname;
+    const normalizedPath = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
+
+    // mobile-sub-menu 처리
+    const mobileSubMenuItems = document.querySelectorAll('.mobile-sub-menu li a');
+    mobileSubMenuItems.forEach((item) => {
+        if (item.getAttribute('href') === normalizedPath) {
+            const parentLi = item.closest('li');
+            if (parentLi) {
+                parentLi.classList.add('active');
+                console.log('Active class added to sub menu:', parentLi);
+                console.log('Current classes:', parentLi.className);
+            }
+        }
+    });
+
+    // mobile-menu-item 처리
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu-item a');
+    mobileMenuItems.forEach((item) => {
+        if (item.getAttribute('href') === normalizedPath) {
+            const parentMenuItem = item.closest('.mobile-menu-item');
+            if (parentMenuItem) {
+                parentMenuItem.classList.add('active');
+                console.log('Active class added to menu item:', parentMenuItem);
+                console.log('Current classes:', parentMenuItem.className);
+            }
         }
     });
 })();
