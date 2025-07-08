@@ -979,6 +979,8 @@ function initParallaxDepthSectionAnimation() {
         },
     });
 
+    window.addEventListener('resize', () => ScrollTrigger.refresh());
+
     return () => {
         window.removeEventListener('scroll', trackScrollState);
         clearTimeout(scrollTimeout);
