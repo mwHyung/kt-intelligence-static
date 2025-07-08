@@ -5727,4 +5727,8 @@
     .diamond-wrapper .box-list {
         width: 86.5rem;
     }
+
+    .useCasePage .card-list-horizontal .card {
+        flex: 0 0 20.5rem;
+    }
 }

@@ -1627,6 +1627,7 @@ br {
     border-radius: 0;
     transition: background 0.2s;
     padding-bottom: 3.75rem;
+    gap: 2rem;
 }
 
 .news-list li:first-child .news-content {
@@ -1660,13 +1661,15 @@ br {
 }
 
 .hasNew .news-title:after {
-    display: block;
+    display: inline-block;
     content: '';
     width: 2.375rem;
     height: 1.25rem;
-    position: absolute;
+    margin-left: 0.6rem;
+    vertical-align: middle;
+    /* position: absolute;
     right: -3rem;
-    top: 0.5rem;
+    top: 0.5rem; */
     background-image: url('/resource/images/ai/icons/new-mark_pc.png');
     background-position: center;
     background-repeat: no-repeat;

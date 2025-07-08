@@ -1133,7 +1133,7 @@ class WheelNavigation {
                 let targetY = isExitingTop ? st.start - 1 : st.end + 1;
                 const scrollDistance = Math.abs(targetY - scrollY);
                 const duration = scrollDistance > 2000 ? 0.8 : 0.5;
-                const ease = scrollDistance > 2000 ? 'power1.inOut' : 'power2.inOut';
+                const ease = scrollDistance > 2000 ? 'none' : 'none';
 
                 gsap.to(window, {
                     scrollTo: targetY,
