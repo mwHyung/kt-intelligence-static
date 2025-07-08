@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- SEO -->
     <link rel="icon" href="/resource/images/ai/KT_48.ico" />
-    <title>K Studio  |  K intelligence</title>
-    <meta name="description" content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
-    <meta name="keywords" content="K Studio, 생성형 AI 플랫폼, KT AI, AI 개발 툴, 노코드 AI, K intelligence, AI 서비스 제작, 인터페이스 스튜디오, 누구나 쓰는 AI, 한국형 AI 플랫폼" />
+    <title>K Studio | K intelligence</title>
+    <meta name="description"
+        content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
+    <meta name="keywords"
+        content="K Studio, 생성형 AI 플랫폼, KT AI, AI 개발 툴, 노코드 AI, K intelligence, AI 서비스 제작, 인터페이스 스튜디오, 누구나 쓰는 AI, 한국형 AI 플랫폼" />
 
     <!-- SNS 공유용 -->
     <meta property="og:title" content="K Studio  |  K intelligence" />
-    <meta property="og:description" content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
+    <meta property="og:description"
+        content="K Studio는 생성형 AI 도입의 복잡한 과정을 간소화한 All-in-One 플랫폼으로 맞춤형 AI를 쉽고 빠르게 구축하고 운영할 수 있습니다." />
     <meta property="og:image" content="/resource/images/ai/og-image.png" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="KT AI" />
@@ -29,10 +33,10 @@
     <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
     <script th:inline="javascript">
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
 
-        gtag('config', [[${ga4Id}]]);
+        gtag('config', [[${ ga4Id }]]);
     </script>
     <script src="/js/ai/ga.js"></script>
 </head>
@@ -148,135 +152,6 @@
                 </div>
 
                 <div class="table-advantage-wrapper">
-                    <!-- <div class="table-advantage-item">
-                            <div
-                                class="table-advantage-item-inner"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="table-advantage-item-title">
-                                    <h3>Service</h3>
-                                </div>
-                                <div class="table-advantage-item-content">
-                                    <dl>
-                                        <dt>
-                                            <h4>Service Builder</h4>
-                                            <p>서비스 구성을 위한 환경 및 Tool 제공</p>
-                                        </dt>
-                                        <dd>
-                                            <ul>
-                                                <li>지식형 챗봇</li>
-                                                <li>워크플로우 챗봇</li>
-                                                <li>AICC 연계 상담 요약</li>
-                                                <li>보고서 초안 생성</li>
-                                                <li>변환/번역</li>
-                                                <li>마케팅 홍보</li>
-                                                <li>워크플로우 기반 Agent 생성</li>
-                                                <li>No Code 기반 Drag&Drop 방식 구성</li>
-                                                <li>Custom API 제공</li>
-                                            </ul>
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div
-                                class="table-advantage-item-inner"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="table-advantage-item-title">
-                                    <h3>Platform</h3>
-                                </div>
-                                <div class="table-advantage-item-content">
-                                    <dl>
-                                        <dt>
-                                            <h4>Platform</h4>
-                                            <p>고객사 전용 모델의 최적화를 위한 AI Platform</p>
-                                        </dt>
-                                        <dd>
-                                            <div class="tripple-layout">
-                                                <div class="tripple-layout-item">
-                                                    <div class="tripple-layout-title">
-                                                        <h4>LLM</h4>
-                                                        <h5>
-                                                            AI 모델 개발 및 관리를 위한 종합 솔루션
-                                                        </h5>
-                                                    </div>
-                                                    <ul>
-                                                        <li>다양한 LLM 모델 지원</li>
-                                                        <li>
-                                                            모델 학습 및 미세조정(Fine-tuning) 기능
-                                                        </li>
-                                                        <li>모델 버전 관리 및 배포 자동화(예정)</li>
-                                                        <li>성능 모니터링 및 최적화 도구</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="tripple-layout-item">
-                                                    <div class="tripple-layout-title">
-                                                        <h4>RAG</h4>
-                                                        <h5>정확하고 맥락에 맞는 AI 응답 생성</h5>
-                                                    </div>
-                                                    <ul>
-                                                        <li>효율적인 데이터 인덱싱 및 검색 기능</li>
-                                                        <li>컨텍스트 기반 정보 검색 및 추출</li>
-                                                        <li>AI 모델과 검색기 엔진의 통합</li>
-                                                        <li>사용자 정의 지식베이스 구축 및 관리</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="tripple-layout-item">
-                                                    <div class="tripple-layout-title">
-                                                        <h4>LLMOps</h4>
-                                                        <h5>직관적인 UI기반 AI 개발/운영 플랫폼</h5>
-                                                    </div>
-                                                    <ul>
-                                                        <li>
-                                                            웹 기반 사용자 인터페이스로 쉬운 접근성
-                                                        </li>
-                                                        <li>AI 모델의 원활한 배표 및 스케일링</li>
-                                                        <li>
-                                                            실시간 협업 도구 및 프로젝트 관리 기능
-                                                        </li>
-                                                        <li>데이터 보안 및 개인정보 보호</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </div>
-                            <div
-                                class="table-advantage-item-inner"
-                                data-aos="fade-up"
-                                data-aos-duration="800"
-                                data-aos-easing="ease-out-cubic"
-                            >
-                                <div class="table-advantage-item-title">
-                                    <h3>Infra</h3>
-                                </div>
-                                <div class="table-advantage-item-content">
-                                    <dl>
-                                        <dt>
-                                            <h4>Infra</h4>
-                                            <p>다양한 상황과 니즈에 맞춘 인프라 제공</p>
-                                        </dt>
-                                        <dd>
-                                            <ul>
-                                                <li>On-Premise</li>
-                                                <li>워크플로우 챗봇</li>
-                                                <li>AICC 연계 상담 요약</li>
-                                                <li>보고서 초안 생성</li>
-                                                <li>워크플로우 기반 Agent 생성</li>
-                                                <li>No Code 기반 Drag&Drop 방식 구성</li>
-                                                <li>Custom API 제공</li>
-                                            </ul>
-                                        </dd>
-                                    </dl>
-                                </div>
-                            </div>
-                        </div> -->
-
                     <div class="architecture-diagram pc-only model-diagram02" data-aos="fade-up" data-aos-duration="800"
                         data-aos-easing="ease-out-cubic">
                         <!-- Table 형태 리스트 -->
@@ -606,12 +481,6 @@ AI Platform LLM AI 모델 개발 및 관리를 위한
                     </div>
 
                 </div>
-
-                <!-- <div class="btnWrap mt-20" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                    <a href="https://kai.kt.co.kr/studio/main" target="_blank">
-                        <button type="button" class="btn md">K Studio SaaS・‘25. 3Q 공개 예정</button>
-                    </a>
-                </div> -->
             </div>
         </section>
     </div>
