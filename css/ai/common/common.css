@@ -1644,9 +1644,9 @@ body.scroll-lock {
     transition: color 0.3s ease-in;
 }
 
-.mobile-menu-item.has-sub.open .mobile-menu-link strong {
+/* .mobile-menu-item.has-sub.open .mobile-menu-link strong {
     color: var(--primary-color);
-}
+} */
 
 .mobile-menu-item.directTop {
     margin-top: 8px;

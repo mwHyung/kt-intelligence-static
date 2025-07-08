@@ -505,7 +505,8 @@ function initParallaxDepthSectionAnimation() {
                 pinSpacing: true,
                 id: 'depth-pin',
                 onEnter: () => {
-                    disableScroll();
+                    document.documentElement.style.overflow = 'hidden';
+                    document.querySelector('.component-inner').style.backgroundColor = 'black';
                     const checkComplete = () => {
                         if (tlComplete) {
                             if (wheelNavInstance) {
@@ -520,7 +521,9 @@ function initParallaxDepthSectionAnimation() {
                     requestAnimationFrame(checkComplete);
                 },
                 onLeave: () => {
-                    enableScroll();
+                    document.documentElement.style.overflow = 'auto';
+                    document.querySelector('.component-inner').style.backgroundColor =
+                        'transparent';
                     setTimeout(() => {
                         if (wheelNavInstance) {
                             wheelNavInstance.destroy();
@@ -560,7 +563,8 @@ function initParallaxDepthSectionAnimation() {
                     }
                 },
                 onEnterBack: () => {
-                    disableScroll();
+                    document.documentElement.style.overflow = 'hidden';
+                    document.querySelector('.component-inner').style.backgroundColor = 'black';
                     const lastIndex =
                         document.querySelectorAll('.parallax-depth-section .list-wrap ul li')
                             .length - 1;
@@ -571,7 +575,9 @@ function initParallaxDepthSectionAnimation() {
                     wheelNavInstance = new WheelNavigation(lastIndex);
                 },
                 onLeaveBack: () => {
-                    enableScroll();
+                    document.documentElement.style.overflow = 'auto';
+                    document.querySelector('.component-inner').style.backgroundColor =
+                        'transparent';
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
