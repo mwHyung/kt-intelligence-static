@@ -886,6 +886,10 @@
     margin-bottom: 2.5rem;
 }
 
+.tech-detail-article.mod .post-custom .img:nth-last-child(1) h5 {
+    margin-bottom: 0;
+}
+
 .tech-detail-article .post-custom h5>strong,
 .tech-detail-article .post-custom h5>div {
     text-align: left;
@@ -4558,7 +4562,9 @@
 
     .tech-detail-article .post-custom h5>strong,
     .tech-detail-article .post-custom h5>div {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 160%;
     }
 
     .tech-detail-article .post-custom ul.tatics-con {
