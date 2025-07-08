@@ -4229,6 +4229,12 @@
         padding-top: 9.4rem;
     }
 
+    .tech-detail-bottom {
+        margin-top: 8rem;
+        padding-top: 6rem;
+    }
+
+
     .techDetailPage .tech-detail-article img+img {
         margin-top: 2.4rem;
     }
