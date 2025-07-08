@@ -867,7 +867,6 @@ function initParallaxDepthSectionAnimation() {
             const contentWidth = cubeContentInner.clientWidth;
             const cubeWidth = cubeWrapper.clientWidth;
             const centerOffset = (contentWidth - cubeWidth) / 2 - 32;
-            console.log(contentWidth, cubeWidth, centerOffset);
 
             tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
                 .fromTo(
