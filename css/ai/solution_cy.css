@@ -1807,8 +1807,6 @@
 .agent-pattern-diagram {
     width: 100%;
     margin-top: 2rem;
-    overflow: hidden;
-    overflow-x: auto;
 }
 
 .agent-pattern-diagram img {
@@ -2168,8 +2166,6 @@
     border: 1px solid var(--gray-300-color);
     border-radius: 1.25rem;
     padding: 2.5rem;
-    overflow: hidden;
-    overflow-x: auto;
 }
 
 .agent-graph-wrapper .k-agent-title {
@@ -5681,9 +5677,7 @@
     }
 
     .orchestrator-diagram {
-        overflow: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
+        width: fit-content;
     }
 
     .sub-title-sm {
@@ -5707,19 +5701,30 @@
         padding-top: 1rem;
     }
 
-    .diamond-wrapper .box-item {
-        padding: 1rem;
+    .agent-graph-wrapper {
+        width: fit-content;
     }
-
-    .diamond-wrapper .box-list li {
+    .agent-pattern-diagram {
         width: fit-content;
     }
 
-    .agent-graph-wrapper {
-        display: flex;
-        flex-wrap: wrap;
+    .open-planned {
+        display: inline-flex !important;
     }
-    .agent-pattern-diagram {
-        flex-wrap: wrap;
+    .open-planned.top-banner {
+        margin: 0 !important;
+    }
+
+    .example-side-item .example-side-txts dt {
+        display: block;
+    }
+
+    .diamond-wrapper {
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .diamond-wrapper .box-list {
+        width: 86.5rem;
     }
 }

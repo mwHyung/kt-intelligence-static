@@ -102,10 +102,6 @@
     --max-width: 86.5rem;
 }
 
-html {
-    font-size: 16px;
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -134,13 +130,7 @@ body.scroll-lock {
 
 /* @media (max-width: 1366px) {
     html {
-        font-size: 1.1713vw !important;
-    }
-} */
-
-/* @media (max-width: 1536px) {
-    html {
-        font-size: 1.0417vw !important;
+        font-size: 14px;
     }
 } */
 
@@ -1097,6 +1087,10 @@ body.scroll-lock {
 .pc-only {
     display: block !important;
     width: 100%;
+}
+.pc-only.graph {
+    overflow: hidden;
+    overflow-x: auto;
 }
 
 .mobile-show {

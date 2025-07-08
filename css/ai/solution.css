@@ -168,7 +168,6 @@ br.mo-br {
     flex-direction: column;
     align-items: center;
     gap: 3.75rem;
-    padding: 0 2rem;
 }
 
 .content-inner.gap0 {
@@ -272,7 +271,11 @@ br.mo-br {
 }
 
 .card-list li {
-    /* flex: 1; */
+    flex: 1;
+}
+
+.card-list.multi li {
+    flex: none;
 }
 
 .card-list li:nth-child(4),
@@ -2629,6 +2632,21 @@ br.mo-br {
 }
 
 @media (min-width: 768px) and (max-width: 1366px) {
+    .content-inner {
+        padding: 0 2rem;
+    }
+    .content-inner.overgrid-inner {
+        padding: 0;
+    }
+    .content-inner.overgrid-inner .tabs__panel__anchor > * {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+    .solution-model-wrapper .tab-inner-wrapper > #tab-panel-2,
+    .solution-model-wrapper .tab-inner-wrapper > #tab-panel-3 {
+        background-size: 117% auto !important;
+    }
+
     .banner-section h2 {
         font-size: 5.75rem;
     }
@@ -2671,11 +2689,11 @@ br.mo-br {
     }
     .architecture-diagram .table-title {
         font-size: var(--font-size-xl) !important;
-        padding: 1rem !important;
+        padding: 1.5rem !important;
         /* text-align: center !important; */
     }
     .architecture-diagram .table-list .table-col .table-item {
-        padding: 1rem;
+        padding: 1.5rem 1rem;
         text-align: center;
         min-height: 24rem;
     }
@@ -2713,6 +2731,7 @@ br.mo-br {
         white-space: normal;
         flex-wrap: wrap;
         margin-top: 0;
+        padding: 0 !important;
     }
     .architecture-diagram .table-item.center.text ul li {
         flex: 0;
@@ -2722,12 +2741,12 @@ br.mo-br {
         font-size: var(--font-size-2xl) !important;
         margin-bottom: 0.5rem !important;
     }
-    .architecture-diagram .table-list .table-col .table-title strong {
+    /* .architecture-diagram .table-list .table-col .table-title strong {
         font-size: var(--font-size-2xl) !important;
-    }
-    .architecture-diagram .table-list .table-col .table-title span {
+    } */
+    /* .architecture-diagram .table-list .table-col .table-title span {
         font-size: var(--font-size-base) !important;
-    }
+    } */
 
     .useCasePage .sub-conSec {
         padding: 0 2rem !important;
@@ -2801,5 +2820,14 @@ br.mo-br {
     }
     .list-item .list-description li {
         font-size: var(--font-size-base);
+    }
+
+    .table-card-list.text > li .table-card-item h3.to-be {
+        display: block;
+    }
+    .table-card-list.text > li .table-card-item h3.to-be:after {
+        display: inline-block;
+        margin-left: 1rem;
+        vertical-align: top;
     }
 }
