@@ -1201,6 +1201,7 @@
 /* sticky */
 .sticky-header.tab-sticky-header.black-style {
     background: var(--black-color);
+    border: 0 !important;
 }
 
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li.active {
@@ -1211,6 +1212,10 @@
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li:hover {
     color: var(--white-color);
     border-bottom: 2px solid var(--white-color);
+}
+
+.sticky-header.tab-sticky-header .sticky-header-inner:hover {
+    border: 0 !important;
 }
 
 /* title */
