@@ -1132,13 +1132,13 @@ class WheelNavigation {
             if (window.gsap && window.ScrollToPlugin) {
                 let targetY = isExitingTop ? st.start - 1 : st.end + 1;
                 const scrollDistance = Math.abs(targetY - scrollY);
-                const duration = scrollDistance > 2000 ? 0.8 : 0.5;
-                const ease = scrollDistance > 2000 ? 'none' : 'none';
+                // const duration = scrollDistance > 2000 ? 0.8 : 0.5;
+                // const ease = scrollDistance > 2000 ? 'none' : 'none';
 
                 gsap.to(window, {
                     scrollTo: targetY,
-                    duration,
-                    ease,
+                    // duration,
+                    // ease,
                     onComplete: () => {
                         setTimeout(() => {
                             this.isAnimating = false;
