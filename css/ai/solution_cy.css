@@ -570,6 +570,10 @@
     margin-top: 6.25rem;
 }
 
+.tech-detail-article-list.gap-mt100 {
+    margin-top: 6.25rem;
+}
+
 .tech-detail-article-list.gap-40 {
     gap: 2.5rem;
     margin-top: 5.75rem;
@@ -4666,6 +4670,7 @@
         font-size: 1.6rem;
         line-height: 1.8;
     }
+
 
     /* ***************************************solution page ****************************************** */
 
