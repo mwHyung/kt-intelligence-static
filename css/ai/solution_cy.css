@@ -815,7 +815,7 @@
 }
 
 .tech-detail-article .post-custom:nth-of-type(5) h5 {
-    margin-top: 1.25rem;
+    margin-top: 0.75rem;
 }
 
 .tech-detail-article .post-custom h3 {
@@ -4639,6 +4639,10 @@
 
     .tech-detail-article .post-custom .nestedList {
         margin-top: 2.8rem;
+    }
+
+    .tech-detail-article .post-custom .nestedList+h4 {
+        margin-top: 4rem;
     }
 
     .tech-detail-article .post-custom .nestedList>li {
