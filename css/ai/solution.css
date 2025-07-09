@@ -999,6 +999,7 @@ br.mo-br {
 .shape-wrapper {
     width: 100%;
     position: relative;
+    padding: 0 1rem;
 }
 
 .shape-wrapper > img {
@@ -1007,7 +1008,6 @@ br.mo-br {
 
 .shape-header,
 .shape-footer {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1025,11 +1025,10 @@ br.mo-br {
     border-radius: 0.75rem;
     background: var(--gray-100-color);
     text-align: center;
-    flex-shrink: 0;
 }
 
 .shape-title.full {
-    flex: 1 0 37.3rem;
+    flex: 1;
 }
 
 .shape-title.md {
@@ -1062,7 +1061,7 @@ br.mo-br {
     width: 10.938rem;
     height: 10.938rem;
     padding: 1.25rem 0 0 0;
-    margin-right: 7.463rem;
+    margin-right: 8.563rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1070,7 +1069,6 @@ br.mo-br {
     gap: 2rem;
     position: relative;
     z-index: 1;
-    flex-shrink: 0;
 }
 
 .shape-box.gap-11 {
@@ -1078,7 +1076,7 @@ br.mo-br {
 }
 
 .shape-box.mr-130 {
-    margin-right: 7.825rem;
+    margin-right: 8.125rem;
 }
 
 .shape-box:last-child {
@@ -1243,12 +1241,11 @@ br.mo-br {
     align-items: center;
     justify-content: flex-start;
     gap: 0.625rem;
-    padding: 0.95rem 0 0.8rem 0;
-    flex-shrink: 0;
+    padding: 1.75rem 0 0.8rem 1.8rem;
 }
 
 .shape-background-box.sec {
-    padding-right: 4rem;
+    padding-right: 1rem;
 }
 
 .shape-background-box p {
@@ -1279,13 +1276,13 @@ br.mo-br {
 }
 
 .shape-background-box.last {
-    flex: 1 0 0;
+    flex: 1;
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
     margin-right: 3.75rem;
-    padding-left: 5.588rem;
-    gap: 14.1rem;
+    padding-left: 8.788rem;
+    gap: 14.3rem;
 }
 
 .shape-background-box.last > div {
@@ -1294,9 +1291,6 @@ br.mo-br {
     align-items: center;
     justify-content: center;
     gap: 0.813rem;
-}
-
-@media (max-width: 1366px) {
 }
 
 /* 클라우드 아키텍처 도식 영역 */
@@ -2819,5 +2813,17 @@ br.mo-br {
         display: inline-block;
         margin-left: 1rem;
         vertical-align: top;
+    }
+
+    /* RAI 도식 */
+    .shape-wrapper .shape-header,
+    .shape-flow {
+        display: none;
+    }
+    .shape-wrapper > img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }

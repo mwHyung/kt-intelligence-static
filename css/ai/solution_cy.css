@@ -2203,7 +2203,7 @@
     border-radius: 1.25rem;
     width: 47.125rem;
     padding: 2.5rem 4.25rem 2.5rem 8.625rem;
-    margin-left: 18.625rem;
+    margin-left: 19.925rem;
     display: flex;
     flex-direction: column;
     gap: 4.25rem;
@@ -2213,7 +2213,7 @@
 .k-agent-container:after {
     display: block;
     content: '';
-    width: 58.8125rem;
+    width: 59.1125rem;
     height: 48.8125rem;
     position: absolute;
     top: 18.5rem;
@@ -2400,7 +2400,6 @@
 
 .k-agent-architecture {
     position: relative;
-    width: 79.375rem;
 }
 
 .query-response-section {
@@ -2477,7 +2476,7 @@
     width: 7.27rem;
     position: absolute;
     top: 8.2rem;
-    left: -7.9rem;
+    left: -8.2rem;
     background-image: url('/resource/images/ai/solution/agent/KeyFeatures-graph-arrow05.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -5758,5 +5757,24 @@
     .card-list-horizontal .card {
         flex: none;
         max-width: 20.12rem;
+    }
+
+    /* 서브페이지 도식 */
+    .pc-only.graph {
+        display: none !important;
+    }
+    .mobile-show.graph {
+        display: block !important;
+    }
+
+    /* Agent 페이지 */
+    .list-item {
+        flex-direction: column;
+    }
+    .list-item h3 {
+        margin-bottom: 1.2rem;
+    }
+    .tab-section .list-wrapper > ul > li h3 {
+        margin-bottom: 1.2rem;
     }
 }

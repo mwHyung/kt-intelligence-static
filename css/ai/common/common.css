@@ -1088,10 +1088,6 @@ body.scroll-lock {
     display: block !important;
     width: 100%;
 }
-.pc-only.graph {
-    overflow: hidden;
-    overflow-x: auto;
-}
 
 .mobile-show {
     display: none !important;
