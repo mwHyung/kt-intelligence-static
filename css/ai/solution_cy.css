@@ -5670,3 +5670,82 @@
         padding-top: 0;
     }
 }
+
+/* 태블릿 */
+@media (min-width: 768px) and (max-width: 1366px) {
+    .cloud-arch-bottom {
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-wrap: wrap;
+        padding: 1rem 2rem;
+    }
+    .cloud-arch-layer {
+        flex: 1;
+    }
+
+    .studio-lineUp .table-card-list.text > li .table-card-item {
+        max-height: none;
+    }
+
+    .orchestrator-diagram {
+        width: fit-content;
+    }
+
+    .sub-title-sm {
+        font-size: var(--font-size-xl);
+    }
+
+    .sub-title-wrap .sub-title {
+        font-size: var(--font-size-7xl);
+    }
+    .sub-title-wrap p {
+        font-size: var(--font-size-xl);
+    }
+
+    .techPage .tabs {
+        margin-bottom: 1rem;
+    }
+    .techPage .tabs__tab {
+        font-size: var(--font-size-xl);
+    }
+    .tabs__panel {
+        padding-top: 1rem;
+    }
+
+    .agent-graph-wrapper {
+        width: fit-content;
+    }
+    .agent-pattern-diagram {
+        width: fit-content;
+    }
+
+    .open-planned {
+        display: inline-flex !important;
+    }
+    .open-planned.top-banner {
+        margin: 0 !important;
+    }
+
+    .example-side-item .example-side-txts dt {
+        display: block;
+    }
+
+    .diamond-wrapper {
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .diamond-wrapper .box-list {
+        width: 86.5rem;
+    }
+
+    .useCasePage .card-list-horizontal .card {
+        flex: 0 0 20.5rem;
+    }
+
+    /* Resources 상세페이지 */
+    .sub-inner.detail-inner {
+        padding: 0 2rem;
+    }
+}
