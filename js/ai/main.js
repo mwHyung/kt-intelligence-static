@@ -439,15 +439,6 @@ function initParallaxDepthSectionAnimation() {
 
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
-            const cubeContentInner = document.querySelector('.component-content-inner');
-            const cubeWrapper = document.querySelector('.cube-wrapper');
-            const computedStyle = window.getComputedStyle(cubeContentInner);
-            const paddingRightPercent = (parseFloat(computedStyle.paddingRight) / cubeContentInner.clientWidth) * 100;
-            const contentWidthPercent = 100;
-            const cubeWidthPercent = (cubeWrapper.clientWidth / cubeContentInner.clientWidth) * 100;
-            const centerOffset = (contentWidthPercent - cubeWidthPercent) / 2;
-            // console.log(centerOffset, cubeWidthPercent, contentWidthPercent);
-
             gsap.set('.cube-last-text', { zIndex: -1 });
             let tlComplete = false;
             const tl = gsap.timeline({
@@ -469,11 +460,11 @@ function initParallaxDepthSectionAnimation() {
                     duration: 0.4,
                     stagger: 0.2,
                     onStart: () => {
-                        gsap.set('.cube-wrapper', { right: `${centerOffset}%` });
+                        gsap.set('.cube-wrapper', { right: `50%`, xPercent: 50 });
                     },
                 },
             )
-                .fromTo('.cube-wrapper', { right: `${centerOffset}%` }, { right: '0%', duration: 0.3 })
+                .fromTo('.cube-wrapper', { right: `50%`, xPercent: 50 }, { right: '0%', xPercent: 0, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -510,7 +501,6 @@ function initParallaxDepthSectionAnimation() {
                 end: '+=8000', // 충분한 스크롤 공간 확보
                 pin: true,
                 pinSpacing: true,
-                markers: true,
                 id: 'depth-pin',
                 onEnter: () => {
                     document.documentElement.style.overflow = 'hidden';
@@ -641,9 +631,10 @@ function initParallaxDepthSectionAnimation() {
             tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
                 .fromTo(
                     '.cube-wrapper',
-                    { xPercent: 0 },
+                    { right: '0%', xPercent: 0 },
                     {
-                        xPercent: -centerOffset,
+                        right: `50%`,
+                        xPercent: 50,
                         duration: 0.5,
                         ease: 'power2.inOut',
                     },
@@ -972,11 +963,29 @@ function initParallaxDepthSectionAnimation() {
         },
     });
 
-    window.addEventListener('resize', () => ScrollTrigger.refresh());
+    let lastScrollY = 0;
+    let isResizing = false;
+
+    window.addEventListener('resize', () => {
+        lastScrollY = window.scrollY;
+        isResizing = true;
+
+        ScrollTrigger.refresh();
+
+        setTimeout(() => {
+            if (isResizing && (window.innerWidth < 1024 || window.innerWidth > 768)) {
+                window.scrollTo(0, lastScrollY);
+                isResizing = false;
+            }
+        }, 80);
+    });
 
     return () => {
         window.removeEventListener('scroll', trackScrollState);
-        window.removeEventListener('resize', () => ScrollTrigger.refresh());
+        window.removeEventListener('resize', () => {
+            ScrollTrigger.refresh();
+            console.log(window.scrollY);
+        });
         clearTimeout(scrollTimeout);
     };
 }
