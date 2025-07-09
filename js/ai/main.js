@@ -973,11 +973,12 @@ function initParallaxDepthSectionAnimation() {
         ScrollTrigger.refresh();
 
         setTimeout(() => {
-            if (isResizing && (window.innerWidth < 1024 || window.innerWidth > 768)) {
+            if (isResizing && window.innerWidth > 768) {
+                console.log(lastScrollY);
                 window.scrollTo(0, lastScrollY);
                 isResizing = false;
             }
-        }, 80);
+        }, 1);
     });
 
     return () => {
