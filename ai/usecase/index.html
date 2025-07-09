@@ -6,10 +6,7 @@
         <!-- SEO -->
         <link rel="icon" href="/resource/images/ai/KT_48.ico" />
         <title>Use Cases | K intelligence</title>
-        <meta
-            name="description"
-            content="K intelligence의 핵심 기술과 다양한 활용 사례를 소개합니다."
-        />
+        <meta name="description" content="K intelligence의 핵심 기술과 다양한 활용 사례를 소개합니다." />
         <meta
             name="keywords"
             content="KT AI 활용 사례, K intelligence, AI 유스케이스, 생성형 AI 사례, 기업용 AI 도입, 한국형 AI 적용 사례, KT AI 고객 사례, AI 성공 사례, AI 현장 적용"
@@ -17,10 +14,7 @@
 
         <!-- SNS 공유용 -->
         <meta property="og:title" content="Use Cases  |  K intelligence" />
-        <meta
-            property="og:description"
-            content="K intelligence의 핵심 기술과 다양한 활용 사례를 소개합니다."
-        />
+        <meta property="og:description" content="K intelligence의 핵심 기술과 다양한 활용 사례를 소개합니다." />
         <meta property="og:image" content="/resource/images/ai/og-image.png" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="KT AI" />
@@ -36,10 +30,7 @@
         <link rel="stylesheet" href="/css/ai/solution.css" />
         <link rel="stylesheet" href="/css/ai/solution_cy.css" />
         <!-- Google tag (gtag.js) -->
-        <script
-            th:async="async"
-            th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"
-        ></script>
+        <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
         <script th:inline="javascript">
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -48,6 +39,7 @@
             gtag('config', [[${ga4Id}]]);
         </script>
     </head>
+
     <body>
         <!-- Header -->
         <header id="main-header" class="header">
@@ -67,27 +59,29 @@
                 <div class="sub-conSec">
                     <ul class="card-list-horizontal">
                         <li class="card">
-                            <div class="card-inner">
-                                <div class="card-img">
-                                    <img src="/resource/images/ai/usecase/image02.png" alt="" />
-                                </div>
-                                <div class="card-txts">
-                                    <h3 class="sub-title-sm open-wrapper">
-                                        지니 TV <span class="open-planned">공개 예정</span>
-                                    </h3>
-                                    <p class="sub-desc">
-                                        지니 TV에 대형 언어모델(LLM) 기반 미디어 특화 <br />AI
-                                        에이전트 탑재
-                                    </p>
-                                    <div class="card-tags">
-                                        <span class="card-tag">KT사례</span>
-                                        <span class="card-tag">Agent (예정)</span>
-                                        <span class="card-tag">음성인식</span>
-                                        <span class="card-tag">음성합성</span>
-                                        <!-- <span class="card-tag">음성합성</span> -->
+                            <a
+                                data-pc="https://gigagenie.kt.com/whyGenie.do"
+                                data-mo="https://gigagenie.kt.com/m/whyGenie.do"
+                                class="genieTv"
+                                target="_blank"
+                            >
+                                <div class="card-inner">
+                                    <div class="card-img">
+                                        <img src="/resource/images/ai/usecase/image02.png" alt="" />
+                                    </div>
+                                    <div class="card-txts">
+                                        <h3 class="sub-title-sm open-wrapper">지니 TV</h3>
+                                        <p class="sub-desc">지니 TV에 대형 언어모델(LLM) 기반 미디어 특화 <br />AI 에이전트 탑재</p>
+                                        <div class="card-tags">
+                                            <span class="card-tag">KT사례</span>
+                                            <span class="card-tag">Agent</span>
+                                            <span class="card-tag">음성인식</span>
+                                            <span class="card-tag">음성합성</span>
+                                            <!-- <span class="card-tag">음성합성</span> -->
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </li>
                         <li class="card">
                             <a
@@ -103,8 +97,7 @@
                                     <div class="card-txts">
                                         <h3 class="sub-title-sm">사장이지</h3>
                                         <p class="sub-desc">
-                                            하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문
-                                            지식을 학습한 AI Agent가 실시간 질문에 대답
+                                            하나의 앱으로 효율적인 매장 운영 기능 통합제공, 전문 지식을 학습한 AI Agent가 실시간 질문에 대답
                                         </p>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
@@ -128,10 +121,7 @@
                                     </div>
                                     <div class="card-txts">
                                         <h3 class="sub-title-sm">KT 100번 고객센터</h3>
-                                        <p class="sub-desc">
-                                            AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT
-                                            100번 고객센터
-                                        </p>
+                                        <p class="sub-desc">AI 상담 어시스트와 보이스봇으로 더 똑똑하게 상담하는 KT 100번 고객센터</p>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
                                             <span class="card-tag">믿:음</span>
@@ -154,9 +144,7 @@
                                     </div>
                                     <div class="card-txts">
                                         <h3 class="sub-title-sm">기가지니</h3>
-                                        <p class="sub-desc">
-                                            KT 음성인식·자연어처리 기반의 <br />스마트홈 AI 서비스
-                                        </p>
+                                        <p class="sub-desc">KT 음성인식·자연어처리 기반의 <br />스마트홈 AI 서비스</p>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
                                             <span class="card-tag">믿:음</span>
@@ -181,8 +169,8 @@
                                     <div class="card-txts">
                                         <h3 class="sub-title-sm">보이스 피싱 탐지</h3>
                                         <p class="sub-desc">
-                                            피싱범이 말하는 내용에 대해 문맥을 분석하여 보이스피싱을
-                                            방지하는 안전 지킴이 후후(whowho) 서비스
+                                            피싱범이 말하는 내용에 대해 문맥을 분석하여 보이스피싱을 방지하는 안전 지킴이 후후(whowho)
+                                            서비스
                                         </p>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
@@ -207,10 +195,7 @@
                                     </div>
                                     <div class="card-txts">
                                         <h3 class="sub-title-sm">AI 전화</h3>
-                                        <p class="sub-desc">
-                                            소상공인 대신 AI가 전화를 대신 받아 예약이나 장소를
-                                            안내하는 서비스
-                                        </p>
+                                        <p class="sub-desc">소상공인 대신 AI가 전화를 대신 받아 예약이나 장소를 안내하는 서비스</p>
                                         <div class="card-tags">
                                             <span class="card-tag">KT사례</span>
                                             <span class="card-tag">음성인식</span>
