@@ -2969,7 +2969,7 @@ br {
 }
 
 /*  */
-@media (min-width: 1024px) and (max-width: 1366px) {
+@media (min-width: 1025px) and (max-width: 1366px) {
     .sub-banner-section .sub-banner-inner > ul > li > h2 span {
         font-size: 3.4rem;
     }
@@ -3245,7 +3245,7 @@ br {
         font-size: var(--font-size-base);
     }
 }
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .sub-banner-section .sub-banner-inner > ul > li > h2 span {
         font-size: 3.4rem;
     }
