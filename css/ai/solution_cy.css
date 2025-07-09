@@ -5748,4 +5748,10 @@
     .sub-inner.detail-inner {
         padding: 0 2rem;
     }
+
+    /* 서브페이지 유즈케이스 */
+    .card-list-horizontal .card {
+        flex: none;
+        max-width: 20.12rem;
+    }
 }
