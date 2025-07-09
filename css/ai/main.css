@@ -3258,6 +3258,19 @@ br {
         transform: none !important;
         margin-bottom: 0;
     }
+    .list-wrap ul li > h3 > img {
+        width: 5.3rem;
+        height: auto;
+    }
+    .list-wrap ul li > h3 > span {
+        font-size: 4.2rem;
+    }
+    .list-wrap ul li > h3 .flex-bottom span {
+        font-size: 4.2rem;
+    }
+    .list-wrap ul li > p {
+        font-size: var(--font-size-lg);
+    }
     .cube-wrapper {
         max-width: 29.5rem;
         height: 32.5rem;
