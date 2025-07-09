@@ -246,13 +246,7 @@ br {
     padding: 2.5rem;
 }
 
-.sub-banner-section
-    .sub-banner-inner
-    > ul
-    > li
-    .count-up.smallflex
-    .rolling-number.count-item-2
-    .countup-digit-container:nth-child(2) {
+.sub-banner-section .sub-banner-inner > ul > li .count-up.smallflex .rolling-number.count-item-2 .countup-digit-container:nth-child(2) {
     margin-left: -0.95rem;
 }
 
@@ -2493,8 +2487,7 @@ br {
         flex-direction: column;
         align-items: center;
         gap: 4rem;
-        background: url(/resource/images/ai/k-eco/mo-k-eco-top-bg.png) no-repeat center center /
-            cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-top-bg.png) no-repeat center center / cover;
     }
 
     .eco-section .eco-title {
@@ -2625,18 +2618,15 @@ br {
     }
 
     .eco-section .eco-bottom .eco-bottom-card:nth-child(1) {
-        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-1.png) no-repeat center center /
-            cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-1.png) no-repeat center center / cover;
     }
 
     .eco-section .eco-bottom .eco-bottom-card:nth-child(2) {
-        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-2.png) no-repeat center center /
-            cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-2.png) no-repeat center center / cover;
     }
 
     .eco-section .eco-bottom .eco-bottom-card:nth-child(3) {
-        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-3.png) no-repeat center center /
-            cover;
+        background: url(/resource/images/ai/k-eco/mo-k-eco-bottom-bg-3.png) no-repeat center center / cover;
     }
 
     .eco-section .eco-bottom .eco-bottom-card .eco-bottom-title {
@@ -2668,11 +2658,7 @@ br {
         gap: 0.7rem;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.research-badges
-        .eco-badge:first-child {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.research-badges .eco-badge:first-child {
         width: 100%;
         background: none;
         border: 0;
@@ -2681,12 +2667,7 @@ br {
         padding: 0;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.research-badges
-        .eco-badge
-        .eco-badge-inner {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.research-badges .eco-badge .eco-badge-inner {
         width: 11rem;
         height: 11rem;
         display: flex;
@@ -2710,42 +2691,22 @@ br {
         padding-bottom: 1rem;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.research-badges
-        .eco-badge:nth-child(1)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.research-badges .eco-badge:nth-child(1) img {
         width: 5.6rem;
         height: auto;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.research-badges
-        .eco-badge:nth-child(2)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.research-badges .eco-badge:nth-child(2) img {
         width: 4.9rem;
         height: auto;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.research-badges
-        .eco-badge:nth-child(3)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.research-badges .eco-badge:nth-child(3) img {
         width: 4.9rem;
         height: auto;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.research-badges
-        .eco-badge:nth-child(4)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.research-badges .eco-badge:nth-child(4) img {
         width: 4.78rem;
         height: 4.78rem;
     }
@@ -2769,65 +2730,38 @@ br {
         padding-bottom: 1.6rem;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.innovation-badges
-        .eco-badge:nth-child(1) {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.innovation-badges .eco-badge:nth-child(1) {
         gap: 1.5rem;
         width: 22.7rem;
         margin: 0 auto 0.8rem;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.innovation-badges
-        .eco-badge:nth-child(1)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.innovation-badges .eco-badge:nth-child(1) img {
         width: 3.7rem;
         height: auto;
         margin: 0;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.innovation-badges
-        .eco-badge:nth-child(2) {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.innovation-badges .eco-badge:nth-child(2) {
         display: inline-flex;
         gap: 2.3rem;
         margin-right: 0.8rem;
         vertical-align: top;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.innovation-badges
-        .eco-badge:nth-child(2)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.innovation-badges .eco-badge:nth-child(2) img {
         width: 7.3rem;
         height: auto;
         margin: 0;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.innovation-badges
-        .eco-badge:nth-child(3) {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.innovation-badges .eco-badge:nth-child(3) {
         display: inline-flex;
         gap: 1.3rem;
         vertical-align: top;
     }
 
-    .eco-section
-        .eco-bottom
-        .eco-bottom-card
-        .eco-bottom-badges.innovation-badges
-        .eco-badge:nth-child(3)
-        img {
+    .eco-section .eco-bottom .eco-bottom-card .eco-bottom-badges.innovation-badges .eco-badge:nth-child(3) img {
         width: 3.4rem;
         height: auto;
     }
@@ -3110,14 +3044,15 @@ br {
     }
 
     .component-title h2 {
-        font-size: 4.5rem;
+        font-size: 4.875rem;
     }
     .component-title p {
-        font-size: 1.6rem;
+        font-size: 1.875rem;
     }
     .component-content-inner {
-        padding: 0 2rem;
+        padding: 0 7.5rem;
         align-items: center;
+        justify-content: space-between;
     }
     .list-wrap {
         width: 22rem;
@@ -3131,12 +3066,15 @@ br {
         margin-bottom: 2.038rem;
     }
     .list-wrap ul li > h3 > img {
-        width: 5.575rem;
-        height: 5.488rem;
-        margin-top: -1.5rem;
+        width: 6.125rem;
+        height: auto;
+        margin-top: -1.9rem;
     }
     .list-wrap ul li > h3 > span {
-        font-size: 5.324rem;
+        font-size: 5.5rem;
+    }
+    .list-wrap ul li > h3 .flex-bottom span {
+        font-size: 5.5rem;
     }
     .list-wrap ul li > p {
         font-size: var(--font-size-2xl);
@@ -3147,8 +3085,8 @@ br {
         margin-bottom: 2rem;
     }
     .cube-wrapper {
-        max-width: 39rem;
-        height: 43.4rem;
+        max-width: 34.5rem;
+        height: 38rem;
         margin-top: 0;
     }
     .cube-item-1,
@@ -3159,20 +3097,20 @@ br {
     .cube-item-4,
     .cube-item-5,
     .cube-item-6 {
-        width: 19.538rem;
+        width: 16.938rem;
         height: auto;
     }
     .cube-item-4 {
-        bottom: 50.1%;
-        left: 12.3%;
+        bottom: 50.6%;
+        left: 12.6%;
     }
     .cube-item-5 {
-        bottom: 43.4%;
-        left: 24.9%;
+        bottom: 43.6%;
+        left: 25.7%;
     }
     .cube-item-6 {
-        bottom: 36.9%;
-        left: 37.6%;
+        bottom: 37.3%;
+        left: 38.5%;
     }
     .cube-last-text ul {
         gap: 1.5rem;
@@ -3388,13 +3326,13 @@ br {
         padding-bottom: 1.5rem;
     }
     .component-title h2 {
-        font-size: 3.6rem;
+        font-size: 4.375rem;
     }
     .component-title p {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
     }
     .component-content-inner {
-        padding: 0 2rem;
+        padding: 0 3.75rem;
         align-items: center;
         justify-content: space-between;
         gap: 2rem;
@@ -3411,27 +3349,27 @@ br {
         margin-bottom: 1.5rem;
     }
     .list-wrap ul li > h3 > img {
-        width: 3.975rem;
+        width: 4.875rem;
         height: auto;
-        margin-top: -1.2rem;
+        margin-top: -1.5rem;
     }
     .list-wrap ul li > h3 > span {
-        font-size: 3.5rem;
+        font-size: 4.375rem;
     }
     .list-wrap ul li > h3 .flex-bottom span {
         font-size: 3.5rem;
     }
     .list-wrap ul li > p {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-3xl);
         margin-bottom: 1rem;
     }
     .list-wrap ul li > span {
-        font-size: var(--font-size-base);
+        font-size: var(--font-size-md);
         margin-bottom: 2rem;
     }
     .cube-wrapper {
-        max-width: 24.8rem;
-        height: 27.8rem;
+        max-width: 27.5rem;
+        height: 30.35rem;
         margin-top: 0;
     }
     .cube-item-1,
@@ -3442,20 +3380,20 @@ br {
     .cube-item-4,
     .cube-item-5,
     .cube-item-6 {
-        width: 12.338rem;
+        width: 13.575rem;
         height: auto;
     }
     .cube-item-4 {
-        bottom: 50.1%;
+        bottom: 50.8%;
         left: 12.3%;
     }
     .cube-item-5 {
-        bottom: 43.4%;
-        left: 24.9%;
+        bottom: 44%;
+        left: 25.2%;
     }
     .cube-item-6 {
-        bottom: 36.9%;
-        left: 37.6%;
+        bottom: 37.1%;
+        left: 38.3%;
     }
     .cube-last-text ul {
         gap: 1.5rem;

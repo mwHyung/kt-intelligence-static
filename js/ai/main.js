@@ -274,8 +274,7 @@ function initParallaxSectionAnimation() {
     });
 
     // iOS 크롬에서만 부드러운 scrub 값 적용
-    const isIOSChrome =
-        /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const isIOSChrome = /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
     const scrubValue = isIOSChrome ? 0.3 : 1; // iOS 크롬에서만 부드럽게
 
     gsap.fromTo(
@@ -388,14 +387,14 @@ const imagePaths = [
     },
 ];
 
-function disableScroll() {
-    document.addEventListener('wheel', preventDefault, { passive: false });
-    document.addEventListener('touchmove', preventDefault, { passive: false });
-    document.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
-    // 추가 이벤트들
-    document.addEventListener('scroll', preventDefault, { passive: false });
-    document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
-}
+// function disableScroll() {
+//     document.addEventListener('wheel', preventDefault, { passive: false });
+//     document.addEventListener('touchmove', preventDefault, { passive: false });
+//     document.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+//     // 추가 이벤트들
+//     document.addEventListener('scroll', preventDefault, { passive: false });
+//     document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
+// }
 
 function enableScroll() {
     document.removeEventListener('wheel', preventDefault);
@@ -439,7 +438,16 @@ function initParallaxDepthSectionAnimation() {
     window.addEventListener('scroll', trackScrollState, { passive: true });
 
     ScrollTrigger.matchMedia({
-        '(min-width: 1367px)': function () {
+        '(min-width: 769px)': function () {
+            const cubeContentInner = document.querySelector('.component-content-inner');
+            const cubeWrapper = document.querySelector('.cube-wrapper');
+            const computedStyle = window.getComputedStyle(cubeContentInner);
+            const paddingRightPercent = (parseFloat(computedStyle.paddingRight) / cubeContentInner.clientWidth) * 100;
+            const contentWidthPercent = 100;
+            const cubeWidthPercent = (cubeWrapper.clientWidth / cubeContentInner.clientWidth) * 100;
+            const centerOffset = (contentWidthPercent - cubeWidthPercent) / 2;
+            // console.log(centerOffset, cubeWidthPercent, contentWidthPercent);
+
             gsap.set('.cube-last-text', { zIndex: -1 });
             let tlComplete = false;
             const tl = gsap.timeline({
@@ -461,11 +469,11 @@ function initParallaxDepthSectionAnimation() {
                     duration: 0.4,
                     stagger: 0.2,
                     onStart: () => {
-                        gsap.set('.cube-wrapper', { xPercent: -30 });
+                        gsap.set('.cube-wrapper', { right: `${centerOffset}%` });
                     },
                 },
             )
-                .fromTo('.cube-wrapper', { xPercent: -30 }, { xPercent: 0, duration: 0.3 })
+                .fromTo('.cube-wrapper', { right: `${centerOffset}%` }, { right: '0%', duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -487,9 +495,7 @@ function initParallaxDepthSectionAnimation() {
                         opacity: 1,
                         duration: 0.3,
                         onStart: () => {
-                            const img = document.querySelector(
-                                '.cube-wrapper .cube-item.cube-item-6 img',
-                            );
+                            const img = document.querySelector('.cube-wrapper .cube-item.cube-item-6 img');
                             if (img) {
                                 img.src = imagePaths[0].active;
                             }
@@ -504,6 +510,7 @@ function initParallaxDepthSectionAnimation() {
                 end: '+=8000', // 충분한 스크롤 공간 확보
                 pin: true,
                 pinSpacing: true,
+                markers: true,
                 id: 'depth-pin',
                 onEnter: () => {
                     document.documentElement.style.overflow = 'hidden';
@@ -523,8 +530,7 @@ function initParallaxDepthSectionAnimation() {
                 },
                 onLeave: () => {
                     document.documentElement.style.overflow = 'auto';
-                    document.querySelector('.component-inner').style.backgroundColor =
-                        'transparent';
+                    document.querySelector('.component-inner').style.backgroundColor = 'transparent';
                     setTimeout(() => {
                         if (wheelNavInstance) {
                             wheelNavInstance.destroy();
@@ -566,9 +572,7 @@ function initParallaxDepthSectionAnimation() {
                 onEnterBack: () => {
                     document.documentElement.style.overflow = 'hidden';
                     document.querySelector('.component-inner').style.backgroundColor = 'black';
-                    const lastIndex =
-                        document.querySelectorAll('.parallax-depth-section .list-wrap ul li')
-                            .length - 1;
+                    const lastIndex = document.querySelectorAll('.parallax-depth-section .list-wrap ul li').length - 1;
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
@@ -577,8 +581,7 @@ function initParallaxDepthSectionAnimation() {
                 },
                 onLeaveBack: () => {
                     document.documentElement.style.overflow = 'auto';
-                    document.querySelector('.component-inner').style.backgroundColor =
-                        'transparent';
+                    document.querySelector('.component-inner').style.backgroundColor = 'transparent';
                     if (wheelNavInstance) {
                         wheelNavInstance.destroy();
                         wheelNavInstance = null;
@@ -640,7 +643,7 @@ function initParallaxDepthSectionAnimation() {
                     '.cube-wrapper',
                     { xPercent: 0 },
                     {
-                        xPercent: -30,
+                        xPercent: -centerOffset,
                         duration: 0.5,
                         ease: 'power2.inOut',
                     },
@@ -667,245 +670,235 @@ function initParallaxDepthSectionAnimation() {
                     '-=0.2',
                 );
         },
-        '(min-width: 769px) and (max-width: 1366px)': function () {
-            gsap.set('.cube-last-text', { zIndex: -1 });
-            let tlComplete = false;
-            const tl = gsap.timeline({
-                ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top center',
-                    end: 'bottom center',
-                    id: 'start-tl',
-                },
-            });
+        // '(min-width: 769px) and (max-width: 1366px)': function () {
+        //     gsap.set('.cube-last-text', { zIndex: -1 });
+        //     let tlComplete = false;
+        //     const tl = gsap.timeline({
+        //         ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
+        //         scrollTrigger: {
+        //             trigger: section,
+        //             start: 'top center',
+        //             end: 'bottom center',
+        //             id: 'start-tl',
+        //         },
+        //     });
 
-            tl.fromTo(
-                '.cube-item',
-                { opacity: 0, yPercent: -10 },
-                {
-                    opacity: 1,
-                    yPercent: 0,
-                    duration: 0.4,
-                    stagger: 0.2,
-                    onStart: () => {
-                        gsap.set('.cube-wrapper', { xPercent: -50 });
-                    },
-                },
-            )
-                .fromTo('.cube-wrapper', { xPercent: -50 }, { xPercent: 0, duration: 0.3 })
-                .fromTo(
-                    '.list-wrap ul',
-                    { opacity: 0, xPercent: 52, yPercent: -12 },
-                    {
-                        opacity: 1,
-                        xPercent: 0,
-                        yPercent: 0,
-                        duration: 0.3,
-                        onComplete: () => {
-                            tlComplete = true;
-                        },
-                    },
-                    '<',
-                )
-                .fromTo(
-                    '.list-wrap ul li:first-child',
-                    { opacity: 0 },
-                    {
-                        opacity: 1,
-                        duration: 0.3,
-                        onStart: () => {
-                            const img = document.querySelector(
-                                '.cube-wrapper .cube-item.cube-item-6 img',
-                            );
-                            if (img) {
-                                img.src = imagePaths[0].active;
-                            }
-                        },
-                    },
-                    '<',
-                );
+        //     tl.fromTo(
+        //         '.cube-item',
+        //         { opacity: 0, yPercent: -10 },
+        //         {
+        //             opacity: 1,
+        //             yPercent: 0,
+        //             duration: 0.4,
+        //             stagger: 0.2,
+        //             onStart: () => {
+        //                 gsap.set('.cube-wrapper', { xPercent: -50 });
+        //             },
+        //         },
+        //     )
+        //         .fromTo('.cube-wrapper', { xPercent: -50 }, { xPercent: 0, duration: 0.3 })
+        //         .fromTo(
+        //             '.list-wrap ul',
+        //             { opacity: 0, xPercent: 52, yPercent: -12 },
+        //             {
+        //                 opacity: 1,
+        //                 xPercent: 0,
+        //                 yPercent: 0,
+        //                 duration: 0.3,
+        //                 onComplete: () => {
+        //                     tlComplete = true;
+        //                 },
+        //             },
+        //             '<',
+        //         )
+        //         .fromTo(
+        //             '.list-wrap ul li:first-child',
+        //             { opacity: 0 },
+        //             {
+        //                 opacity: 1,
+        //                 duration: 0.3,
+        //                 onStart: () => {
+        //                     const img = document.querySelector('.cube-wrapper .cube-item.cube-item-6 img');
+        //                     if (img) {
+        //                         img.src = imagePaths[0].active;
+        //                     }
+        //                 },
+        //             },
+        //             '<',
+        //         );
 
-            ScrollTrigger.create({
-                trigger: '.component-content',
-                start: 'top top',
-                end: '+=8000', // 충분한 스크롤 공간 확보
-                pin: true,
-                pinSpacing: true,
-                id: 'depth-pin',
-                onEnter: () => {
-                    // disableScroll();
-                    document.documentElement.style.overflow = 'hidden';
-                    document.querySelector('.component-inner').style.backgroundColor = 'black';
+        //     ScrollTrigger.create({
+        //         trigger: '.component-content',
+        //         start: 'top top',
+        //         end: '+=8000', // 충분한 스크롤 공간 확보
+        //         pin: true,
+        //         pinSpacing: true,
+        //         id: 'depth-pin',
+        //         onEnter: () => {
+        //             document.documentElement.style.overflow = 'hidden';
+        //             document.querySelector('.component-inner').style.backgroundColor = 'black';
 
-                    const checkComplete = () => {
-                        if (tlComplete) {
-                            if (wheelNavInstance) {
-                                wheelNavInstance.destroy();
-                                wheelNavInstance = null;
-                            }
-                            wheelNavInstance = new WheelNavigation(0);
-                        } else {
-                            requestAnimationFrame(checkComplete);
-                        }
-                    };
-                    requestAnimationFrame(checkComplete);
-                },
-                onLeave: () => {
-                    // enableScroll();
-                    document.documentElement.style.overflow = 'auto';
-                    document.querySelector('.component-inner').style.backgroundColor =
-                        'transparent';
-                    setTimeout(() => {
-                        if (wheelNavInstance) {
-                            wheelNavInstance.destroy();
-                            wheelNavInstance = null;
-                        }
-                    }, 400);
-                    tl.progress(1);
+        //             const checkComplete = () => {
+        //                 if (tlComplete) {
+        //                     if (wheelNavInstance) {
+        //                         wheelNavInstance.destroy();
+        //                         wheelNavInstance = null;
+        //                     }
+        //                     wheelNavInstance = new WheelNavigation(0);
+        //                 } else {
+        //                     requestAnimationFrame(checkComplete);
+        //                 }
+        //             };
+        //             requestAnimationFrame(checkComplete);
+        //         },
+        //         onLeave: () => {
+        //             document.documentElement.style.overflow = 'auto';
+        //             document.querySelector('.component-inner').style.backgroundColor = 'transparent';
+        //             setTimeout(() => {
+        //                 if (wheelNavInstance) {
+        //                     wheelNavInstance.destroy();
+        //                     wheelNavInstance = null;
+        //                 }
+        //             }, 400);
+        //             tl.progress(1);
 
-                    const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
-                    const listItems = document.querySelectorAll('.list-wrap ul li');
-                    if (imgs && listItems) {
-                        setTimeout(() => {
-                            imgs.forEach((img) => {
-                                if (img.src.includes('k-model')) {
-                                    img.src = imagePaths[0].src;
-                                } else if (img.src.includes('k-rag')) {
-                                    img.src = imagePaths[1].src;
-                                } else if (img.src.includes('k-agent')) {
-                                    img.src = imagePaths[2].src;
-                                } else if (img.src.includes('k-studio')) {
-                                    img.src = imagePaths[3].src;
-                                } else if (img.src.includes('k-rai')) {
-                                    img.src = imagePaths[4].src;
-                                } else if (img.src.includes('k-infra')) {
-                                    img.src = imagePaths[5].src;
-                                }
-                            });
+        //             const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
+        //             const listItems = document.querySelectorAll('.list-wrap ul li');
+        //             if (imgs && listItems) {
+        //                 setTimeout(() => {
+        //                     imgs.forEach((img) => {
+        //                         if (img.src.includes('k-model')) {
+        //                             img.src = imagePaths[0].src;
+        //                         } else if (img.src.includes('k-rag')) {
+        //                             img.src = imagePaths[1].src;
+        //                         } else if (img.src.includes('k-agent')) {
+        //                             img.src = imagePaths[2].src;
+        //                         } else if (img.src.includes('k-studio')) {
+        //                             img.src = imagePaths[3].src;
+        //                         } else if (img.src.includes('k-rai')) {
+        //                             img.src = imagePaths[4].src;
+        //                         } else if (img.src.includes('k-infra')) {
+        //                             img.src = imagePaths[5].src;
+        //                         }
+        //                     });
 
-                            listItems.forEach((item) => {
-                                if (item.classList.contains('active')) {
-                                    item.classList.remove('active');
-                                }
+        //                     listItems.forEach((item) => {
+        //                         if (item.classList.contains('active')) {
+        //                             item.classList.remove('active');
+        //                         }
 
-                                gsap.set(item, { opacity: 0 });
-                            });
-                        }, 400);
-                    }
-                },
-                onEnterBack: () => {
-                    // disableScroll();
-                    document.documentElement.style.overflow = 'hidden';
-                    document.querySelector('.component-inner').style.backgroundColor = 'black';
-                    const lastIndex =
-                        document.querySelectorAll('.parallax-depth-section .list-wrap ul li')
-                            .length - 1;
-                    if (wheelNavInstance) {
-                        wheelNavInstance.destroy();
-                        wheelNavInstance = null;
-                    }
-                    wheelNavInstance = new WheelNavigation(lastIndex);
-                },
-                onLeaveBack: () => {
-                    // enableScroll();
-                    document.documentElement.style.overflow = 'auto';
-                    document.querySelector('.component-inner').style.backgroundColor =
-                        'transparent';
-                    if (wheelNavInstance) {
-                        wheelNavInstance.destroy();
-                        wheelNavInstance = null;
-                    }
-                    const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
-                    const listItems = document.querySelectorAll('.list-wrap ul li');
-                    if (imgs && listItems) {
-                        imgs.forEach((img) => {
-                            if (img.src.includes('k-model')) {
-                                img.src = imagePaths[0].active;
-                            } else if (img.src.includes('k-rag')) {
-                                img.src = imagePaths[1].src;
-                            } else if (img.src.includes('k-agent')) {
-                                img.src = imagePaths[2].src;
-                            } else if (img.src.includes('k-studio')) {
-                                img.src = imagePaths[3].src;
-                            } else if (img.src.includes('k-rai')) {
-                                img.src = imagePaths[4].src;
-                            } else if (img.src.includes('k-infra')) {
-                                img.src = imagePaths[5].src;
-                            }
-                        });
+        //                         gsap.set(item, { opacity: 0 });
+        //                     });
+        //                 }, 400);
+        //             }
+        //         },
+        //         onEnterBack: () => {
+        //             document.documentElement.style.overflow = 'hidden';
+        //             document.querySelector('.component-inner').style.backgroundColor = 'black';
+        //             const lastIndex = document.querySelectorAll('.parallax-depth-section .list-wrap ul li').length - 1;
+        //             if (wheelNavInstance) {
+        //                 wheelNavInstance.destroy();
+        //                 wheelNavInstance = null;
+        //             }
+        //             wheelNavInstance = new WheelNavigation(lastIndex);
+        //         },
+        //         onLeaveBack: () => {
+        //             document.documentElement.style.overflow = 'auto';
+        //             document.querySelector('.component-inner').style.backgroundColor = 'transparent';
+        //             if (wheelNavInstance) {
+        //                 wheelNavInstance.destroy();
+        //                 wheelNavInstance = null;
+        //             }
+        //             const imgs = document.querySelectorAll('.cube-wrapper .cube-item img');
+        //             const listItems = document.querySelectorAll('.list-wrap ul li');
+        //             if (imgs && listItems) {
+        //                 imgs.forEach((img) => {
+        //                     if (img.src.includes('k-model')) {
+        //                         img.src = imagePaths[0].active;
+        //                     } else if (img.src.includes('k-rag')) {
+        //                         img.src = imagePaths[1].src;
+        //                     } else if (img.src.includes('k-agent')) {
+        //                         img.src = imagePaths[2].src;
+        //                     } else if (img.src.includes('k-studio')) {
+        //                         img.src = imagePaths[3].src;
+        //                     } else if (img.src.includes('k-rai')) {
+        //                         img.src = imagePaths[4].src;
+        //                     } else if (img.src.includes('k-infra')) {
+        //                         img.src = imagePaths[5].src;
+        //                     }
+        //                 });
 
-                        listItems.forEach((item) => {
-                            if (item.classList.contains('active')) {
-                                item.classList.remove('active');
-                            }
-                            listItems[0].classList.add('active');
+        //                 listItems.forEach((item) => {
+        //                     if (item.classList.contains('active')) {
+        //                         item.classList.remove('active');
+        //                     }
+        //                     listItems[0].classList.add('active');
 
-                            gsap.set(item, { opacity: 0 });
-                            gsap.set(listItems[0], {
-                                opacity: 1,
-                            });
-                        });
-                    }
-                },
-            });
+        //                     gsap.set(item, { opacity: 0 });
+        //                     gsap.set(listItems[0], {
+        //                         opacity: 1,
+        //                     });
+        //                 });
+        //             }
+        //         },
+        //     });
 
-            const tl2 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.component-content',
-                    start: '+=1',
-                    end: '+=1300',
-                    id: 'depth-pin2',
-                    pin: true,
-                    pinSpacing: true,
-                    scrub: 1,
-                    onLeave: () => {
-                        if (wheelNavInstance) {
-                            wheelNavInstance.destroy();
-                            wheelNavInstance = null;
-                        }
-                    },
-                },
-            });
+        //     const tl2 = gsap.timeline({
+        //         scrollTrigger: {
+        //             trigger: '.component-content',
+        //             start: '+=1',
+        //             end: '+=1300',
+        //             id: 'depth-pin2',
+        //             pin: true,
+        //             pinSpacing: true,
+        //             scrub: 1,
+        //             onLeave: () => {
+        //                 if (wheelNavInstance) {
+        //                     wheelNavInstance.destroy();
+        //                     wheelNavInstance = null;
+        //                 }
+        //             },
+        //         },
+        //     });
 
-            const cubeContentInner = document.querySelector('.component-content-inner');
-            const cubeWrapper = document.querySelector('.cube-wrapper');
-            const contentWidth = cubeContentInner.clientWidth;
-            const cubeWidth = cubeWrapper.clientWidth;
-            const centerOffset = (contentWidth - cubeWidth) / 2 - 32;
+        //     const cubeContentInner = document.querySelector('.component-content-inner');
+        //     const cubeWrapper = document.querySelector('.cube-wrapper');
+        //     const contentWidth = cubeContentInner.clientWidth;
+        //     const cubeWidth = cubeWrapper.clientWidth;
+        //     const centerOffset = (contentWidth - cubeWidth) / 2 - 32;
 
-            tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
-                .fromTo(
-                    '.cube-wrapper',
-                    { x: 0 },
-                    {
-                        x: -centerOffset,
-                        duration: 0.5,
-                        ease: 'power2.inOut',
-                    },
-                    '<',
-                )
-                .fromTo('.component-content', { scale: 1 }, { scale: 0.8, ease: 'power2.inOut' })
-                .fromTo(
-                    '.cube-last-text',
-                    { opacity: 0, zIndex: -1 },
-                    {
-                        opacity: 1,
-                        zIndex: 1,
-                        duration: 0.3,
-                        ease: 'power2.inOut',
-                        onComplete: () => {
-                            // 애니메이션 완료 후 AOS 재설정
-                            if (window.AOS) {
-                                setTimeout(() => {
-                                    AOS.refreshHard();
-                                }, 200);
-                            }
-                        },
-                    },
-                    '-=0.2',
-                );
-        },
+        //     tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
+        //         .fromTo(
+        //             '.cube-wrapper',
+        //             { x: 0 },
+        //             {
+        //                 x: -centerOffset,
+        //                 duration: 0.5,
+        //                 ease: 'power2.inOut',
+        //             },
+        //             '<',
+        //         )
+        //         .fromTo('.component-content', { scale: 1 }, { scale: 0.8, ease: 'power2.inOut' })
+        //         .fromTo(
+        //             '.cube-last-text',
+        //             { opacity: 0, zIndex: -1 },
+        //             {
+        //                 opacity: 1,
+        //                 zIndex: 1,
+        //                 duration: 0.3,
+        //                 ease: 'power2.inOut',
+        //                 onComplete: () => {
+        //                     // 애니메이션 완료 후 AOS 재설정
+        //                     if (window.AOS) {
+        //                         setTimeout(() => {
+        //                             AOS.refreshHard();
+        //                         }, 200);
+        //                     }
+        //                 },
+        //             },
+        //             '-=0.2',
+        //         );
+        // },
         '(max-width: 768px)': function () {
             enableScroll();
             if (wheelNavInstance) {
@@ -983,6 +976,7 @@ function initParallaxDepthSectionAnimation() {
 
     return () => {
         window.removeEventListener('scroll', trackScrollState);
+        window.removeEventListener('resize', () => ScrollTrigger.refresh());
         clearTimeout(scrollTimeout);
     };
 }
@@ -992,11 +986,7 @@ class WheelNavigation {
         this.listItems = document.querySelectorAll('.list-wrap ul li');
         this.cubeItems = document.querySelectorAll('.cube-wrapper .cube-item');
         this.cubeItems = Array.from(this.cubeItems).reverse();
-        if (
-            !this.listItems.length ||
-            !this.cubeItems.length ||
-            this.listItems.length !== this.cubeItems.length
-        ) {
+        if (!this.listItems.length || !this.cubeItems.length || this.listItems.length !== this.cubeItems.length) {
             console.warn('WheelNavigation: Mismatch between list and cube items.');
             return;
         }
@@ -1111,10 +1101,7 @@ class WheelNavigation {
         }
 
         // 터치 거리와 시간 체크
-        if (
-            Math.abs(touchDistance) < this.touchThreshold ||
-            touchDuration > this.touchTimeThreshold
-        ) {
+        if (Math.abs(touchDistance) < this.touchThreshold || touchDuration > this.touchTimeThreshold) {
             return;
         }
 

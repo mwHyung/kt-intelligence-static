@@ -999,8 +999,6 @@ br.mo-br {
 .shape-wrapper {
     width: 100%;
     position: relative;
-    overflow-y: hidden;
-    overflow-x: auto;
 }
 
 .shape-wrapper > img {
@@ -1657,14 +1655,7 @@ br.mo-br {
     gap: 2rem;
 }
 
-.architecture-diagram
-    .table-list
-    .table-row-2
-    .table-col-2
-    .table-col.long
-    .table-item
-    ul
-    li:before {
+.architecture-diagram .table-list .table-row-2 .table-col-2 .table-col.long .table-item ul li:before {
     display: none;
 }
 
@@ -2219,8 +2210,7 @@ br.mo-br {
         width: 0.9rem;
         height: 3.2rem;
         transform: unset;
-        background: url(/resource/images/ai/solution/RAI/mo-ico-dot-arrow.png) no-repeat center
-            center;
+        background: url(/resource/images/ai/solution/RAI/mo-ico-dot-arrow.png) no-repeat center center;
     }
 
     .table-card-list > li:last-child {
