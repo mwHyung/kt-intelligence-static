@@ -3639,7 +3639,7 @@ br {
         margin: 0;
         position: absolute;
         top: 50%;
-        right: 10vw;
+        right: 7.5vw;
         transform: translate(0, -50%);
     }
     .eco-bottom-card ul {
