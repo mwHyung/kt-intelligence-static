@@ -3662,6 +3662,9 @@ br {
         font-size: var(--font-size-2xl);
     }
 
+    .usecase-section {
+        padding-top: 2.75rem;
+    }
     .usecase-name {
         font-size: var(--font-size-3xl);
         margin-bottom: 0.5rem;

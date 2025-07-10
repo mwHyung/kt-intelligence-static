@@ -5817,9 +5817,30 @@
     }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
+    /* 서브페이지 */
+    /* Model 페이지 */
+    .gpt-benefit-box .box-list {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    .gpt-benefit-box .box-list li {
+        width: 100%;
+    }
+    .box-item h3 br {
+        display: none;
+    }
+
+    /* Agent 페이지 */
+    .divided-table-card-wrapper.agent-frameWork .table-card-item p br {
+        display: none;
+    }
+
     /* Resources 리스트페이지 */
     .tech-card .card-img {
         padding-bottom: 12.7rem;
         width: 20.35rem;
+    }
+    .tech-card .card-txts {
+        padding: 2.813rem 0;
     }
 }
