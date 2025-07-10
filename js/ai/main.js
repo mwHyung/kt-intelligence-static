@@ -738,6 +738,9 @@ function initParallaxDepthSectionAnimation() {
     let isResizing = false;
 
     window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+            return;
+        }
         lastScrollY = window.scrollY;
         isResizing = true;
 
@@ -755,6 +758,9 @@ function initParallaxDepthSectionAnimation() {
         window.removeEventListener('scroll', trackScrollState);
 
         window.removeEventListener('resize', () => {
+            if (window.innerWidth < 768) {
+                return;
+            }
             lastScrollY = window.scrollY;
             isResizing = true;
 
