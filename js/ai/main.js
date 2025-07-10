@@ -498,7 +498,7 @@ function initParallaxDepthSectionAnimation() {
             ScrollTrigger.create({
                 trigger: '.component-content',
                 start: 'top top',
-                end: '+=100%', // 충분한 스크롤 공간 확보
+                end: '+=200%', // 충분한 스크롤 공간 확보
                 pin: true,
                 pinSpacing: true,
                 id: 'depth-pin',
@@ -748,7 +748,7 @@ function initParallaxDepthSectionAnimation() {
                 window.scrollTo(0, lastScrollY);
                 isResizing = false;
             }
-        }, 1);
+        }, 10);
     });
 
     return () => {
@@ -765,7 +765,7 @@ function initParallaxDepthSectionAnimation() {
                     window.scrollTo(0, lastScrollY);
                     isResizing = false;
                 }
-            }, 1);
+            }, 10);
         });
         clearTimeout(scrollTimeout);
     };
