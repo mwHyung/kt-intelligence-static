@@ -423,19 +423,18 @@ function initParallaxDepthSectionAnimation() {
     if (!cubeItems.length) return;
 
     let wheelNavInstance; // 휠 네비게이션 인스턴스
-    let isUserScrolling = false; // 사용자가 직접 스크롤하고 있는지 추적
-    let scrollTimeout;
+    // let scrollTimeout;
 
     // 스크롤 상태 추적
-    const trackScrollState = () => {
-        isUserScrolling = true;
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            isUserScrolling = false;
-        }, 150);
-    };
+    // const trackScrollState = () => {
+    //     isUserScrolling = true;
+    //     clearTimeout(scrollTimeout);
+    //     scrollTimeout = setTimeout(() => {
+    //         isUserScrolling = false;
+    //     }, 150);
+    // };
 
-    window.addEventListener('scroll', trackScrollState, { passive: true });
+    // window.addEventListener('scroll', trackScrollState, { passive: true });
 
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
@@ -768,13 +767,13 @@ function initParallaxDepthSectionAnimation() {
 
     // 클린업 함수 반환
     return () => {
-        if (typeof trackScrollState === 'function') {
-            window.removeEventListener('scroll', trackScrollState);
-        }
+        // if (typeof trackScrollState === 'function') {
+        //     window.removeEventListener('scroll', trackScrollState);
+        // }
         window.removeEventListener('resize', resizeHandler);
-        if (typeof scrollTimeout !== 'undefined') {
-            clearTimeout(scrollTimeout);
-        }
+        // if (typeof scrollTimeout !== 'undefined') {
+        //     clearTimeout(scrollTimeout);
+        // }
     };
 }
 
