@@ -69,6 +69,12 @@
 .sub-desc {
     line-height: 172%;
     color: var(--gray-800-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-break: keep-all;
 }
 
 /* Card Common Styles */
@@ -5743,6 +5749,11 @@
         flex: 0 0 20.5rem;
     }
 
+    /* Resources 리스트페이지 */
+    .tech-card .card-img {
+        padding-bottom: 14.3rem;
+        width: 22.85rem;
+    }
     /* Resources 상세페이지 */
     .sub-inner.detail-inner {
         padding: 0 2rem;
@@ -5776,5 +5787,12 @@
     }
     .tab-section .list-wrapper > ul > li h3 {
         margin-bottom: 1.2rem;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Resources 리스트페이지 */
+    .tech-card .card-img {
+        padding-bottom: 12.7rem;
+        width: 20.35rem;
     }
 }
