@@ -973,7 +973,7 @@ function initParallaxDepthSectionAnimation() {
         ScrollTrigger.refresh();
 
         setTimeout(() => {
-            if (isResizing && window.innerWidth > 768) {
+            if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
                 console.log(lastScrollY);
                 window.scrollTo(0, lastScrollY);
                 isResizing = false;
