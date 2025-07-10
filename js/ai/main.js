@@ -736,42 +736,45 @@ function initParallaxDepthSectionAnimation() {
 
     let lastScrollY = 0;
     let isResizing = false;
+    let resizeHandler;
 
+    // 모바일 환경에서는 리사이즈 이벤트 처리하지 않음
     if (window.innerWidth < 768) {
         return;
-    } else {
-        window.addEventListener('resize', () => {
-            lastScrollY = window.scrollY;
-            isResizing = true;
-
-            ScrollTrigger.refresh();
-
-            setTimeout(() => {
-                if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
-                    window.scrollTo(0, lastScrollY);
-                    isResizing = false;
-                }
-            }, 10);
-        });
     }
 
-    return () => {
-        window.removeEventListener('scroll', trackScrollState);
+    // 리사이즈 핸들러 함수 정의
+    resizeHandler = () => {
+        lastScrollY = window.scrollY;
+        isResizing = true;
 
-        window.removeEventListener('resize', () => {
-            lastScrollY = window.scrollY;
-            isResizing = true;
+        ScrollTrigger.refresh();
 
-            ScrollTrigger.refresh();
-
+        // 태블릿 환경에서만 스크롤 위치 복원
+        if (window.innerWidth > 768 && window.innerWidth < 1366) {
             setTimeout(() => {
-                if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
+                if (isResizing) {
                     window.scrollTo(0, lastScrollY);
                     isResizing = false;
                 }
-            }, 10);
-        });
-        clearTimeout(scrollTimeout);
+            }, 100); // 딜레이 시간 증가
+        } else {
+            isResizing = false;
+        }
+    };
+
+    // 리사이즈 이벤트 등록
+    window.addEventListener('resize', resizeHandler);
+
+    // 클린업 함수 반환
+    return () => {
+        if (typeof trackScrollState === 'function') {
+            window.removeEventListener('scroll', trackScrollState);
+        }
+        window.removeEventListener('resize', resizeHandler);
+        if (typeof scrollTimeout !== 'undefined') {
+            clearTimeout(scrollTimeout);
+        }
     };
 }
 
