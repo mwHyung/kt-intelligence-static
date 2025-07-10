@@ -3595,7 +3595,7 @@ br {
         width: 100%;
     }
     .eco-partner-card {
-        padding: 3rem 0;
+        padding: 3rem 1rem;
         height: auto;
     }
     .eco-partner-logos {
@@ -3650,6 +3650,9 @@ br {
         right: 0;
         transform: translate(0, -50%);
         margin-right: 10.438rem;
+    }
+    .eco-partner-desc br {
+        display: none;
     }
 
     .section-title {
