@@ -5678,13 +5678,6 @@
 
 /* 태블릿 */
 @media (min-width: 768px) and (max-width: 1366px) {
-    .cloud-arch-bottom {
-        overflow: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
-        flex-wrap: wrap;
-        padding: 1rem 2rem;
-    }
     .cloud-arch-layer {
         flex: 1;
     }
@@ -5732,8 +5725,22 @@
         margin: 0 !important;
     }
 
+    /* Model 페이지 */
     .example-side-item .example-side-txts dt {
-        display: block;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .example-side-item .example-side-txts dt .open-planned {
+        margin-left: 0 !important;
+    }
+    .example-side-item .example-side-txts dl {
+        padding: 1.5rem 1.6rem;
+    }
+    .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
+        padding: 1.5rem 1.6rem;
+    }
+    .model-believe-box .box-item {
+        padding: 1.5rem 1.6rem;
     }
 
     .diamond-wrapper {
@@ -5776,6 +5783,13 @@
     }
     .mobile-show.graph {
         display: block !important;
+        width: 100%;
+    }
+    .mobile-show.graph.mt-2 {
+        margin-top: 2rem;
+    }
+    .mobile-show.graph.mt-3 {
+        margin-top: 3.75rem;
     }
 
     /* Agent 페이지 */
@@ -5787,6 +5801,28 @@
     }
     .tab-section .list-wrapper > ul > li h3 {
         margin-bottom: 1.2rem;
+    }
+    .shape-wrapper {
+        padding: 0;
+    }
+    .divided-table-card-wrapper .table-card-item h3 {
+        padding: 1.5rem 1.6rem 1.25rem;
+    }
+    .divided-table-card-wrapper.agent-frameWork .table-card-item p {
+        padding: 0 1.6rem 1.5rem;
+    }
+    .pattern-top10-grid .pattern-card {
+        padding: 1.5rem 1.6rem;
+    }
+    .pattern-top10-grid .pattern-card p {
+        margin-top: 1.5rem;
+    }
+
+    /* Cloud 페이지 */
+    .cloud-graph-top img {
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 }
 @media (min-width: 768px) and (max-width: 1024px) {

@@ -2756,9 +2756,13 @@ br.mo-br {
     .card-item p {
         font-size: var(--font-size-base);
     }
+    .card-item.icon {
+        padding: 1.5rem 1.6rem;
+    }
     .card-item.icon ul li {
         font-size: var(--font-size-base);
     }
+
     .sub-title h3 {
         font-size: var(--font-size-6xl);
     }
@@ -2775,24 +2779,50 @@ br.mo-br {
     .box-wrapper-rag .box-list li ul li {
         font-size: var(--font-size-base);
     }
+    .box-item {
+        padding: 1.5rem 1.6rem;
+    }
     .box-item h3 {
         font-size: var(--font-size-2xl) !important;
     }
     .box-item p {
         font-size: var(--font-size-base);
     }
+    .box-wrapper-rag .box-list.fit-content li .box-item {
+        padding: 1.5rem 1.6rem;
+    }
+    .box-wrapper-rag .box-list li .box-item {
+        padding: 1.5rem 1.6rem;
+    }
 
+    .table-card-item {
+        padding: 1.5rem 1.6rem;
+    }
     .table-card-item h3 {
         font-size: var(--font-size-2xl) !important;
     }
     .table-card-item p {
         font-size: var(--font-size-base) !important;
     }
+    .table-card-list.text {
+        gap: 1rem;
+    }
     .table-card-list.text > li .table-card-item ul li h4 {
         font-size: var(--font-size-sm);
     }
     .table-card-list.text > li .table-card-item ul li p {
         font-size: var(--font-size-base);
+    }
+    .table-card-list.text > li .table-card-item h3.to-be {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .table-card-list.text > li .table-card-item h3.to-be:after {
+        display: inline-block;
+        margin-left: 1rem;
+        vertical-align: top;
+        margin-left: 0;
     }
 
     .list-item h3 {
@@ -2806,15 +2836,6 @@ br.mo-br {
         font-size: var(--font-size-base);
     }
 
-    .table-card-list.text > li .table-card-item h3.to-be {
-        display: block;
-    }
-    .table-card-list.text > li .table-card-item h3.to-be:after {
-        display: inline-block;
-        margin-left: 1rem;
-        vertical-align: top;
-    }
-
     /* RAI 도식 */
     .shape-wrapper .shape-header,
     .shape-flow {
@@ -2825,5 +2846,41 @@ br.mo-br {
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    /* Agent 리스트 스타일 */
+    .list-wrapper > ul > li {
+        padding: 2rem 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .table-card-list.text > li {
+        flex: 1 0 100%;
+    }
+    .table-card-list.text > li .table-card-item ul {
+        min-height: auto;
+    }
+    .table-card-list.text > li .table-card-item h3.to-be {
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+    }
+    .table-card-list.text > li .table-card-item h3 {
+        padding: 0 0 1.5rem;
+    }
+    .table-card-list.text > li .table-card-item ul {
+        gap: 1rem;
+    }
+
+    .card-item h4.to-be {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .card-item h4.to-be::after {
+        display: inline-block;
+        margin-left: 0;
     }
 }
