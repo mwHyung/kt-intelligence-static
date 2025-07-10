@@ -2855,6 +2855,9 @@ br.mo-br {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .banner-section p br {
+        display: none;
+    }
     .title-wrapper h3 br {
         display: none;
     }

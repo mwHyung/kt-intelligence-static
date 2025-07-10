@@ -13,22 +13,26 @@ if (document.querySelectorAll('.has-dropdown').length) {
 
         // Touch events for tablet
         item.addEventListener('touchstart', (e) => {
-            e.preventDefault();
-            const wasActive = item.classList.contains('active');
-            // Close other dropdowns
-            document.querySelectorAll('.has-dropdown').forEach((dropdown) => {
-                dropdown.classList.remove('active');
-            });
-            // Toggle current dropdown
-            if (!wasActive) {
-                item.classList.add('active');
+            if (!e.target.closest('.dropdown-menu')) {
+                e.preventDefault();
+                const wasActive = item.classList.contains('active');
+                // Close other dropdowns
+                document.querySelectorAll('.has-dropdown').forEach((dropdown) => {
+                    if (dropdown !== item) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+                // Toggle current dropdown
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
             }
         });
     });
 
     // Close dropdown when touching outside
     document.addEventListener('touchstart', (e) => {
-        if (!e.target.closest('.has-dropdown')) {
+        if (!e.target.closest('.has-dropdown') && !e.target.closest('.dropdown-menu')) {
             document.querySelectorAll('.has-dropdown').forEach((dropdown) => {
                 dropdown.classList.remove('active');
             });
