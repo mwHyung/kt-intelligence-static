@@ -737,30 +737,28 @@ function initParallaxDepthSectionAnimation() {
     let lastScrollY = 0;
     let isResizing = false;
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth < 768) {
-            return;
-        }
-        lastScrollY = window.scrollY;
-        isResizing = true;
+    if (window.innerWidth < 768) {
+        return;
+    } else {
+        window.addEventListener('resize', () => {
+            lastScrollY = window.scrollY;
+            isResizing = true;
 
-        ScrollTrigger.refresh();
+            ScrollTrigger.refresh();
 
-        setTimeout(() => {
-            if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
-                window.scrollTo(0, lastScrollY);
-                isResizing = false;
-            }
-        }, 10);
-    });
+            setTimeout(() => {
+                if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
+                    window.scrollTo(0, lastScrollY);
+                    isResizing = false;
+                }
+            }, 10);
+        });
+    }
 
     return () => {
         window.removeEventListener('scroll', trackScrollState);
 
         window.removeEventListener('resize', () => {
-            if (window.innerWidth < 768) {
-                return;
-            }
             lastScrollY = window.scrollY;
             isResizing = true;
 
