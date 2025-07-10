@@ -1018,6 +1018,10 @@ class WheelNavigation {
         this.touchThreshold = 50; // 최소 터치 이동 거리
         this.touchTimeThreshold = 300; // 최대 터치 시간 (ms)
 
+        // 헤더 wheel 방향 클래스 관련
+        this.header = document.getElementById('main-header');
+        this.lastWheelDirection = null;
+
         this.init();
     }
 
@@ -1118,6 +1122,25 @@ class WheelNavigation {
         this.lastScrollTime = currentTime;
         const direction = touchDistance > 0 ? 1 : -1; // 위로 스와이프시 1, 아래로 스와이프시 -1
 
+        // ===== Header show/hide class toggle (touch) =====
+        if (this.header) {
+            if (direction > 0) {
+                // Swipe up (show header)
+                if (this.lastWheelDirection !== 'up') {
+                    this.header.classList.add('hide');
+                    this.header.classList.remove('show');
+                    this.lastWheelDirection = 'up';
+                }
+            } else if (direction < 0) {
+                // Swipe down (hide header)
+                if (this.lastWheelDirection !== 'down') {
+                    this.header.classList.add('show');
+                    this.header.classList.remove('hide');
+                    this.lastWheelDirection = 'down';
+                }
+            }
+        }
+
         this.handleNavigation(direction, e);
     }
 
@@ -1131,6 +1154,25 @@ class WheelNavigation {
         if (this.isAnimating) {
             e.preventDefault();
             return;
+        }
+
+        // ===== Header wheel direction class toggle (WheelNavigation 내부) =====
+        if (this.header) {
+            if (e.deltaY > 0) {
+                // Scrolling down
+                if (this.lastWheelDirection !== 'down') {
+                    this.header.classList.add('hide');
+                    this.header.classList.remove('show');
+                    this.lastWheelDirection = 'down';
+                }
+            } else if (e.deltaY < 0) {
+                // Scrolling up
+                if (this.lastWheelDirection !== 'up') {
+                    this.header.classList.add('show');
+                    this.header.classList.remove('hide');
+                    this.lastWheelDirection = 'up';
+                }
+            }
         }
 
         this.lastScrollTime = currentTime;
@@ -1296,6 +1338,7 @@ window.addEventListener('load', function () {
     initParallaxDepthSectionAnimation();
     initMobileMenu();
     initUsecaseSectionAnimation();
+    // (전역 wheel 이벤트는 WheelNavigation 내부로 이동)
 });
 
 // Ensure GSAP ScrollToPlugin is registered
