@@ -387,14 +387,14 @@ const imagePaths = [
     },
 ];
 
-// function disableScroll() {
-//     document.addEventListener('wheel', preventDefault, { passive: false });
-//     document.addEventListener('touchmove', preventDefault, { passive: false });
-//     document.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
-//     // 추가 이벤트들
-//     document.addEventListener('scroll', preventDefault, { passive: false });
-//     document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
-// }
+function disableScroll() {
+    document.addEventListener('wheel', preventDefault, { passive: false });
+    document.addEventListener('touchmove', preventDefault, { passive: false });
+    document.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
+    // 추가 이벤트들
+    document.addEventListener('scroll', preventDefault, { passive: false });
+    document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
+}
 
 function enableScroll() {
     document.removeEventListener('wheel', preventDefault);
@@ -439,7 +439,6 @@ function initParallaxDepthSectionAnimation() {
 
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
-            gsap.set('.cube-last-text', { zIndex: -1 });
             let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
@@ -460,11 +459,11 @@ function initParallaxDepthSectionAnimation() {
                     duration: 0.4,
                     stagger: 0.2,
                     onStart: () => {
-                        gsap.set('.cube-wrapper', { right: `50%`, xPercent: 50 });
+                        gsap.set('.cube-wrapper', { xPercent: 0 });
                     },
                 },
             )
-                .fromTo('.cube-wrapper', { right: `50%`, xPercent: 50 }, { right: '0%', xPercent: 0, duration: 0.3 })
+                .fromTo('.cube-wrapper', { xPercent: 0 }, { xPercent: 34, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -498,7 +497,7 @@ function initParallaxDepthSectionAnimation() {
             ScrollTrigger.create({
                 trigger: '.component-content',
                 start: 'top top',
-                end: '+=200%', // 충분한 스크롤 공간 확보
+                end: '+=8000', // 충분한 스크롤 공간 확보
                 pin: true,
                 pinSpacing: true,
                 id: 'depth-pin',
@@ -631,10 +630,9 @@ function initParallaxDepthSectionAnimation() {
             tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
                 .fromTo(
                     '.cube-wrapper',
-                    { right: '0%', xPercent: 0 },
+                    { xPercent: 34 },
                     {
-                        right: `50%`,
-                        xPercent: 50,
+                        xPercent: 0,
                         duration: 0.5,
                         ease: 'power2.inOut',
                     },
@@ -662,12 +660,6 @@ function initParallaxDepthSectionAnimation() {
                 );
         },
         '(max-width: 768px)': function () {
-            // enableScroll();
-            // if (wheelNavInstance) {
-            //     wheelNavInstance.destroy();
-            //     wheelNavInstance = null;
-            // }
-
             // Swiper 인스턴스 생성 (모바일 메뉴용)
             var pdsSwiper = null;
             var section = document.querySelector('.parallax-depth-section .component-content');
@@ -734,39 +726,19 @@ function initParallaxDepthSectionAnimation() {
         },
     });
 
-    // let lastScrollY = 0;
-    // let isResizing = false;
-
+    // 리사이즈 시 WheelNavigation만 재생성
     // window.addEventListener('resize', () => {
-    //     lastScrollY = window.scrollY;
-    //     isResizing = true;
-
     //     ScrollTrigger.refresh();
-
-    //     setTimeout(() => {
-    //         if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
-    //             window.scrollTo(0, lastScrollY);
-    //             isResizing = false;
-    //         }
-    //     }, 10);
+    // if (wheelNavInstance) {
+    //     console.log(wheelNavInstance);
+    //     wheelNavInstance.destroy();
+    //     wheelNavInstance = null;
+    // }
     // });
 
+    // cleanup function
     return () => {
         window.removeEventListener('scroll', trackScrollState);
-
-        // window.removeEventListener('resize', () => {
-        //     lastScrollY = window.scrollY;
-        //     isResizing = true;
-
-        //     ScrollTrigger.refresh();
-
-        //     setTimeout(() => {
-        //         if (isResizing && window.innerWidth > 768 && window.innerWidth < 1366) {
-        //             window.scrollTo(0, lastScrollY);
-        //             isResizing = false;
-        //         }
-        //     }, 10);
-        // });
         clearTimeout(scrollTimeout);
     };
 }
@@ -797,10 +769,6 @@ class WheelNavigation {
         this.isTouching = false;
         this.touchThreshold = 50; // 최소 터치 이동 거리
         this.touchTimeThreshold = 300; // 최대 터치 시간 (ms)
-
-        // 헤더 wheel 방향 클래스 관련
-        this.header = document.getElementById('main-header');
-        this.lastWheelDirection = null;
 
         this.init();
     }
@@ -902,25 +870,6 @@ class WheelNavigation {
         this.lastScrollTime = currentTime;
         const direction = touchDistance > 0 ? 1 : -1; // 위로 스와이프시 1, 아래로 스와이프시 -1
 
-        // ===== Header show/hide class toggle (touch) =====
-        if (this.header) {
-            if (direction > 0) {
-                // Swipe up (show header)
-                if (this.lastWheelDirection !== 'up') {
-                    this.header.classList.add('hide');
-                    this.header.classList.remove('show');
-                    this.lastWheelDirection = 'up';
-                }
-            } else if (direction < 0) {
-                // Swipe down (hide header)
-                if (this.lastWheelDirection !== 'down') {
-                    this.header.classList.add('show');
-                    this.header.classList.remove('hide');
-                    this.lastWheelDirection = 'down';
-                }
-            }
-        }
-
         this.handleNavigation(direction, e);
     }
 
@@ -934,25 +883,6 @@ class WheelNavigation {
         if (this.isAnimating) {
             e.preventDefault();
             return;
-        }
-
-        // ===== Header wheel direction class toggle (WheelNavigation 내부) =====
-        if (this.header) {
-            if (e.deltaY > 0) {
-                // Scrolling down
-                if (this.lastWheelDirection !== 'down') {
-                    this.header.classList.add('hide');
-                    this.header.classList.remove('show');
-                    this.lastWheelDirection = 'down';
-                }
-            } else if (e.deltaY < 0) {
-                // Scrolling up
-                if (this.lastWheelDirection !== 'up') {
-                    this.header.classList.add('show');
-                    this.header.classList.remove('hide');
-                    this.lastWheelDirection = 'up';
-                }
-            }
         }
 
         this.lastScrollTime = currentTime;
@@ -976,13 +906,13 @@ class WheelNavigation {
             if (window.gsap && window.ScrollToPlugin) {
                 let targetY = isExitingTop ? st.start - 1 : st.end + 1;
                 const scrollDistance = Math.abs(targetY - scrollY);
-                // const duration = scrollDistance > 2000 ? 0.8 : 0.5;
-                // const ease = scrollDistance > 2000 ? 'none' : 'none';
+                const duration = scrollDistance > 2000 ? 0.8 : 0.5;
+                const ease = scrollDistance > 2000 ? 'power1.inOut' : 'power2.inOut';
 
                 gsap.to(window, {
                     scrollTo: targetY,
-                    duration: 0.1,
-                    // ease,
+                    duration,
+                    ease,
                     onComplete: () => {
                         setTimeout(() => {
                             this.isAnimating = false;
@@ -1116,7 +1046,6 @@ window.addEventListener('load', function () {
     initParallaxDepthSectionAnimation();
     initMobileMenu();
     initUsecaseSectionAnimation();
-    // (전역 wheel 이벤트는 WheelNavigation 내부로 이동)
 });
 
 // Ensure GSAP ScrollToPlugin is registered
