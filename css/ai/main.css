@@ -752,8 +752,8 @@ br {
     align-items: center;
     justify-content: center;
     position: relative;
-    /* top: 50%;
-    transform: translate(0%, -46%); */
+    /* right: 50%;
+    transform: translate(50%, 0%); */
 }
 
 .cube-item {

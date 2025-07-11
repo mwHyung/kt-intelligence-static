@@ -396,13 +396,13 @@ const imagePaths = [
 //     document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
 // }
 
-function enableScroll() {
-    document.removeEventListener('wheel', preventDefault);
-    document.removeEventListener('touchmove', preventDefault);
-    document.removeEventListener('keydown', preventDefaultForScrollKeys);
-    document.removeEventListener('scroll', preventDefault);
-    document.removeEventListener('DOMMouseScroll', preventDefault);
-}
+// function enableScroll() {
+//     document.removeEventListener('wheel', preventDefault);
+//     document.removeEventListener('touchmove', preventDefault);
+//     document.removeEventListener('keydown', preventDefaultForScrollKeys);
+//     document.removeEventListener('scroll', preventDefault);
+//     document.removeEventListener('DOMMouseScroll', preventDefault);
+// }
 
 function preventDefault(e) {
     e.preventDefault();
@@ -438,19 +438,20 @@ function initParallaxDepthSectionAnimation() {
                 },
             });
 
-            tl.fromTo(
-                '.cube-item',
-                { opacity: 0, yPercent: -10 },
-                {
-                    opacity: 1,
-                    yPercent: 0,
-                    duration: 0.4,
-                    stagger: 0.2,
-                    onStart: () => {
-                        gsap.set('.cube-wrapper', { right: `50%`, xPercent: 50 });
+            tl.to('.cube-wrapper', { right: `50%`, xPercent: 50, duration: 0.3 })
+                .fromTo(
+                    '.cube-item',
+                    { opacity: 0, yPercent: -10 },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                        stagger: 0.2,
+                        onStart: () => {
+                            gsap.set('.cube-wrapper', { right: `50%`, xPercent: 50 });
+                        },
                     },
-                },
-            )
+                )
                 .fromTo('.cube-wrapper', { right: `50%`, xPercent: 50 }, { right: '0%', xPercent: 0, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
@@ -745,21 +746,22 @@ function initParallaxDepthSectionAnimation() {
                     isResizing = false;
                 }
             }, 10); // 딜레이 시간 증가
+
+            const pinSpacer = document.querySelector('.pin-spacer.pin-spacer-depth-pin');
+            if (pinSpacer) {
+                const top = pinSpacer.getBoundingClientRect().top;
+                const bottom = pinSpacer.getBoundingClientRect().bottom;
+                if (top > 0 || bottom < 1000) {
+                    document.documentElement.style.overflow = 'auto';
+                    document.querySelector('.component-inner').style.backgroundColor = 'transparent';
+                    if (wheelNavInstance) {
+                        wheelNavInstance.destroy();
+                        wheelNavInstance = null;
+                    }
+                }
+            }
         } else {
             isResizing = false;
-        }
-
-        const pinSpacer = document.querySelector('.pin-spacer.pin-spacer-depth-pin');
-        const top = pinSpacer.getBoundingClientRect().top;
-        const bottom = pinSpacer.getBoundingClientRect().bottom;
-        if (top > 0 || bottom < 1000) {
-            console.log('top', top, 'bottom', bottom);
-            document.documentElement.style.overflow = 'auto';
-            document.querySelector('.component-inner').style.backgroundColor = 'transparent';
-            if (wheelNavInstance) {
-                wheelNavInstance.destroy();
-                wheelNavInstance = null;
-            }
         }
     };
 
