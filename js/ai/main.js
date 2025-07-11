@@ -423,18 +423,6 @@ function initParallaxDepthSectionAnimation() {
     if (!cubeItems.length) return;
 
     let wheelNavInstance; // 휠 네비게이션 인스턴스
-    // let scrollTimeout;
-
-    // 스크롤 상태 추적
-    // const trackScrollState = () => {
-    //     isUserScrolling = true;
-    //     clearTimeout(scrollTimeout);
-    //     scrollTimeout = setTimeout(() => {
-    //         isUserScrolling = false;
-    //     }, 150);
-    // };
-
-    // window.addEventListener('scroll', trackScrollState, { passive: true });
 
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
@@ -756,24 +744,29 @@ function initParallaxDepthSectionAnimation() {
                     window.scrollTo(0, lastScrollY);
                     isResizing = false;
                 }
-            }, 100); // 딜레이 시간 증가
+            }, 10); // 딜레이 시간 증가
         } else {
             isResizing = false;
         }
+
+        const pinSpacer = document.querySelector('.pin-spacer.pin-spacer-depth-pin');
+        const top = pinSpacer.getBoundingClientRect().top;
+        const bottom = pinSpacer.getBoundingClientRect().bottom;
+        if (top > 0) {
+            console.log('top');
+            document.documentElement.style.overflow = 'auto';
+            document.querySelector('.component-inner').style.backgroundColor = 'transparent';
+            if (wheelNavInstance) {
+                wheelNavInstance.destroy();
+                wheelNavInstance = null;
+            }
+        }
     };
 
-    // 리사이즈 이벤트 등록
     window.addEventListener('resize', resizeHandler);
 
-    // 클린업 함수 반환
     return () => {
-        // if (typeof trackScrollState === 'function') {
-        //     window.removeEventListener('scroll', trackScrollState);
-        // }
         window.removeEventListener('resize', resizeHandler);
-        // if (typeof scrollTimeout !== 'undefined') {
-        //     clearTimeout(scrollTimeout);
-        // }
     };
 }
 
@@ -982,13 +975,10 @@ class WheelNavigation {
             if (window.gsap && window.ScrollToPlugin) {
                 let targetY = isExitingTop ? st.start - 1 : st.end + 1;
                 const scrollDistance = Math.abs(targetY - scrollY);
-                // const duration = scrollDistance > 2000 ? 0.8 : 0.5;
-                // const ease = scrollDistance > 2000 ? 'none' : 'none';
 
                 gsap.to(window, {
                     scrollTo: targetY,
                     duration: 0.1,
-                    // ease,
                     onComplete: () => {
                         setTimeout(() => {
                             this.isAnimating = false;
