@@ -752,7 +752,7 @@ function initParallaxDepthSectionAnimation() {
         const pinSpacer = document.querySelector('.pin-spacer.pin-spacer-depth-pin');
         const top = pinSpacer.getBoundingClientRect().top;
         const bottom = pinSpacer.getBoundingClientRect().bottom;
-        if (top > 0 || bottom < 2500) {
+        if (top > 0 || bottom < 1000) {
             console.log('top', top, 'bottom', bottom);
             document.documentElement.style.overflow = 'auto';
             document.querySelector('.component-inner').style.backgroundColor = 'transparent';
