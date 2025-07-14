@@ -400,8 +400,8 @@ if (stickyHeaderList && componentSections.length > 0) {
             const parentLi = item.closest('li');
             if (parentLi) {
                 parentLi.classList.add('active');
-                console.log('Active class added to sub menu:', parentLi);
-                console.log('Current classes:', parentLi.className);
+                // console.log('Active class added to sub menu:', parentLi);
+                // console.log('Current classes:', parentLi.className);
             }
         }
     });
@@ -413,8 +413,8 @@ if (stickyHeaderList && componentSections.length > 0) {
             const parentMenuItem = item.closest('.mobile-menu-item');
             if (parentMenuItem) {
                 parentMenuItem.classList.add('active');
-                console.log('Active class added to menu item:', parentMenuItem);
-                console.log('Current classes:', parentMenuItem.className);
+                // console.log('Active class added to menu item:', parentMenuItem);
+                // console.log('Current classes:', parentMenuItem.className);
             }
         }
     });
