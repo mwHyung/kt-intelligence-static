@@ -1943,6 +1943,11 @@ br.mo-br {
         text-shadow: 1px 4px 24px rgba(0, 0, 0, 0.6);
     }
 
+    .banner-section .banner-inner h2 img.banner-text {
+        width: 27.2rem;
+        height: auto;
+    }
+
     .sub-banner img {
         display: none;
     }
