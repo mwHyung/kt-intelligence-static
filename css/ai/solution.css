@@ -58,7 +58,12 @@ br.mo-br {
     width: 6.65rem;
     height: 6.56rem;
     display: inline-block;
-    /* box-shadow 보장 */
+}
+.banner-section .banner-inner h2 img.banner-text {
+    display: block;
+    width: 23.063rem;
+    height: 4.5rem;
+    object-fit: contain;
 }
 
 .banner-section .banner-inner.logo-bk img {
