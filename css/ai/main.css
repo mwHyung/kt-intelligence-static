@@ -2205,8 +2205,8 @@ br {
 
     .mobile-pds-menu .swiper-slide .btn.main img {
         display: block;
-        width: 0.5rem;
-        height: 0.7rem;
+        width: 0.6rem;
+        height: auto;
         margin-left: 0.6rem;
         margin-bottom: 2px;
     }
