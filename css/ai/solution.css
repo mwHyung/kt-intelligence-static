@@ -58,7 +58,17 @@ br.mo-br {
     width: 6.65rem;
     height: 6.56rem;
     display: inline-block;
-    /* box-shadow 보장 */
+}
+.banner-section .banner-inner h2 img.banner-text {
+    display: block;
+    width: auto;
+    height: 4.8rem;
+    object-fit: contain;
+}
+
+.banner-section .banner-inner h2 img.agent {
+    width: auto;
+    height: 5.8rem;
 }
 
 .banner-section .banner-inner.logo-bk img {
@@ -1936,6 +1946,15 @@ br.mo-br {
 
     .banner-section p {
         text-shadow: 1px 4px 24px rgba(0, 0, 0, 0.6);
+    }
+
+    .banner-section .banner-inner h2 img.banner-text {
+        width: auto;
+        height: 5.2rem;
+    }
+    .banner-section .banner-inner h2 img.agent {
+        height: 6.8rem;
+        margin-bottom: -1rem;
     }
 
     .sub-banner img {
