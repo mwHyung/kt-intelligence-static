@@ -83,7 +83,7 @@ const header = document.getElementById('main-header');
         let headerState;
         if (currentY === 0) {
             headerState = 'top';
-        } else if (currentY > lastScrollY && currentY > 80) {
+        } else if (currentY >= lastScrollY && currentY > 80) {
             headerState = 'hide';
         } else {
             headerState = 'show';
