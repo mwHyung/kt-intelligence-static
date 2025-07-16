@@ -752,8 +752,7 @@ br {
     align-items: center;
     justify-content: center;
     position: relative;
-    /* right: 50%;
-    transform: translate(50%, 0%); */
+    margin-left: 8rem;
 }
 
 .cube-item {
@@ -3097,6 +3096,7 @@ br {
         max-width: 34.5rem;
         height: 38rem;
         margin-top: 0;
+        margin-left: 0;
     }
     .cube-item-1,
     .cube-item-2,
@@ -3314,6 +3314,7 @@ br {
         max-width: 29.5rem;
         height: 32.5rem;
         margin-top: 0;
+        margin-left: 0;
     }
     .cube-item-1,
     .cube-item-2,
@@ -3486,6 +3487,7 @@ br {
         max-width: 27.5rem;
         height: 30.35rem;
         margin-top: 0;
+        margin-left: 0;
     }
     .cube-item-1,
     .cube-item-2,
