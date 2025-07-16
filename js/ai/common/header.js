@@ -53,7 +53,7 @@ const header = document.getElementById('main-header');
         let headerState;
         if (currentY === 0) {
             headerState = 'top';
-        } else if (currentY > lastScrollY && currentY > 80) {
+        } else if (currentY >= lastScrollY && currentY > 80) {
             headerState = 'hide';
         } else {
             headerState = 'show';
@@ -122,9 +122,7 @@ function updateHeaderAndStickyNav() {
     if (kqualitySection) {
         const kqualityRect = kqualitySection.getBoundingClientRect();
         const kqualityVisible = kqualityRect.top <= 100 && kqualityRect.bottom > 0;
-        kqualityVisible
-            ? header.classList.add('gray-header')
-            : header.classList.remove('gray-header');
+        kqualityVisible ? header.classList.add('gray-header') : header.classList.remove('gray-header');
     }
 
     // 스티키 네비게이션 업데이트
@@ -137,17 +135,13 @@ function updateHeaderAndStickyNav() {
             .filter(({ top, section }) => top < window.innerHeight && top > -section.offsetHeight);
 
         if (visibleSections.length > 0) {
-            const activeSection = visibleSections.reduce((prev, curr) =>
-                !prev || curr.top < prev.top ? curr : prev,
-            );
+            const activeSection = visibleSections.reduce((prev, curr) => (!prev || curr.top < prev.top ? curr : prev));
 
             const sectionId = activeSection.section.id || activeSection.section.dataset.section;
             const stickyItems = stickyHeaderList.querySelectorAll('li');
 
             stickyItems.forEach((el) => el.classList.remove('active'));
-            const activeStickyItem = stickyHeaderList.querySelector(
-                `[data-section="${sectionId}"]`,
-            );
+            const activeStickyItem = stickyHeaderList.querySelector(`[data-section="${sectionId}"]`);
             if (activeStickyItem) activeStickyItem.classList.add('active');
         }
     }
@@ -164,20 +158,15 @@ if (stickyHeaderList && componentSections.length > 0) {
     stickyHeaderList.querySelectorAll('li').forEach((item) => {
         item.addEventListener('click', () => {
             const sectionId = item.dataset.section;
-            const targetSection =
-                document.getElementById(sectionId) ||
-                document.querySelector(`[data-section="${sectionId}"]`);
+            const targetSection = document.getElementById(sectionId) || document.querySelector(`[data-section="${sectionId}"]`);
 
             if (targetSection) {
                 const headerOffset = (header && header.offsetHeight) || 0;
-                const sectionTop =
-                    targetSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                const sectionTop = targetSection.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
                 window.scrollTo({ top: sectionTop, behavior: 'smooth' });
 
-                stickyHeaderList
-                    .querySelectorAll('li')
-                    .forEach((el) => el.classList.remove('active'));
+                stickyHeaderList.querySelectorAll('li').forEach((el) => el.classList.remove('active'));
                 item.classList.add('active');
             }
         });
@@ -375,9 +364,7 @@ if (stickyHeaderList && componentSections.length > 0) {
 
     window.addEventListener('scroll', function () {
         if (window.innerWidth <= 768 && manualActive) {
-            const stickyHeaderList = document.querySelector(
-                '.sticky-header-list.main-sticky-header',
-            );
+            const stickyHeaderList = document.querySelector('.sticky-header-list.main-sticky-header');
             if (stickyHeaderList) {
                 stickyHeaderList.querySelectorAll('li.active').forEach((li) => {
                     li.classList.remove('active');
