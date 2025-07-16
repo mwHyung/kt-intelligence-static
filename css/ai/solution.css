@@ -61,9 +61,14 @@ br.mo-br {
 }
 .banner-section .banner-inner h2 img.banner-text {
     display: block;
-    width: 23.063rem;
-    height: 4.5rem;
+    width: auto;
+    height: 4.8rem;
     object-fit: contain;
+}
+
+.banner-section .banner-inner h2 img.agent {
+    width: auto;
+    height: 5.8rem;
 }
 
 .banner-section .banner-inner.logo-bk img {
@@ -1944,8 +1949,12 @@ br.mo-br {
     }
 
     .banner-section .banner-inner h2 img.banner-text {
-        width: 27.2rem;
-        height: auto;
+        width: auto;
+        height: 5.2rem;
+    }
+    .banner-section .banner-inner h2 img.agent {
+        height: 6.8rem;
+        margin-bottom: -1rem;
     }
 
     .sub-banner img {
