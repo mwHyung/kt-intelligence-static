@@ -39,10 +39,10 @@
         <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
         <script th:inline="javascript">
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
 
-            gtag('config', [[${ga4Id}]]);
+            gtag('config', [[${ ga4Id }]]);
         </script>
         <script src="/js/ai/ga.js"></script>
     </head>
@@ -62,7 +62,6 @@
                     <img src="/resource/images/ai/solution/ico-kon.svg" alt="logo" width="53" height="52" />
                     <img src="/resource/images/ai/solution/ico-kon_bk.svg" alt="logo" width="53" height="52" class="k-logo-bk" />
                     RAI
-                    <!-- <span class="open-planned top-banner pc-only">공개 예정</span> -->
                 </h2>
                 <p>
                     KT는 안전한 AI 세상을 만들기 위해, <br class="mo-br" />
@@ -84,8 +83,7 @@
                         </h2>
                         <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             AI 기술의 책임을 최우선으로 여기며,<br /><br class="mo-br" />
-                            내부 전문가와 외부 자문 위원회가 함께 참여하는 체계적인 거버넌스를 운영하고 있습니다.
-                            <br /><br class="mo-br" />
+                            내부 전문가와 외부 자문 위원회가 함께 참여하는 체계적인 거버넌스를 운영하고 있습니다. <br /><br class="mo-br" />
                             또한 글로벌 기업 및 연구기관과의 협력을 통해, 안전하고 신뢰할 수 있는 AI 기술 개발에 지속적으로 힘쓰고 있습니다.
                         </p>
                     </div>
@@ -110,7 +108,7 @@
                         </p>
                     </div>
                     <div class="card-wrapper">
-                        <ul class="card-list multi">
+                        <ul class="card-list">
                             <li data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                 <div class="card-item">
                                     <h3><strong>A</strong>ccountability</h3>
