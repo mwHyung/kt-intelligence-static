@@ -650,11 +650,12 @@ function initParallaxDepthSectionAnimation() {
                 );
         },
         '(max-width: 768px)': function () {
-            // enableScroll();
-            // if (wheelNavInstance) {
-            //     wheelNavInstance.destroy();
-            //     wheelNavInstance = null;
-            // }
+            document.documentElement.style.overflow = 'auto';
+            document.querySelector('.component-inner').style.backgroundColor = 'transparent';
+            if (wheelNavInstance) {
+                wheelNavInstance.destroy();
+                wheelNavInstance = null;
+            }
 
             // Swiper 인스턴스 생성 (모바일 메뉴용)
             var pdsSwiper = null;
@@ -725,6 +726,7 @@ function initParallaxDepthSectionAnimation() {
     let lastScrollY = 0;
     let isResizing = false;
     let resizeHandler;
+    ScrollTrigger.refresh();
 
     // 모바일 환경에서는 리사이즈 이벤트 처리하지 않음
     if (window.innerWidth < 768) {
