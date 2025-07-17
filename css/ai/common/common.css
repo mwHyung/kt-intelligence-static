@@ -247,6 +247,9 @@ body.scroll-lock {
 .nav-link:hover {
     color: var(--gray-800-color);
 }
+.dark-header .nav-link:hover {
+    color: var(--gray-500-color);
+}
 
 .nav-link:hover img {
     filter: invert(0.4);
