@@ -681,12 +681,13 @@ function initParallaxDepthSectionAnimation() {
 
             // Swiper 생성
             pdsSwiper = new Swiper('.mobile-pds-menu .swiper-container', {
-                slidesPerView: 'auto',
+                slidesPerView: 1.2,
                 spaceBetween: 16,
                 speed: 500,
                 effect: 'slide',
                 on: {
                     slideChange: function () {
+                        console.log(this.activeIndex);
                         updateCubeActiveImage(this.activeIndex);
                     },
                 },
