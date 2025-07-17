@@ -779,7 +779,7 @@ br {
 .cube-item-2 {
     width: 46.563rem;
     height: auto;
-    bottom: 11.9%;
+    bottom: 10.9%;
     /* left: 50%;
     transform: translate(-50%, 0); */
 }
@@ -787,7 +787,7 @@ br {
 .cube-item-3 {
     width: 46.563rem;
     height: auto;
-    bottom: 24.2%;
+    bottom: 22.7%;
     /* left: 50%;
     transform: translate(-50%, 0); */
 }
@@ -795,22 +795,22 @@ br {
 .cube-item-4 {
     width: 22.938rem;
     height: auto;
-    bottom: 49.8%;
-    left: 13%;
+    bottom: 48.4%;
+    left: 12.8%;
 }
 
 .cube-item-5 {
     width: 22.938rem;
     height: auto;
-    bottom: 43.3%;
-    left: 25.6%;
+    bottom: 41.9%;
+    left: 25.5%;
 }
 
 .cube-item-6 {
     width: 22.938rem;
     height: auto;
-    bottom: 36.9%;
-    left: 37.9%;
+    bottom: 35.4%;
+    left: 38%;
 }
 
 .cube-last-text {
@@ -2243,22 +2243,22 @@ br {
     .cube-item.cube-item-4 {
         width: 11.8rem;
         height: 9.8rem;
-        bottom: 50%;
-        left: 26.3%;
+        bottom: 48.7%;
+        left: 26.2%;
     }
 
     .cube-item.cube-item-5 {
         width: 11.8rem;
         height: 9.8rem;
-        bottom: 43.3%;
-        left: 34.7%;
+        bottom: 42.3%;
+        left: 34.4%;
     }
 
     .cube-item.cube-item-6 {
         width: 11.8rem;
         height: 9.8rem;
-        bottom: 36.9%;
-        left: 42.6%;
+        bottom: 36%;
+        left: 42.4%;
     }
 
     .cube-last-text {
