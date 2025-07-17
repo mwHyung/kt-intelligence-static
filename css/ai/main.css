@@ -457,7 +457,7 @@ br {
 /* 각 이미지의 위치 (Tailwind의 top, left, right, bottom 변환) */
 .image-obj-0 {
     width: 20.125rem;
-    height: 26.813rem;
+    height: auto;
     top: 118%;
     left: 7%;
     z-index: 10;
@@ -465,35 +465,35 @@ br {
 
 .image-obj-1 {
     width: 20.063rem;
-    height: 26.813rem;
+    height: auto;
     top: -12%;
     left: 0%;
 }
 
 .image-obj-2 {
     width: 27.5rem;
-    height: 20.625rem;
+    height: auto;
     top: 93%;
     right: 8%;
 }
 
 .image-obj-3 {
     width: 12rem;
-    height: 9rem;
+    height: auto;
     top: 63%;
     left: 6.7%;
 }
 
 .image-obj-4 {
     width: 20.125rem;
-    height: 27.938rem;
+    height: auto;
     top: 62%;
     left: 18%;
 }
 
 .image-obj-5 {
     width: 20.125rem;
-    height: 26.813rem;
+    height: auto;
     top: 28%;
     right: 0%;
 }
