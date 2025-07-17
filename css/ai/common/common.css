@@ -1423,6 +1423,7 @@ body.scroll-lock {
         gap: 0;
         text-align: center;
         font-size: 4rem;
+        margin-bottom: 0.5rem;
     }
 
     .kt-model-content .red-point-txt img {
