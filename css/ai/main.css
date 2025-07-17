@@ -776,7 +776,7 @@ br {
 .cube-item-2 {
     width: 46.563rem;
     height: auto;
-    bottom: 10.9%;
+    bottom: 11.2%;
     /* left: 50%;
     transform: translate(-50%, 0); */
 }
@@ -784,7 +784,7 @@ br {
 .cube-item-3 {
     width: 46.563rem;
     height: auto;
-    bottom: 22.7%;
+    bottom: 23%;
     /* left: 50%;
     transform: translate(-50%, 0); */
 }
@@ -792,21 +792,21 @@ br {
 .cube-item-4 {
     width: 22.938rem;
     height: auto;
-    bottom: 48.4%;
+    bottom: 48.6%;
     left: 12.8%;
 }
 
 .cube-item-5 {
     width: 22.938rem;
     height: auto;
-    bottom: 41.9%;
+    bottom: 42.1%;
     left: 25.5%;
 }
 
 .cube-item-6 {
     width: 22.938rem;
     height: auto;
-    bottom: 35.4%;
+    bottom: 35.7%;
     left: 38%;
 }
 
