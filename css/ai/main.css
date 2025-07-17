@@ -2228,31 +2228,33 @@ br {
     .cube-item.cube-item-2 {
         width: 24rem;
         height: 16.4rem;
+        bottom: 11.6%;
     }
 
     .cube-item.cube-item-3 {
         width: 24rem;
         height: 20.2rem;
+        bottom: 23.5%;
     }
 
     .cube-item.cube-item-4 {
         width: 11.8rem;
         height: 9.8rem;
-        bottom: 48.7%;
+        bottom: 49.6%;
         left: 26.2%;
     }
 
     .cube-item.cube-item-5 {
         width: 11.8rem;
         height: 9.8rem;
-        bottom: 42.3%;
+        bottom: 42.9%;
         left: 34.4%;
     }
 
     .cube-item.cube-item-6 {
         width: 11.8rem;
         height: 9.8rem;
-        bottom: 36%;
+        bottom: 36.4%;
         left: 42.4%;
     }
 
