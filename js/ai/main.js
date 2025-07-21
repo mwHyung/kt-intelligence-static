@@ -387,33 +387,6 @@ const imagePaths = [
     },
 ];
 
-// function disableScroll() {
-//     document.addEventListener('wheel', preventDefault, { passive: false });
-//     document.addEventListener('touchmove', preventDefault, { passive: false });
-//     document.addEventListener('keydown', preventDefaultForScrollKeys, { passive: false });
-//     // 추가 이벤트들
-//     document.addEventListener('scroll', preventDefault, { passive: false });
-//     document.addEventListener('DOMMouseScroll', preventDefault, { passive: false }); // Firefox
-// }
-
-// function enableScroll() {
-//     document.removeEventListener('wheel', preventDefault);
-//     document.removeEventListener('touchmove', preventDefault);
-//     document.removeEventListener('keydown', preventDefaultForScrollKeys);
-//     document.removeEventListener('scroll', preventDefault);
-//     document.removeEventListener('DOMMouseScroll', preventDefault);
-// }
-
-function preventDefault(e) {
-    e.preventDefault();
-}
-
-function preventDefaultForScrollKeys(e) {
-    const keys = [32, 33, 34, 35, 36, 37, 38, 39, 40]; // 스크롤 관련 키들
-    if (keys.includes(e.keyCode)) {
-        e.preventDefault();
-    }
-}
 
 function initParallaxDepthSectionAnimation() {
     const section = document.querySelector('.parallax-depth-section .component-content');
