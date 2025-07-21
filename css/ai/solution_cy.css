@@ -3876,7 +3876,7 @@
 }
 
 /* Mobile Styles */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     /* Common Layout */
     .sticky-header.tab-sticky-header .sticky-header-inner {
         justify-content: center;
@@ -5680,7 +5680,7 @@
 }
 
 /* 태블릿 */
-@media (min-width: 768px) and (max-width: 1366px) {
+@media (min-width: 769px) and (max-width: 1366px) {
     .cloud-arch-layer {
         flex: 1;
     }
@@ -5823,7 +5823,7 @@
         height: 100%;
     }
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     /* 서브페이지 */
     /* Model 페이지 */
     .gpt-benefit-box .box-list {

@@ -1,5 +1,6 @@
 {
     "liveServer.settings.port": 5506,
     "editor.formatOnSave": true,
-    "liveServer.settings.host": "10.192.1.123"
+    // "liveServer.settings.host": "10.192.1.123",
+    "livePreview.defaultPreviewPath": "/ai/main/index.html"
 }
