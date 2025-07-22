@@ -400,7 +400,7 @@ function initParallaxDepthSectionAnimation() {
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
             gsap.set('.cube-last-text', { zIndex: -1 });
-            gsap.set('.cube-wrapper', { transform: 'scale(0.7)' });
+            gsap.set('.cube-wrapper', { scale: 0.7 });
             let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
@@ -590,7 +590,7 @@ function initParallaxDepthSectionAnimation() {
                 },
             });
 
-            tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
+            tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0 })
                 .fromTo(
                     '.cube-wrapper',
                     { left: '42%', xPercent: 0, yPercent: -50 },
