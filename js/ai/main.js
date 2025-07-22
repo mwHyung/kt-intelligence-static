@@ -400,6 +400,7 @@ function initParallaxDepthSectionAnimation() {
     ScrollTrigger.matchMedia({
         '(min-width: 769px)': function () {
             gsap.set('.cube-last-text', { zIndex: -1 });
+            gsap.set('.cube-wrapper', { transform: 'scale(0.7)' });
             let tlComplete = false;
             const tl = gsap.timeline({
                 ease: 'cubic-bezier(0.33, 1, 0.68, 1)',
@@ -411,7 +412,7 @@ function initParallaxDepthSectionAnimation() {
                 },
             });
 
-            tl.to('.cube-wrapper', { right: `50%`, xPercent: 50, duration: 0.3 })
+            tl.to('.cube-wrapper', {left: '50%', xPercent: -50, yPercent: -50, duration: 0.3 })
                 .fromTo(
                     '.cube-item',
                     { opacity: 0, yPercent: -10 },
@@ -421,11 +422,11 @@ function initParallaxDepthSectionAnimation() {
                         duration: 0.4,
                         stagger: 0.2,
                         onStart: () => {
-                            gsap.set('.cube-wrapper', { right: `50%`, xPercent: 50 });
+                            gsap.set('.cube-wrapper', { left: '50%', xPercent: -50, yPercent: -50 });
                         },
                     },
                 )
-                .fromTo('.cube-wrapper', { right: `50%`, xPercent: 50 }, { right: '0%', xPercent: 0, duration: 0.3 })
+                .fromTo('.cube-wrapper', { left: '50%', xPercent: -50, yPercent: -50 }, { left: '42%', xPercent: 0, yPercent: -50, duration: 0.3 })
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -592,10 +593,11 @@ function initParallaxDepthSectionAnimation() {
             tl2.fromTo('.list-wrap ul', { opacity: 1 }, { opacity: 0, duration: 0.5 })
                 .fromTo(
                     '.cube-wrapper',
-                    { right: '0%', xPercent: 0 },
+                    { left: '42%', xPercent: 0, yPercent: -50 },
                     {
-                        right: `50%`,
-                        xPercent: 50,
+                        left: `50%`,
+                        xPercent: -50,
+                        yPercent: -50,
                         duration: 0.5,
                         ease: 'power2.inOut',
                     },

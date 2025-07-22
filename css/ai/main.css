@@ -605,7 +605,7 @@ br {
     height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     overflow: hidden;
     gap: 6.5rem;
@@ -614,7 +614,6 @@ br {
 .list-wrap {
     width: 26rem;
     height: 26.7rem;
-    margin-bottom: 10rem;
 }
 
 .list-wrap ul {
@@ -735,13 +734,14 @@ br {
     max-width: 46.625rem;
     width: 100%;
     height: 53rem;
-    margin-top: 5rem;
+    /* margin-top: 5rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
-    margin-left: 8rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
 }
 
 .cube-item {
@@ -1177,7 +1177,7 @@ br {
 .eco-partner-desc p {
     color: var(--gray-900-color);
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.48;
     margin-bottom: 0.5rem;
 }
@@ -1784,6 +1784,11 @@ br {
     animation-play-state: paused;
 }
 
+@media (min-width: 1366px) and (max-width: 1536px) {
+    .list-wrap {
+        margin-left: 3.4rem;
+    }
+}
 /* 태블릿 및 데스크탑 */
 @media (min-width: 1025px) and (max-width: 1366px) {
     .sub-banner-section .sub-banner-inner > ul > li > h2 span {
@@ -1868,14 +1873,13 @@ br {
     .component-content-inner {
         padding: 0 7.5rem;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-start;
         gap: 0;
     }
     .list-wrap {
         width: 100%;
         height: 22rem;
         position: relative;
-        top: -7%;
         transform: none !important;
         margin-bottom: 0;
     }
@@ -1903,9 +1907,9 @@ br {
         margin-bottom: 2rem;
     }
     .cube-wrapper {
-        flex: 1 0 34.5rem;
-        max-width: 34.5rem;
-        height: 38rem;
+        flex: 1 0 41.2rem;
+        max-width: 41.2rem;
+        height: 45rem;
         margin-top: 0;
         margin-left: 0;
     }
@@ -2097,74 +2101,6 @@ br {
         font-size: var(--font-size-base);
     }
 }
-/* 구성요소 전용 미디어쿼리 */
-@media (min-width: 1025px) and (max-width: 1220px) {
-    .list-wrap {
-        width: 22rem;
-        height: 22rem;
-        position: relative;
-        top: -4%;
-        transform: none !important;
-        margin-bottom: 0;
-    }
-    .list-wrap ul li > h3 > img {
-        width: auto;
-        height: 4.2rem;
-        margin-top: -1rem;
-    }
-    .list-wrap ul li > h3 > span {
-        font-size: 4.2rem;
-    }
-    .list-wrap ul li > h3 .flex-bottom span {
-        font-size: 4.2rem;
-    }
-    .list-wrap ul li > p {
-        font-size: var(--font-size-lg);
-    }
-    .cube-wrapper {
-        max-width: 29.5rem;
-        height: 32.5rem;
-        margin-top: 0;
-        margin-left: 0;
-    }
-    .cube-item-1,
-    .cube-item-2,
-    .cube-item-3 {
-        width: 100%;
-    }
-    .cube-item-4,
-    .cube-item-5,
-    .cube-item-6 {
-        width: 49.2%;
-        height: auto;
-    }
-    .cube-item-4 {
-        bottom: 49.3%;
-        left: 12.6%;
-    }
-    .cube-item-5 {
-        bottom: 42.6%;
-        left: 25.3%;
-    }
-    .cube-item-6 {
-        bottom: 35.9%;
-        left: 38%;
-    }
-    .cube-last-text ul {
-        gap: 1.5rem;
-    }
-    .cube-last-text ul li {
-        font-size: 2rem;
-    }
-    .cube-last-text ul li img {
-        width: 30rem;
-        height: auto;
-        margin-top: -1.2rem;
-    }
-    .cube-last-text ul li span {
-        font-size: 4.363rem;
-    }
-}
 
 /* 태블릿 */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -2294,9 +2230,9 @@ br {
         margin-bottom: 2rem;
     }
     .cube-wrapper {
-        flex: 1 0 27.5rem;
-        max-width: 27.5rem;
-        height: 30.35rem;
+        flex: 1 0 34.5rem;
+        max-width: 34.5rem;
+        height: 38.25rem;
         margin-top: 0;
         margin-left: 0;
     }
@@ -2508,9 +2444,9 @@ br {
 /* 구성요소 전용 태블릿 세로 사이즈 미디어쿼리 */
 @media (min-width: 769px) and (max-width: 834px) {
     .cube-wrapper {
-        flex: 1 0 24.5rem;
-        max-width: 24.5rem;
-        height: 27.35rem;
+        flex: 1 0 32.4rem;
+        max-width: 32.4rem;
+        height: 35.35rem;
     }
     .list-wrap ul li > h3 > img {
         height: 3.4rem;

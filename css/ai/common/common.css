@@ -1811,7 +1811,21 @@ body.scroll-lock {
     height: 2.4rem;
 }
 
+@media (min-width: 1366px) and (max-width: 1536px) {
+    .sticky-header-inner {
+        padding: 1.25rem 0;
+    }
+    .sticky-header-list {
+        gap: 2rem;
+    }
+    .sticky-header-list li {
+        font-size: 1.4rem;
+    }
+}
 @media (min-width: 768px) and (max-width: 1366px) {
+    .sticky-header-inner {
+        padding: 1rem 0;
+    }
     .sticky-header-list {
         gap: 2rem;
     }
