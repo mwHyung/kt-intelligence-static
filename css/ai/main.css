@@ -3579,6 +3579,7 @@ br {
 
     .news-list {
         margin: 0;
+        gap: 3.2rem;
     }
 
     .news-list li:first-child .news-content {
@@ -3602,6 +3603,9 @@ br {
 
     .hasNew .news-content {
         padding-top: 6.6rem !important;
+    }
+    .hasNew + .hasNew .news-content {
+        padding-top: 3.4rem !important;
     }
 
     .hasNew .news-title:after {
