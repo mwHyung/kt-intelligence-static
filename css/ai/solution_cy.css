@@ -3875,6 +3875,184 @@
     color: #000;
 }
 
+/* 태블릿 */
+@media (min-width: 769px) and (max-width: 1366px) {
+    .cloud-arch-layer {
+        flex: 1;
+    }
+
+    .studio-lineUp .table-card-list.text > li .table-card-item {
+        max-height: none;
+    }
+
+    .orchestrator-diagram {
+        width: fit-content;
+    }
+
+    .sub-title-sm {
+        font-size: var(--font-size-xl);
+    }
+
+    .sub-title-wrap .sub-title {
+        font-size: var(--font-size-7xl);
+    }
+    .sub-title-wrap p {
+        font-size: var(--font-size-xl);
+    }
+
+    .techPage .tabs {
+        margin-bottom: 1rem;
+    }
+    .techPage .tabs__tab {
+        font-size: var(--font-size-xl);
+    }
+    .tabs__panel {
+        padding-top: 1rem;
+    }
+
+    .agent-graph-wrapper {
+        width: fit-content;
+    }
+    .agent-pattern-diagram {
+        width: fit-content;
+    }
+
+    .open-planned {
+        display: inline-flex !important;
+    }
+    .open-planned.top-banner {
+        margin: 0 !important;
+    }
+
+    /* Model 페이지 */
+    .example-side-item .example-side-txts dt {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .example-side-item .example-side-txts dt .open-planned {
+        margin-left: 0 !important;
+    }
+    .example-side-item .example-side-txts dl {
+        padding: 1.5rem 1.6rem;
+    }
+    .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
+        padding: 1.5rem 1.6rem;
+    }
+    .model-believe-box .box-item {
+        padding: 1.5rem 1.6rem;
+    }
+
+    .diamond-wrapper {
+        overflow: hidden;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .diamond-wrapper .box-list {
+        width: 86.5rem;
+    }
+
+    .useCasePage .card-list-horizontal .card {
+        flex: 0 0 20.5rem;
+    }
+
+    /* Resources 리스트페이지 */
+    .tech-card .card-img {
+        padding-bottom: 14.3rem;
+        width: 22.85rem;
+    }
+    /* Resources 상세페이지 */
+    .sub-inner.detail-inner {
+        padding: 0 2rem;
+    }
+
+    /* 서브페이지 유즈케이스 */
+    .card-list-horizontal .card {
+        flex: none;
+        max-width: 20.12rem;
+    }
+
+    /* 서브페이지 도식 */
+    .pc-only.graph {
+        display: none !important;
+    }
+    .mobile-show.graph {
+        display: block !important;
+        width: 100%;
+    }
+    .mobile-show.graph.mt-2 {
+        margin-top: 2rem;
+    }
+    .mobile-show.graph.mt-3 {
+        margin-top: 3.75rem;
+    }
+
+    /* Agent 페이지 */
+    .list-item {
+        flex-direction: column;
+    }
+    .list-item h3 {
+        margin-bottom: 1.2rem;
+    }
+    .tab-section .list-wrapper > ul > li h3 {
+        margin-bottom: 1.2rem;
+    }
+    .shape-wrapper {
+        padding: 0;
+    }
+    .divided-table-card-wrapper .table-card-item h3 {
+        padding: 1.5rem 1.6rem 1.25rem;
+    }
+    .divided-table-card-wrapper.agent-frameWork .table-card-item p {
+        padding: 0 1.6rem 1.5rem;
+    }
+    .pattern-top10-grid .pattern-card {
+        padding: 1.5rem 1.6rem;
+    }
+    .pattern-top10-grid .pattern-card p {
+        margin-top: 1.5rem;
+    }
+
+    /* Cloud 페이지 */
+    .cloud-graph-top img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* 서브페이지 */
+    /* Model 페이지 */
+    .gpt-benefit-box .box-list {
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    .gpt-benefit-box .box-list li {
+        width: 100%;
+    }
+    .box-item h3 br {
+        display: none;
+    }
+
+    /* Agent 페이지 */
+    .divided-table-card-wrapper.agent-frameWork .table-card-item p br {
+        display: none;
+    }
+
+    /* Resources 리스트페이지 */
+    .tech-card .card-img {
+        padding-bottom: 12.7rem;
+        width: 20.35rem;
+    }
+    .tech-card .card-txts {
+        padding: 2.813rem 0;
+    }
+
+    /* Resources 상세페이지 */
+    .tech-detail-article.mod .table-wrapper tbody td {
+        padding: 1.1875rem 0.6rem;
+    }
+}
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     /* Common Layout */
@@ -5676,183 +5854,5 @@
 
     .bg-black-style .example-content.ex-content .ex-content-wrap {
         padding-top: 0;
-    }
-}
-
-/* 태블릿 */
-@media (min-width: 769px) and (max-width: 1366px) {
-    .cloud-arch-layer {
-        flex: 1;
-    }
-
-    .studio-lineUp .table-card-list.text > li .table-card-item {
-        max-height: none;
-    }
-
-    .orchestrator-diagram {
-        width: fit-content;
-    }
-
-    .sub-title-sm {
-        font-size: var(--font-size-xl);
-    }
-
-    .sub-title-wrap .sub-title {
-        font-size: var(--font-size-7xl);
-    }
-    .sub-title-wrap p {
-        font-size: var(--font-size-xl);
-    }
-
-    .techPage .tabs {
-        margin-bottom: 1rem;
-    }
-    .techPage .tabs__tab {
-        font-size: var(--font-size-xl);
-    }
-    .tabs__panel {
-        padding-top: 1rem;
-    }
-
-    .agent-graph-wrapper {
-        width: fit-content;
-    }
-    .agent-pattern-diagram {
-        width: fit-content;
-    }
-
-    .open-planned {
-        display: inline-flex !important;
-    }
-    .open-planned.top-banner {
-        margin: 0 !important;
-    }
-
-    /* Model 페이지 */
-    .example-side-item .example-side-txts dt {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .example-side-item .example-side-txts dt .open-planned {
-        margin-left: 0 !important;
-    }
-    .example-side-item .example-side-txts dl {
-        padding: 1.5rem 1.6rem;
-    }
-    .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
-        padding: 1.5rem 1.6rem;
-    }
-    .model-believe-box .box-item {
-        padding: 1.5rem 1.6rem;
-    }
-
-    .diamond-wrapper {
-        overflow: hidden;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-    .diamond-wrapper .box-list {
-        width: 86.5rem;
-    }
-
-    .useCasePage .card-list-horizontal .card {
-        flex: 0 0 20.5rem;
-    }
-
-    /* Resources 리스트페이지 */
-    .tech-card .card-img {
-        padding-bottom: 14.3rem;
-        width: 22.85rem;
-    }
-    /* Resources 상세페이지 */
-    .sub-inner.detail-inner {
-        padding: 0 2rem;
-    }
-
-    /* 서브페이지 유즈케이스 */
-    .card-list-horizontal .card {
-        flex: none;
-        max-width: 20.12rem;
-    }
-
-    /* 서브페이지 도식 */
-    .pc-only.graph {
-        display: none !important;
-    }
-    .mobile-show.graph {
-        display: block !important;
-        width: 100%;
-    }
-    .mobile-show.graph.mt-2 {
-        margin-top: 2rem;
-    }
-    .mobile-show.graph.mt-3 {
-        margin-top: 3.75rem;
-    }
-
-    /* Agent 페이지 */
-    .list-item {
-        flex-direction: column;
-    }
-    .list-item h3 {
-        margin-bottom: 1.2rem;
-    }
-    .tab-section .list-wrapper > ul > li h3 {
-        margin-bottom: 1.2rem;
-    }
-    .shape-wrapper {
-        padding: 0;
-    }
-    .divided-table-card-wrapper .table-card-item h3 {
-        padding: 1.5rem 1.6rem 1.25rem;
-    }
-    .divided-table-card-wrapper.agent-frameWork .table-card-item p {
-        padding: 0 1.6rem 1.5rem;
-    }
-    .pattern-top10-grid .pattern-card {
-        padding: 1.5rem 1.6rem;
-    }
-    .pattern-top10-grid .pattern-card p {
-        margin-top: 1.5rem;
-    }
-
-    /* Cloud 페이지 */
-    .cloud-graph-top img {
-        display: block;
-        width: 100%;
-        height: 100%;
-    }
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-    /* 서브페이지 */
-    /* Model 페이지 */
-    .gpt-benefit-box .box-list {
-        flex-direction: column;
-        gap: 1.6rem;
-    }
-    .gpt-benefit-box .box-list li {
-        width: 100%;
-    }
-    .box-item h3 br {
-        display: none;
-    }
-
-    /* Agent 페이지 */
-    .divided-table-card-wrapper.agent-frameWork .table-card-item p br {
-        display: none;
-    }
-
-    /* Resources 리스트페이지 */
-    .tech-card .card-img {
-        padding-bottom: 12.7rem;
-        width: 20.35rem;
-    }
-    .tech-card .card-txts {
-        padding: 2.813rem 0;
-    }
-
-    /* Resources 상세페이지 */
-    .tech-detail-article.mod .table-wrapper tbody td {
-        padding: 1.1875rem 0.6rem;
     }
 }
