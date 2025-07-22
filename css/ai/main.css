@@ -2901,6 +2901,8 @@ br {
         height: 26.5rem;
         transform: none;
         margin: 0 auto;
+        left: 0;
+        top: 0;
     }
 
     .cube-item.cube-item-1 {
