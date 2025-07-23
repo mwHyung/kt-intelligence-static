@@ -1790,7 +1790,7 @@ br {
     }
 }
 /* 태블릿 및 데스크탑 */
-@media (min-width: 1025px) and (max-width: 1366px) {
+@media (min-width: 1025px) and (max-width: 1536px) {
     .sub-banner-section .sub-banner-inner > ul > li > h2 span {
         font-size: 3.4rem;
     }

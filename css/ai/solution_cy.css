@@ -3657,7 +3657,8 @@
 
 /* 250612 */
 .table-card-wrapper .table-card-list.studio-table-card-list.text > li {
-    flex: 1 0 calc(100% / 2 - 2rem);
+    /* flex: 1 0 calc(100% / 2 - 2rem); */
+    /* flex: 1; */
 }
 
 .table-card-wrapper .table-card-list.studio-table-card-list.text > li h3.open-wrapper {
@@ -3868,7 +3869,7 @@
 }
 
 .studio-lineUp .table-card-list.text > li .table-card-item {
-    max-height: 26rem;
+    /* max-height: 26rem; */
 }
 
 .studio-lineUp .table-card-list.text > li .table-card-item ul li h4 {
@@ -3876,7 +3877,7 @@
 }
 
 /* 태블릿 */
-@media (min-width: 769px) and (max-width: 1366px) {
+@media (min-width: 769px) and (max-width: 1536px) {
     .cloud-arch-layer {
         flex: 1;
     }
@@ -4037,6 +4038,9 @@
     .divided-table-card-wrapper.agent-frameWork .table-card-item p br {
         display: none;
     }
+
+    /* Studio 페이지 */
+
 
     /* Resources 리스트페이지 */
     .tech-card .card-img {
