@@ -204,7 +204,7 @@ body.scroll-lock {
     display: flex;
     align-items: center;
     gap: 2.5rem;
-    padding-top: 0.5rem;
+    /* padding-top: 0.5rem; */
 }
 
 .nav-item {
@@ -1822,7 +1822,8 @@ body.scroll-lock {
         font-size: 1.4rem;
     }
 }
-@media (min-width: 768px) and (max-width: 1366px) {
+@media (min-width: 769px) and (max-width: 1366px) {
+
     .sticky-header-inner {
         padding: 1rem 0;
     }
@@ -1839,4 +1840,23 @@ body.scroll-lock {
     .kt-model-content .red-point-txt img {
         width: 23.8rem;
     }
+}
+/* 태블릿 */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-logo {
+        margin-right: 1.875rem;
+    }
+    .header-nav {
+        gap: 1.5rem;
+    }
+    .header-lang {
+        margin-left: 0;
+    }
+    .nav-link, .right-link {
+        font-size: var(--font-size-sm);
+    }
+    .header-btn {
+        padding: 0.375rem 1rem;
+    }
+
 }
