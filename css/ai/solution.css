@@ -66,6 +66,9 @@ br.mo-br {
     height: 4.8rem;
     object-fit: contain;
 }
+.banner-section .banner-inner h2 img.cloud {
+    height: 4rem;
+}
 
 .banner-section .banner-inner h2 img.agent {
     width: auto;
