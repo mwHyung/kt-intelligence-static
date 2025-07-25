@@ -7,6 +7,7 @@
 -   **프로젝트 유형**: 정적 웹사이트 (퍼블리싱)
 -   **주요 기술**: HTML5, CSS3, JavaScript, Thymeleaf
 -   **브라우저 지원**: Chrome, Firefox, Safari, Edge (최신 2개 버전)
+-   **사내/사외 링크**: 사내: https://test2intelligenceinternal.vercel.app/ai/main, 사외: https://testaiintellegence.vercel.app/ai/main
 
 ---
 
