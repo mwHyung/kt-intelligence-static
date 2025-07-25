@@ -407,18 +407,27 @@ if (stickyHeaderList && componentSections.length > 0) {
 
 // 현재 페이지 URL 기반으로 dropdown menu active 처리
 (function () {
+    // 현재 페이지의 path만 추출 (쿼리스트링, 해시 제거)
+    function getPathOnly(url) {
+        const a = document.createElement('a');
+        a.href = url;
+        // a.pathname이 항상 '/'로 시작하므로, 마지막 '/'는 제거
+        let path = a.pathname;
+        if (path.endsWith('/')) path = path.slice(0, -1);
+        return path;
+    }
+
     const currentPath = window.location.pathname;
     const normalizedPath = currentPath.endsWith('/') ? currentPath.slice(0, -1) : currentPath;
 
     // mobile-sub-menu 처리
     const mobileSubMenuItems = document.querySelectorAll('.mobile-sub-menu li a');
     mobileSubMenuItems.forEach((item) => {
-        if (item.getAttribute('href') === normalizedPath) {
+        const itemPath = getPathOnly(item.href);
+        if (itemPath === normalizedPath) {
             const parentLi = item.closest('li');
             if (parentLi) {
                 parentLi.classList.add('active');
-                // console.log('Active class added to sub menu:', parentLi);
-                // console.log('Current classes:', parentLi.className);
             }
         }
     });
@@ -426,12 +435,11 @@ if (stickyHeaderList && componentSections.length > 0) {
     // mobile-menu-item 처리
     const mobileMenuItems = document.querySelectorAll('.mobile-menu-item a');
     mobileMenuItems.forEach((item) => {
-        if (item.getAttribute('href') === normalizedPath) {
+        const itemPath = getPathOnly(item.href);
+        if (itemPath === normalizedPath) {
             const parentMenuItem = item.closest('.mobile-menu-item');
             if (parentMenuItem) {
                 parentMenuItem.classList.add('active');
-                // console.log('Active class added to menu item:', parentMenuItem);
-                // console.log('Current classes:', parentMenuItem.className);
             }
         }
     });

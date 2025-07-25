@@ -34,8 +34,7 @@ br.mo-br {
 }
 
 .banner-inner {
-    /* max-width: 1200px; */
-    height: 33.75rem;
+    height: 30rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -48,11 +47,15 @@ br.mo-br {
 }
 
 .banner-section h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
     font-weight: 600;
     font-size: 6.25rem;
     line-height: 1rem;
     letter-spacing: var(--letter-spacing-md);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .banner-section h2 img {
@@ -63,16 +66,11 @@ br.mo-br {
 .banner-section .banner-inner h2 img.banner-text {
     display: block;
     width: auto;
-    height: 4.8rem;
+    height: auto;
     object-fit: contain;
 }
 .banner-section .banner-inner h2 img.cloud {
-    height: 4rem;
-}
-
-.banner-section .banner-inner h2 img.agent {
-    width: auto;
-    height: 5.8rem;
+    /* height: 4rem; */
 }
 
 .banner-section .banner-inner.logo-bk img {
@@ -89,15 +87,17 @@ br.mo-br {
 
 .banner-section p {
     color: var(--white-color);
-    font-size: var(--font-size-3xl);
-    font-weight: 700;
-    line-height: 1.48;
-    letter-spacing: var(--letter-spacing-md);
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    line-height: var(--line-height-150);
+    letter-spacing: var(--letter-spacing-lg);
+    opacity: 0.8;
 }
 
 .banner-section .banner-inner.logo-bk p {
     color: var(--black-color);
     text-shadow: none;
+    opacity: 1;
 }
 
 .sub-banner {
@@ -151,9 +151,9 @@ br.mo-br {
     padding: 0 0 10rem;
 }
 
-.content-section:last-child {
+/* .content-section:last-child {
     padding-bottom: 0;
-}
+} */
 
 .content-section.bg-gray-50 {
     padding: 10rem 0;
@@ -210,34 +210,37 @@ br.mo-br {
     text-align: center;
 }
 
-.title-wrapper span {
+.title-wrapper > span {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-family: 'Poppins' !important;
+    font-size: var(--font-size-3xl);
     font-weight: 700;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
 }
 
 .title-wrapper h2 {
-    margin-top: 1rem;
-    margin-bottom: 1.25rem;
-    font-size: 4rem;
+    margin: 0.75rem 0 1.5rem;
+    font-size: var(--font-size-48);
     font-weight: 700;
-    line-height: var(--line-height-136);
+    line-height: var(--line-height-130);
     letter-spacing: var(--letter-spacing-md);
 }
 
 .title-wrapper p {
     color: var(--gray-900-color);
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
     font-weight: 500;
-    line-height: var(--line-height-172);
+    line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
 }
 
 .content-section.bg-black .title-wrapper h2,
 .content-section.bg-black .title-wrapper p {
     color: var(--white-color);
+}
+.content-section.bg-black .title-wrapper p {
+    opacity: 0.6;
 }
 
 .sub-title {
@@ -634,13 +637,13 @@ br.mo-br {
     white-space: nowrap;
 }
 
-.table-card-list.text > li .table-card-item h3 span {
+/* .table-card-list.text > li .table-card-item h3 span {
     color: var(--primary-color);
     font-size: var(--font-size-base);
     font-weight: 500;
     line-height: var(--line-height-172);
     letter-spacing: var(--letter-spacing-base);
-}
+} */
 
 .table-card-list.text > li .table-card-item p {
     text-align: left;
@@ -2215,7 +2218,9 @@ br.mo-br {
         font-size: 6.4rem;
         font-weight: 600;
         letter-spacing: var(--letter-spacing-md);
-        margin-bottom: 3.2rem;
+        margin-bottom: 2.8rem;
+        flex-direction: column-reverse;
+        gap: 2rem;
     }
 
     .banner-section .banner-inner h2 img {
@@ -2299,7 +2304,7 @@ br.mo-br {
     .title-wrapper span {
         font-size: 1.6rem;
         line-height: var(--line-height-172);
-        letter-spacing: var(--letter-spacing-base);
+        letter-spacing: normal;
         margin: 0 0 0.8rem;
     }
 
@@ -2374,6 +2379,7 @@ br.mo-br {
         padding: 0.4rem 1.2rem;
         font-size: 1.3rem;
         white-space: nowrap;
+        vertical-align: middle;
     }
 
     .card-list li .card-item p {
@@ -2449,6 +2455,7 @@ br.mo-br {
         font-size: 2.2rem;
         line-height: 1.56;
         letter-spacing: var(--letter-spacing-base);
+        white-space: nowrap;
     }
 
     .card-list.customer li p {
