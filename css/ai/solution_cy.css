@@ -26,7 +26,7 @@
 }
 
 .sub-inner {
-    max-width: 88.5rem;
+    max-width: 86.5rem;
     width: 100%;
     margin: 0 auto;
 }
@@ -1817,8 +1817,8 @@
 .divided-table-card-wrapper .table-card-item {
     padding: 0;
     gap: 1.2rem;
-    background: transparent;
-    border: 1px solid #373737;
+    background: var(--gray-950-color);
+    border: 0;
 }
 
 .divided-table-card-wrapper .table-card-item h3 {
@@ -1889,8 +1889,8 @@
     grid-column: auto;
     /* height: 18.3125rem; */
     padding: 0;
-    background-color: transparent;
-    border: 1px solid #373737;
+    background-color: var(--gray-950-color);
+    border: 0;
     padding: 2.5rem;
 }
 
@@ -2280,9 +2280,9 @@
 
 .orchestrator-steps .orchestrator-step,
 .memory-section .memory-type {
-    background-color: var(--gray-100-color);
+    background-color: #1e1e1e;
     border-radius: 0.5rem;
-    font-family: Pretendard;
+    color: var(--white-color);
     font-weight: 600;
     font-size: var(--font-size-xl);
     line-height: 172%;
@@ -2776,9 +2776,9 @@
     color: var(--gray-900-color);
 }
 
-.model-line-up .box-item {
+/* .model-line-up .box-item {
     background-color: var(--white-color);
-}
+} */
 
 .model-line-up .box-item h4 {
     color: var(--gray-900-color);
@@ -2793,8 +2793,8 @@
 }
 
 .bg-black-style .model-believe-box .box-item {
-    border: 1px solid #373737;
-    background-color: transparent;
+    /* border: 1px solid #373737; */
+    background-color: var(--gray-950-color);
 }
 
 .model-believe-box .box-item h3 {
@@ -2803,18 +2803,18 @@
 }
 
 .box-item h4 {
+    color: var(--gray-900-color);
     font-size: var(--font-size-xl);
     font-style: normal;
     font-weight: 600;
     line-height: var(--line-height-172);
-    /* 37.84px */
-    letter-spacing: -0.44px;
+    letter-spacing: var(--letter-spacing-md);
     margin-bottom: 0.75rem;
 }
 
-.box-list.white-box .box-item {
+/* .box-list.white-box .box-item {
     background-color: var(--white-color);
-}
+} */
 
 .box-item .card-tags {
     margin-top: 1.75rem;
@@ -2865,8 +2865,8 @@
 
 .gpt-benefit-box.liama-benefit-box .box-list li .box-item {
     /* height: 22.8rem; */
-    background-color: transparent;
-    border: 1px solid #373737;
+    background-color: var(--gray-950-color);
+    /* border: 1px solid #373737; */
     padding: 2.5rem;
 }
 
@@ -3037,6 +3037,7 @@
 }
 
 .bg-black-style .example-side-item .example-side-txts.top-tab-txts dl {
+    border: 1px solid var(--gray-600-color);
     background: #131313;
 }
 
@@ -3056,11 +3057,13 @@
     border-radius: 1.25rem;
     padding: 2.5rem;
     width: 100%;
-    border: 1px solid var(--gray-300-color);
+    /* border: 1px solid var(--gray-300-color); */
+    background-color: var(--gray-50-color);
 }
 
 .bg-black-style .example-side-item .example-side-txts dl {
-    border: 1px solid #373737;
+    border: 0;
+    background-color: var(--gray-950-color);
 }
 
 .example-side-item .example-side-txts dt {
@@ -3634,6 +3637,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--white-color);
+    border: 1px solid var(--gray-300-color);
     border-radius: 1.25rem;
 }
 
@@ -5598,8 +5602,8 @@
 
     .example-side-item .example-side-txts dl {
         position: relative;
-        padding: 20px;
-        border: 1px solid var(--gray-300-color);
+        padding: 2.6rem;
+        /* border: 1px solid var(--gray-300-color); */
         border-radius: 12px;
         cursor: pointer;
     }
@@ -5627,7 +5631,7 @@
     }
 
     .bg-black-style .model-believe-box .box-item {
-        background-color: var(--black-color);
+        /* background-color: var(--black-color); */
     }
 
     .moTab-swiper-wrapper .mobile-model-tabs.swiper-container {
