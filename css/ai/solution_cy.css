@@ -3971,10 +3971,6 @@
         width: 86.5rem;
     }
 
-    .useCasePage .card-list-horizontal .card {
-        flex: 0 0 20.5rem;
-    }
-
     /* Resources 리스트페이지 */
     .tech-card .card-img {
         padding-bottom: 14.3rem;
@@ -4063,7 +4059,10 @@
         display: none;
     }
 
-    /* Studio 페이지 */
+    /* Use cases 페이지 */
+    .useCasePage .card-list-horizontal .card {
+        flex: 0 0 20.5rem;
+    }
 
     /* Resources 리스트페이지 */
     .tech-card .card-img {
