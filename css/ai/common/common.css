@@ -937,7 +937,7 @@ body.scroll-lock {
     gap: 1.25rem;
     color: var(--white-color);
     font-size: var(--font-size-60);
-    font-weight: 900;
+    font-weight: 800;
     line-height: var(--line-height-130);
     letter-spacing: var(--letter-spacing-lg);
     text-align: center;
@@ -960,7 +960,7 @@ body.scroll-lock {
     max-width: 86.5rem;
     margin: 0 auto;
     width: 100%;
-    padding: 7.25rem 0 10rem;
+    padding: 15.125rem 0 10rem;
 }
 
 .terms-section {
@@ -971,7 +971,7 @@ body.scroll-lock {
 
 .terms-title {
     color: #000;
-    font-size: var(--font-size-8xl);
+    font-size: var(--font-size-7xl);
     font-weight: 700;
     line-height: 1.4;
     letter-spacing: var(--letter-spacing-md);
@@ -1155,6 +1155,14 @@ body.scroll-lock {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-140);
     text-align: center;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+#pretendard {
+    font-family: 'Pretendard', sans-serif !important;
 }
 
 @media (min-width: 769px) {
@@ -1785,7 +1793,7 @@ body.scroll-lock {
 
 .mobile-sub-menu {
     display: none;
-    background: #fafafa;
+    background: #fbfbfb;
     padding: 2rem 0;
     margin-top: 8px;
     margin-bottom: 8px;
@@ -1955,7 +1963,7 @@ body.scroll-lock {
     .kt-model-content .section-title {
         font-size: var(--font-size-7xl);
     }
-    .kt-model-content .red-point-txt img {
+    /* .kt-model-content .red-point-txt img {
         width: 23.8rem;
-    }
+    } */
 }
