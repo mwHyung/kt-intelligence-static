@@ -1971,7 +1971,7 @@
 }
 
 /* Agent Pattern Framework 도식 */
-.agent-pattern-diagram {
+/* .agent-pattern-diagram {
     width: 100%;
     border-radius: 1.25rem;
     border: 1px solid #373737;
@@ -1982,7 +1982,6 @@
     font-size: var(--font-size-xl);
     font-weight: 500;
     line-height: var(--line-height-172);
-    /* 37.84px */
     letter-spacing: -0.44px;
     position: relative;
 }
@@ -2164,7 +2163,6 @@
     margin-bottom: 2rem;
 }
 
-/* 점선 화살표 */
 .agent-pattern-diagram .diagram-arrow {
     width: 40px;
     height: 2px;
@@ -2184,7 +2182,7 @@
     position: absolute;
     left: 0;
     top: 50%;
-}
+} */
 
 /* k-agent-architecture */
 .agent-graph-wrapper {
@@ -5566,6 +5564,12 @@
         line-height: 156%;
         /* 24.96px */
         word-break: keep-all;
+    }
+
+    .box-item h4 {
+        font-size: 1.6rem;
+        font-weight: 700;
+        line-height: var(--line-height-172);
     }
 
     .box-item .card-tags {
