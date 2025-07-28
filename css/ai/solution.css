@@ -97,7 +97,7 @@ br.mo-br {
 .banner-section .banner-inner.logo-bk p {
     color: var(--black-color);
     text-shadow: none;
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .sub-banner {
@@ -228,12 +228,14 @@ br.mo-br {
 }
 
 .title-wrapper p:not(.coming-tag) {
-    color: var(--black-color);
+    color: rgba(0, 0, 0, 0.6);
     font-size: var(--font-size-lg);
     font-weight: 500;
     line-height: var(--line-height-150);
     letter-spacing: var(--letter-spacing-md);
-    opacity: 0.6 !important;
+}
+.bg-black-style .title-wrapper p:not(.coming-tag) {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .content-section.bg-black .title-wrapper h2,
