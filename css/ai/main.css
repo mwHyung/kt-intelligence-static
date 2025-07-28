@@ -1577,7 +1577,7 @@ br {
 
 /* News Section (Figma 기반) */
 .news-section {
-    padding: 10rem 0 0;
+    padding: 10rem 0 12.5rem;
     position: relative;
 }
 
@@ -2471,7 +2471,6 @@ br {
         margin-top: 0.5rem;
     }
 }
-
 
 /* 모바일 메인 스타일 */
 @media (max-width: 768px) {
@@ -3569,8 +3568,7 @@ br {
     }
 
     .news-section {
-        padding: 0 2rem;
-        padding-top: 10rem;
+        padding: 10rem 2rem;
     }
 
     .news-inner {

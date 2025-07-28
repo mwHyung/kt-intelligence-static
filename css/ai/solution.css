@@ -227,7 +227,7 @@ br.mo-br {
     letter-spacing: var(--letter-spacing-md);
 }
 
-.title-wrapper p {
+.title-wrapper p:not(.coming-tag) {
     color: var(--black-color);
     font-size: var(--font-size-lg);
     font-weight: 500;
@@ -2356,7 +2356,7 @@ br.mo-br {
         line-height: 1.42;
     }
 
-    .title-wrapper p {
+    .title-wrapper p:not(.coming-tag) {
         font-size: 1.7rem;
         font-weight: 500;
         line-height: 1.68;
