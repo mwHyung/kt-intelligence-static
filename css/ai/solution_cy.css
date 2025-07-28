@@ -1112,6 +1112,10 @@
     letter-spacing: -0.16px;
 }
 
+.tech-detail-article .table-wrapper tbody td.empty {
+    background-color: var(--gray-100-color);
+}
+
 .tech-detail-article .table-wrapper > h5 {
     margin-top: 1.25rem;
     text-align: center;
