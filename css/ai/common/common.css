@@ -1165,6 +1165,10 @@ body.scroll-lock {
     font-family: 'Pretendard', sans-serif !important;
 }
 
+.c70 {
+    color: #707070 !important;
+}
+
 @media (min-width: 769px) {
     .mobile-menu-btn {
         display: none !important;

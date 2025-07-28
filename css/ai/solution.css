@@ -2048,10 +2048,6 @@ br.mo-br {
         margin-top: 8rem;
     }
 
-    .card-item {
-        width: 21.6rem;
-        padding: 2rem;
-    }
     /* .card-list.customer li h3 {
         font-size: var(--font-size-xl);
     }
@@ -2185,6 +2181,14 @@ br.mo-br {
     }
     .table-card-list.text > li .table-card-item ul {
         gap: 1rem;
+    }
+
+    .card-list.multi li {
+        flex: 1 1 100%;
+    }
+    .card-item {
+        width: 100%;
+        padding: 2rem;
     }
 
     .card-item h4.to-be {
