@@ -72,7 +72,7 @@ const header = document.getElementById('main-header');
     let lastScrollY = window.scrollY;
     let ticking = false;
     const stickyHeader = document.querySelector('.sticky-header');
-    const parallaxSection = document.querySelector('.cube-last-text');
+    const parallaxSection = document.querySelector('.parallax-depth-section');
     let lastHeaderState = null;
     let lastStickyState = null;
 
