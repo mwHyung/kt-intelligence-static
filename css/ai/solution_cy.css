@@ -1098,6 +1098,18 @@
     color: var(--gray-800-color);
     padding: 1.1875rem 1.5rem;
     line-height: 172%;
+    position: relative;
+}
+
+.tech-detail-article .table-wrapper tbody td span {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: var(--font-size-sm);
+    color: var(--gray-600-color);
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.16px;
 }
 
 .tech-detail-article .table-wrapper > h5 {

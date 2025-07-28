@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- SEO -->
+        <link rel="icon" href="/resource/images/ai/KT_48.ico" />
+        <title>KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다.</title>
+        <meta
+            name="description"
+            content="한국 AI 생태계와 개발자 커뮤니티를 지원하기 위해, 국내 최초 11B 규모의 상업적 활용 가능한 모델을 오픈소스로 공개"
+        />
+        <meta name="keywords" content="Language, Model, 믿:음, 믿:음 2.0, 믿:음 2.0 Base, 믿:음2.0 mini" />
+
+        <!-- SNS 공유용 -->
+        <meta property="og:title" content="KT가 자체 개발한 AI 모델 믿:음 2.0을 오픈소스로 공개합니다." />
+        <meta
+            property="og:description"
+            content="한국 AI 생태계와 개발자 커뮤니티를 지원하기 위해, 국내 최초 11B 규모의 상업적 활용 가능한 모델을 오픈소스로 공개"
+        />
+        <meta property="og:image" content="/resource/images/ai/og-image.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="KT AI" />
+
+        <!-- Common CSS -->
+        <link rel="stylesheet" href="/css/ai/common/common.css" />
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="/css/ai/common/reset.css" />
+        <!-- Style CSS -->
+        <link rel="stylesheet" href="/css/ai/solution_cy.css" />
+        <!-- AOS CSS -->
+        <link rel="stylesheet" href="/css/ai/common/aos.css" />
+        <!-- Google tag (gtag.js) -->
+        <script th:async="async" th:src="@{'https://www.googletagmanager.com/gtag/js?id=' + ${ga4Id}}"></script>
+        <script th:inline="javascript">
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', [[${ ga4Id }]]);
+        </script>
+        <script src="/js/ai/ga.js"></script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header id="main-header" class="header">
+            <div class="header-inner"></div>
+        </header>
+
+        <div class="sub-content techDetailPage">
+            <div class="sub-inner detail-inner">
+                <div class="tech-detail-header">
+                    <span class="tech-detail-category">What's New</span>
+                    <h2 class="tech-detail-title">믿:음 2.0 을 보다 효과적으로 활용할 수 있도록 믿:음 2.0 Prompt Guide를 발간합니다.</h2>
+                    <div class="card-tags">
+                        <span>Prompt</span>
+                        <span>믿:음 2.0</span>
+                        <span>K Studio</span>
+                    </div>
+                    <time class="tech-detail-date" datetime="2025-05-16">2025.07.28</time>
+                </div>
+
+                <!-- 게시글 본문 영역 (관리자 에디터/HTML 입력용) -->
+                <article class="tech-detail-article mod" id="tech-detail-article">
+                    <section class="post-custom">
+                        <p>
+                            KT의 AI 기술 브랜드 K Intelligence의 AI 언어 모델 <b>믿:음 2.0</b>을 보다 효과적으로 활용할 수 있도록
+                            <b>믿:음 2.0 Prompt Guide</b>를 발간하였습니다.
+                        </p>
+                        <p>
+                            이번 가이드는
+                            <b>믿:음 2.0 Mini, 믿:음 2.0 Base 모델을 K Studio 환경에서 실전 활용할 수 있도록 설계된 Prompt 작성 가이드</b
+                            >로, 다음 세 가지 주요 내용을 중심으로 구성되어 있습니다.
+                        </p>
+
+                        <ul class="innerList hasPt">
+                            <li>
+                                K Studio 사용법 가이드: Prompt 입력 방식, 시스템 Prompt / 유저 Prompt 구분, 모델 파라미터 설정 등 K Studio
+                                환경에 최적화된 실습 중심의 기능과 활용법을 설명합니다.
+                            </li>
+                            <li>
+                                Prompt 구성 요소와 Prompt Engineering Technique 소개: 좋은 응답을 이끌어내는 핵심 6가지 Prompt 구성 요소와
+                                효과적인 Prompt 전략을 소개합니다.
+                            </li>
+                            <li>
+                                믿음 20 Best Use Cases: 일반, 공공, 법률, 금융, 교육, 의료 등 6개 도메인에 걸쳐 Prompt 구성 요소 기반의 대표
+                                활용 사례를 제공합니다.
+                            </li>
+                        </ul>
+
+                        <div class="table-wrapper">
+                            <h4>믿:음 2.0 Prompt 매트릭스</h4>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>일상</th>
+                                        <th>공공</th>
+                                        <th>법률</th>
+                                        <th>금융</th>
+                                        <th>교육</th>
+                                        <th>의료</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><b>생성</b></td>
+                                        <td>서비스 소개 <span>1</span></td>
+                                        <td>공문/메일 작성 <span>2</span></td>
+                                        <td>법률 문서 작성 <span>3</span></td>
+                                        <td>개인정보 비식별화 <span>4</span></td>
+                                        <td>문항 출제 <span>5</span></td>
+                                        <td>의학 블로그 작성 <span>6</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>대화/Q&A</b></td>
+                                        <td>찬반 토론 <span>7</span></td>
+                                        <td>공공 문서 Q&A <span>8</span></td>
+                                        <td>법률 토론 <span>9</span></td>
+                                        <td>금융 문서 Q&A <span>10</span></td>
+                                        <td>교과서 Q&A <span>11</span></td>
+                                        <td>의학 지식 Q&A <span>12</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>이해</b></td>
+                                        <td>신문 요약 <span>13</span></td>
+                                        <td>영문 번역 <span>14</span></td>
+                                        <td>판결 해석 <span>15</span></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>처방전 해석 <span>16</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><b>수리추론</b></td>
+                                        <td>코딩 <span>17</span></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>상품수익률 분석 <span>18</span></td>
+                                        <td>수학문제 풀이 <span>19</span></td>
+                                        <td>의료데이터 분석 <span>20</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section class="post-custom">
+                        <h4>믿:음 2.0 Prompt Guide는 다음 분들께 추천합니다.</h4>
+                        <ul class="innerList hasPt">
+                            <li>업무나 일상에 믿:음 2.0을 적용해보고 싶은 일반 사용자</li>
+                            <li>공공/법률/금융/교육/의료 등 전문 영역 실무자 및 관리자</li>
+                            <li>Prompt 전략을 통해 모델 응답 품질을 개선하고자 하는 사용자</li>
+                            <li>K Studio 를 처음 이용하는 사용자</li>
+                        </ul>
+                    </section>
+
+                    <section class="post-custom">
+                        <h4>
+                            믿:음 2.0 Prompt Guide는 누구나 KT의 자체 개발 언어 모델을 쉽고 효율적으로 활용할 수 있도록 돕는 실용 중심
+                            자료입니다.
+                        </h4>
+                        <p>
+                            일상적인 문서 작성부터 전문 영역의 분석, 요약, Q&A까지 다양한 분야에 믿:음 2.0 모델을 직접 적용해 보시는 등 많은
+                            관심과 활용 부탁 드립니다
+                        </p>
+                        <p>본 가이드가 기업의 기술 혁신과 개발자 생태계의 성장에 도움이 되기를 바랍니다.</p>
+                        <p>
+                            <b>보다 자세한 내용은 믿:음 2.0 Prompt Guide 에서 확인하실 수 있습니다.</b>
+                        </p>
+                    </section>
+
+                    <div class="tech-detail-article-list">
+                        <h3>Technical Resources</h3>
+                        <ul class="variety-links">
+                            <li>
+                                <div class="aLinks-wrapper">
+                                    <a href="#" download="KT 믿:음 2.0 Prompt Guide_202507.pdf"
+                                        >믿:음 2.0 Prompt Guide 다운로드 (K Studio 기반)</a
+                                    >
+
+                                    <!-- <div class="aLink-flex">
+                                        <a href="#" download="KT 믿:음 2.0 Prompt Guide_202507.pdf">KT 믿:음 2.0 Prompt Guide_202507.pdf</a>
+                                        <a href="/ai/resources/detail04?v=20250728" class="hasLink">Base</a>
+                                    </div> -->
+                                </div>
+                            </li>
+                            <li class="has-icon">
+                                <a href="/ai/resources/detail06?v=20250728">믿:음 2.0 Prompt 매트릭스 바로가기</a>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+
+                <div class="tech-detail-bottom">
+                    <a href="/ai/resources?v=20250728">
+                        <button type="button" class="basic-bk-btn docs-back">돌아가기</button>
+                    </a>
+                    <div class="tech-banner-sec">
+                        <!-- <div class="tech-banner-wrapper">
+
+    <a href="">
+        <div class="tech-banner-item pc-only">
+            <div class="tech-banner-txts" style="
+                                        background-image: url(/resource/images/ai/resources/tech-detail-banner-pc.png);
+                                    ">
+                <span>K intelligence를 만든 사람이 궁금하다면?</span>
+                <span class="hasIcon">Kode로 보러가기</span>
+            </div>
+        </div>
+
+        <div class="tech-banner-item mobile-show">
+            <div class="tech-banner-txts" style="
+                                        background-image: url(/resource/images/ai/resources/tech-detail-banner-mo.png);
+                                    ">
+                <span>K intelligence를 만든 <br class="mo-br" />사람이
+                    궁금하다면?</span>
+                <span class="hasIcon">Kode로 보러가기</span>
+            </div>
+        </div>
+    </a>
+
+
+</div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-top">
+                <!-- Left: Info -->
+                <div class="footer-info">
+                    <div class="footer-contact">기술 문의 : <a href="mailto:k.intelligence@kt.com">k.intelligence@kt.com</a></div>
+                    <!-- <div class="footer-links">
+                        <a href="/ai/conditions">이용약관</a>
+                        <a href="/ai/privacy" class="bold">개인정보처리방침</a>
+                    </div> -->
+                    <div class="footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+                </div>
+                <ul class="footer-menus">
+                    <li><a href="/ai/solution/model?v=20250728">Technologies</a></li>
+                    <li><a href="/ai/usecase?v=20250728">Use Cases</a></li>
+                    <li><a href="/ai/resources?v=20250728">Resources</a></li>
+                </ul>
+                <!-- Right: Logo -->
+                <div class="footer-logo">
+                    <img src="/resource/images/ai/icons/footer_logo.svg" alt="KT 로고" width="60" height="40" />
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-external-links">
+                    <a href="https://enterprise.kt.com/main.jsp" target="_blank" rel="noopener noreferrer"
+                        >기업 · 공공
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <!-- <a href="https://kode.kt.com" target="_blank" rel="noopener noreferrer"
+                >Kode
+                <img
+                    src="/resource/images/ai/icons/arrow-up-right-white.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                />
+            </a> -->
+                    <!-- <a href="https://kode.kt.com" target="_blank" rel="noopener noreferrer">Kode
+                <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+            </a> -->
+                    <a href="http://kt.com/" target="_blank" rel="noopener noreferrer"
+                        >개인 · 소상공인
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                    <a href="https://corp.kt.com/" target="_blank" rel="noopener noreferrer"
+                        >회사소개
+                        <img src="/resource/images/ai/icons/arrow-up-right-white.svg" alt="" width="16" height="16" />
+                    </a>
+                </div>
+                <div class="footer-sns">
+                    <a
+                        href="https://www.instagram.com/kt.corp/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="KT Instagram (새 창)"
+                    >
+                        <img src="/resource/images/ai/icons/insta_pc.svg" alt="Instagram" width="28" height="28" />
+                    </a>
+                    <a href="https://www.youtube.com/@KT_CORP" target="_blank" rel="noopener noreferrer" aria-label="KT YouTube (새 창)">
+                        <img src="/resource/images/ai/icons/youtube_pc.svg" alt="YouTube" width="28" height="28" />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/company/kt/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="KT LinkedIn (새 창)"
+                    >
+                        <img src="/resource/images/ai/icons/linkedin_pc.svg" alt="LinkedIn" width="28" height="28" />
+                    </a>
+                </div>
+
+                <div class="mobile-footer-copyright">Copyright© KT Corp. All rights reserved.</div>
+            </div>
+        </footer>
+
+        <!-- Script -->
+        <script src="/js/ai/solution.js"></script>
+        <script src="/js/ai/common/common.js"></script>
+        <script>
+            includeCommonLayout({ skipKtModel: true });
+        </script>
+    </body>
+</html>
