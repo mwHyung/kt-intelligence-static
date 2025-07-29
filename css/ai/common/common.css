@@ -378,17 +378,17 @@ body.scroll-lock {
 .header-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
     margin-left: auto;
 }
 
 .right-link {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.125rem;
     font-size: var(--font-size-base);
     font-weight: 700;
     line-height: 1.5;
+    margin-right: 2rem;
 }
 
 .dark-header .right-link {
@@ -403,6 +403,9 @@ body.scroll-lock {
     filter: invert(0.4);
 }
 
+.dark-header .right-link {
+    color: var(--gray-800-color);
+}
 .dark-header .right-link:hover img {
     filter: invert(0.4);
 }
@@ -435,7 +438,7 @@ body.scroll-lock {
 
 .header-lang {
     position: relative;
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
 }
 
 .lang-btn {
@@ -742,10 +745,13 @@ body.scroll-lock {
 .footer-external-links a {
     display: flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.125rem;
     color: var(--white-color);
+    font-weight: 700;
+    line-height: var(--line-height-130);
+    letter-spacing: var(--letter-spacing-lg);
     text-decoration: none;
-    transition: color 0.2s;
+    transition: opacity 0.2s;
 }
 
 .footer-external-links a::after {
@@ -762,11 +768,7 @@ body.scroll-lock {
 }
 
 .footer-external-links a:hover {
-    color: var(--gray-800-color);
-}
-
-.footer-external-links a:hover img {
-    filter: invert(0.7);
+    opacity: 0.3;
 }
 
 .footer-external-links img {
@@ -802,17 +804,29 @@ body.scroll-lock {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.25rem;
     background: var(--black-color);
     color: var(--white-color);
     border: none;
-    border-radius: 0.625rem;
-    padding: 1.25rem 2.5rem;
-    font-size: var(--font-size-3xl);
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: var(--font-size-md);
     font-weight: 700;
-    line-height: var(--line-height-150);
+    line-height: 1.56;
     letter-spacing: var(--letter-spacing-md);
     cursor: pointer;
-    min-width: 12.5rem;
+    min-width: 8.75rem;
+}
+.btn.arrow:after {
+    content: '';
+    display: block;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: url('/resource/images/ai/icons/arrow-up-right-white2.svg') no-repeat center center / contain;
+    margin-top: -2px;
+}
+.btn.white.arrow:after {
+    background: url('/resource/images/ai/icons/arrow-up-right-black2.svg') no-repeat center center / contain;
 }
 
 .btn.md {
@@ -834,6 +848,10 @@ body.scroll-lock {
 .btn.white {
     background: var(--white-color);
     color: var(--black-color);
+}
+
+.btn.disabled {
+    background: #dedede;
 }
 
 .btn.main {
@@ -865,6 +883,7 @@ body.scroll-lock {
     padding: 0.5rem 1.25rem;
     background: rgba(0, 0, 0, 0.6);
     color: var(--white-color) !important;
+    font-family: 'Pretendard', sans-serif !important;
     font-size: var(--font-size-base);
     font-weight: 700;
     line-height: var(--line-height-172);
@@ -1531,11 +1550,11 @@ body.scroll-lock {
 
     /* Button */
     .btn {
-        min-width: 16rem;
-        padding: 1.4rem 3.2rem;
-        font-size: 2rem;
+        min-width: 13.2rem;
+        padding: 1.3rem 2.4rem;
+        font-size: 1.7rem;
         line-height: var(--line-height-172);
-        letter-spacing: var(--letter-spacing-base);
+        letter-spacing: normal;
         border-radius: 0.8rem;
     }
 
@@ -1554,15 +1573,15 @@ body.scroll-lock {
 
     /* 이용약관 */
     .terms-main {
-        margin-top: 12rem;
+        margin-top: 11rem;
         padding: 0 2rem 10rem;
     }
 
     .terms-title {
         padding-bottom: 4rem;
         margin-bottom: 6rem;
-        font-size: 4.8rem;
-        line-height: 1.4;
+        font-size: 3.2rem;
+        line-height: 1.42;
     }
 
     .terms-sub-title {
@@ -1904,23 +1923,41 @@ body.scroll-lock {
 
 .mobile-menu-lang {
     display: flex;
-    gap: 2.4rem;
+}
+
+.mobile-menu-lang::before {
+    content: '';
+    background: url('/resource/images/ai/icons/globe.svg') no-repeat center center / contain;
+    width: 2.8rem;
+    height: 2.8rem;
+    display: block;
+    margin-right: 1.2rem;
 }
 
 .mobile-menu-lang button {
+    display: flex;
+    align-items: center;
     background: none;
     border: none;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: var(--gray-400-color);
-    font-weight: 600;
-    line-height: 1.58;
+    font-weight: 700;
+    line-height: var(--line-height-172);
     cursor: pointer;
     border-bottom: 2px solid transparent;
 }
 
+.mobile-menu-lang button:not(:only-child):first-child::after {
+    content: '';
+    background: var(--gray-200-color);
+    width: 1px;
+    height: 2rem;
+    display: block;
+    margin: 0 2rem;
+}
+
 .mobile-menu-lang button.active {
     color: #000;
-    border-bottom: 2px solid var(--black-color);
 }
 
 .mobile-menu-contact {
@@ -1938,8 +1975,8 @@ body.scroll-lock {
 }
 
 .mobile-menu-contact img {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 @media (min-width: 1366px) and (max-width: 1536px) {
