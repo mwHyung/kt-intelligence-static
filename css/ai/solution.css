@@ -213,10 +213,10 @@ br.mo-br {
 .title-wrapper > span {
     color: var(--primary-color);
     font-family: 'Poppins' !important;
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: 700;
     line-height: var(--line-height-150);
-    letter-spacing: var(--letter-spacing-md);
+    letter-spacing: var(--letter-spacing-lg);
 }
 
 .title-wrapper h2 {
@@ -224,7 +224,11 @@ br.mo-br {
     font-size: var(--font-size-48);
     font-weight: 800;
     line-height: var(--line-height-130);
-    letter-spacing: var(--letter-spacing-md);
+    letter-spacing: var(--letter-spacing-lg);
+}
+
+.title-wrapper h2.poppins {
+    font-weight: 700;
 }
 
 .title-wrapper p:not(.coming-tag) {
@@ -232,7 +236,7 @@ br.mo-br {
     font-size: var(--font-size-lg);
     font-weight: 500;
     line-height: var(--line-height-150);
-    letter-spacing: var(--letter-spacing-md);
+    letter-spacing: var(--letter-spacing-lg);
 }
 .bg-black-style .title-wrapper p:not(.coming-tag) {
     color: rgba(255, 255, 255, 0.6);
