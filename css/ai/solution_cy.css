@@ -61,9 +61,10 @@
 }
 
 .sub-title-sm {
+    padding: 0 1rem;
     font-size: var(--font-size-3xl);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: var(--line-height-150);
     text-align: left;
 }
 
@@ -93,6 +94,7 @@
 
 .card-list-horizontal .card .sub-desc {
     margin: 0.75rem 0 2rem;
+    padding: 0 1rem;
     overflow: hidden;
     white-space: normal;
     text-overflow: ellipsis;
@@ -2527,9 +2529,14 @@
 
 .orchestrator-diagram {
     width: 100%;
-    border: 1px solid #d9d9d9;
     border-radius: 1.25rem;
-    padding: 3.75rem 5rem 5rem 5rem;
+    /* padding: 3.75rem 5rem 5rem 5rem; */
+}
+
+.orchestrator-diagram > img {
+    width: 65rem;
+    height: auto;
+    object-fit: contain;
 }
 
 .orchestrator-title,
@@ -2710,9 +2717,8 @@
 }
 
 .openPlannd-gray-btn-wrap {
-    margin: 0 auto;
+    margin: 5rem auto 0;
     width: fit-content;
-    margin-top: 5rem;
 }
 
 .openPlannd-gray-big {
@@ -2793,10 +2799,6 @@
     color: var(--gray-900-color);
 }
 
-/* .model-line-up .box-item {
-    background-color: var(--white-color);
-} */
-
 .model-line-up .box-item h4 {
     color: var(--gray-900-color);
 }
@@ -2810,7 +2812,6 @@
 }
 
 .bg-black-style .model-believe-box .box-item {
-    /* border: 1px solid #373737; */
     background-color: var(--gray-950-color);
 }
 
@@ -2828,10 +2829,6 @@
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 0.75rem;
 }
-
-/* .box-list.white-box .box-item {
-    background-color: var(--white-color);
-} */
 
 .box-item .card-tags {
     margin-top: 1.75rem;
@@ -3435,7 +3432,7 @@
     line-height: 172%;
     letter-spacing: 0%;
     background-color: var(--white-color);
-    padding: 0 0.75rem 0 2.625rem;
+    padding: 0.5rem 0.75rem;
     height: 2.75rem;
     line-height: 2.75rem;
     border-radius: 0.5rem;
@@ -3457,9 +3454,10 @@
     background-size: cover;
     width: 1.25rem;
     height: 1.25rem;
-    position: absolute;
+    margin-right: 0.625rem;
+    /* position: absolute;
     top: 0.75rem;
-    left: 0.75rem;
+    left: 0.75rem; */
 }
 
 .bg-black-style .download-pdfs li span {
@@ -4094,12 +4092,12 @@
     }
 
     .sub-content {
-        padding-top: 12rem;
+        padding-top: 11rem;
         padding-bottom: 10rem;
     }
 
     .sub-content.techPage {
-        padding-top: 12rem;
+        padding-top: 11rem;
     }
 
     .sub-inner {
@@ -4107,7 +4105,7 @@
     }
 
     .sub-conSec {
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 
     .sub-content p {
@@ -4119,7 +4117,9 @@
     }
 
     .sub-title-wrap p {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        line-height: 1.68;
+        letter-spacing: normal;
         word-break: keep-all;
     }
 
@@ -4129,6 +4129,13 @@
         line-height: 156%;
         /* 34.32px */
         letter-spacing: -0.22px;
+    }
+
+    .sub-title-wrap .sub-title {
+        font-size: 3.2rem;
+        line-height: 1.42;
+        letter-spacing: var(--letter-spacing-md);
+        margin-bottom: 0.8rem;
     }
 
     /* Tab */
@@ -4181,10 +4188,10 @@
     }
 
     .techPage .tabs__tab {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        line-height: 1.4;
-        letter-spacing: -0.2px;
+        line-height: normal;
+        letter-spacing: normal;
     }
 
     .techPage .tabs__panel {
@@ -4252,9 +4259,9 @@
         object-fit: contain;
     }
 
-    .useCasePage .card-list-horizontal .card:nth-child(n + 2) {
+    /* .useCasePage .card-list-horizontal .card:nth-child(n + 2) {
         margin-top: 4rem;
-    }
+    } */
 
     .tech-card .card-img {
         width: 100%;
@@ -4290,6 +4297,10 @@
         margin-top: 0.2rem;
     }
 
+    .useCasePage .card-list-horizontal {
+        gap: 6rem;
+    }
+
     /* resources page */
     .techPage .tabs {
         overflow-x: auto;
@@ -4302,7 +4313,7 @@
         /* Firefox */
         -ms-overflow-style: none;
         /* IE and Edge */
-        margin-top: 8rem;
+        margin-top: 4rem;
         justify-content: left;
         gap: 2.4rem;
     }
@@ -4326,12 +4337,13 @@
     .techPage .tech-card a {
         flex-direction: column;
         align-items: flex-start;
+        gap: 2.4rem;
     }
 
     .techPage .tech-card .card-img {
         order: -1;
         width: 100%;
-        margin-bottom: 2.4rem;
+        /* margin-bottom: 2.4rem; */
     }
 
     .techPage .tech-card .card-txts {
@@ -5024,7 +5036,7 @@
     }
 
     .btn-wrap .last-btn {
-        margin-top: 2.4rem;
+        margin-top: 2.8rem;
     }
 
     .tab-section {
@@ -5032,7 +5044,7 @@
     }
 
     .tab-section.gap10 {
-        gap: 2.4rem;
+        gap: 2rem;
     }
 
     .video-wrapper,
@@ -5457,7 +5469,7 @@
 
     /* model page */
     .comming-soon {
-        margin-top: 7.6rem;
+        margin-top: 8rem;
     }
 
     .comming-soon h3 {
@@ -5695,7 +5707,7 @@
     }
 
     .example-side-item {
-        margin-top: 2.4rem;
+        margin-top: 2rem;
     }
 
     .flex.example-double {
