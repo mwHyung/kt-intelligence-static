@@ -14,10 +14,57 @@ function initHeroSectionAnimation() {
     if (!button || !window.gsap) return;
     gsap.set(button, { opacity: 0 });
     gsap.to(button, { opacity: 1, duration: 1, delay: 1.5, ease: 'power2.out' });
+
+    const text1 = document.getElementById('text-1');
+    const text2 = document.getElementById('text-2');
+    const text3 = document.getElementById('text-3');
+
+    // Timeline 구성
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: '.hero-section',
+            start: 'top top',
+            end: 'bottom top',
+            scrub: true,
+            //pin: true,
+            marker: true,
+        },
+    });
+
+    // 텍스트 1 등장
+    tl.fromTo(text1, { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1 }).to(text1, { opacity: 0, y: -100, duration: 1 });
+
+    // 텍스트 2 등장
+    tl.fromTo(text2, { opacity: 0, y: 100 }, { opacity: 1, y: 0, duration: 1 }).to(text2, { opacity: 0, y: -100, duration: 1 });
+
+    // 텍스트 3 등장
+    tl.fromTo(text3, { opacity: 0, y: 100, scale: 1 }, { opacity: 1, y: 0, scale: 1, duration: 1 });
+
+    // 텍스트 3 사라짐 + 확대
+    tl.to(text3, { opacity: 1, fontSize: '500px', duration: 1 });
 }
 
 function countUpDigitsReverse(selector, options = {}) {
     const el = document.querySelector(selector);
+    if (!el) return;
+    const span = el.querySelector('span');
+    const max = Number(el.dataset.target) || '';
+    // 숫자 목록 생성 (00~63)
+    let html = '';
+    for (let i = 0; i <= max; i++) {
+        html += `${i.toString().padStart(2, '0')}<br>`;
+    }
+    span.innerHTML = html;
+
+    // 전체 높이 계산
+    const lineHeight = 1;
+    const totalHeight = lineHeight * max;
+
+    // 트랜스폼 적용
+    requestAnimationFrame(() => {
+        span.style.transform = `translateY(-${totalHeight}em)`;
+    });
+    /*
     if (!el) return;
     const targetStr = el.dataset.target || '';
     const duration = options.duration || 1100;
@@ -49,16 +96,16 @@ function countUpDigitsReverse(selector, options = {}) {
             digitCol.style.transform = `translateY(0)`; // 아래에서 위로 이동
         }, 80 * i);
     }
+    */
 }
 
 function initIntroSectionAnimation() {
     const section = document.querySelector('.sub-banner-section');
     if (!section || !window.gsap) return;
-
     const title1 = section.querySelector('ul li h2 span:first-child');
     const title2 = section.querySelector('ul li h2 span:last-child');
     const desc1 = section.querySelector('ul li p:first-child');
-    const desc2 = section.querySelector('ul li p:last-child');
+    //const desc2 = section.querySelector('ul li p:last-child');
     const countUp = section.querySelectorAll('.count-up');
 
     ScrollTrigger.matchMedia({
@@ -104,23 +151,10 @@ function initIntroSectionAnimation() {
                         yPercent: 100,
                     },
                     {
-                        opacity: 1,
+                        opacity: 0.6,
                         yPercent: 0,
                         duration: 0.4,
                     },
-                )
-                .fromTo(
-                    desc2,
-                    {
-                        opacity: 0,
-                        yPercent: 100,
-                    },
-                    {
-                        opacity: 1,
-                        yPercent: 0,
-                        duration: 0.4,
-                    },
-                    '-=0.2',
                 )
                 .fromTo(
                     countUp[0],
@@ -249,12 +283,14 @@ function initIntroSectionAnimation() {
 }
 
 function initParallaxSectionAnimation() {
+    // iOS 크롬에서만 부드러운 scrub 값 적용
+    const isIOSChrome = /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
+    const scrubValue = isIOSChrome ? 0.3 : 1; // iOS 크롬에서만 부드럽게
     const section = document.querySelector('.parallax-section');
     if (!section || !window.gsap || !window.ScrollTrigger) return;
 
     // 이미지 요소들 선택
     const images = section.querySelectorAll('.parallax-images img');
-    const container = section.querySelector('.parallax-container');
 
     ScrollTrigger.matchMedia({
         '(max-width: 768px)': function () {
@@ -263,22 +299,29 @@ function initParallaxSectionAnimation() {
     });
 
     // 컨테이너 고정 애니메이션
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: section,
-            start: 'top top',
-            end: 'bottom bottom',
-            pin: true,
-            pinSpacing: false,
+    const spans = gsap.utils.toArray('.parallax-description span');
+    const space = 100;
+
+    // 1. pin 고정
+    ScrollTrigger.create({
+        trigger: section,
+        start: 'top top',
+        end: `+=${spans.length * space}`, // 100px씩 할당 (조절 가능)
+        pin: '.parallax-titles',
+        pinSpacing: true,
+        onUpdate: (self) => {
+            const progress = self.progress;
+            const index = Math.floor(progress * spans.length);
+
+            spans.forEach((span, i) => {
+                span.style.color = i <= index ? '#0B0B0B' : '#d5d5d5';
+            });
+            AOS.refresh();
         },
     });
 
-    // iOS 크롬에서만 부드러운 scrub 값 적용
-    const isIOSChrome = /CriOS/.test(navigator.userAgent) && /iPhone|iPad|iPod/.test(navigator.userAgent);
-    const scrubValue = isIOSChrome ? 0.3 : 1; // iOS 크롬에서만 부드럽게
-
     gsap.fromTo(
-        '.parallax-titles, .parallax-description',
+        '.parallax-titles',
         {
             opacity: 0,
         },
@@ -294,101 +337,259 @@ function initParallaxSectionAnimation() {
             },
         },
     );
-
-    // 각 이미지별 패럴렉스 애니메이션
-    images.forEach((img, index) => {
-        // 이미지별로 다른 속도 적용
-        const speeds = [1, 1, 1, 1, 1];
-        const speed = speeds[index] || 1;
-
-        gsap.fromTo(
-            img,
-            {
-                y: '0', // 시작 위치 (화면 하단)
-            },
-            {
-                y: `-${200 * speed}vh`, // 속도에 따른 최종 위치 조정
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: scrubValue, // iOS 크롬에서 부드러운 scrub
-                    toggleActions: 'play none none reverse',
-                },
-            },
-        );
-    });
-
-    gsap.fromTo(
-        images[1],
-        {
-            opacity: 1,
-            xPercent: 0,
-        },
-        {
-            opacity: 1,
-            xPercent: 0,
-            ease: 'none',
+    /*
+    // 2. 각 span에 개별 색상 변화 애니메이션 설정
+    spans.forEach((span, i) => {
+        gsap.to(span, {
+            color: '#0B0B0B',
             scrollTrigger: {
                 trigger: section,
-                start: 'top bottom',
-                end: 'top center',
-                scrub: scrubValue,
+                start: `top+=${i * space} top`,
+                end: `top+=${(i + 1) * space} top`,
+                scrub: true,
+                markers: false,
+            },
+        });
+    });
+    */
+
+    // 첫 번째 객체 pin (.image-obj-0)
+    /*
+    gsap.fromTo(
+        '.image-obj-0',
+        { opacity: 0, y: 50 },
+        {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+                trigger: '.parallax-section',
+                start: 'top center', // 섹션 진입 시
+                end: `+=${spans.length * 100}`, // span 모션 길이만큼 pin
+                pin: true,
+                scrub: true,
+                onLeave: () => {
+                    // pin 해제 시 자연스럽게 아웃
+                    gsap.to('.image-obj-0', { opacity: 0, y: -30, duration: 0.5 });
+                },
             },
         },
     );
-
+    */
+    // 3️⃣ .image-obj-2: 마지막 span 이후 등장
     gsap.fromTo(
-        images[4],
+        '.image-obj-0',
+        { y: 0 },
         {
-            opacity: 1,
-            xPercent: 0,
-        },
-        {
-            opacity: 1,
-            xPercent: 0,
-            ease: 'none',
+            y: -100,
             scrollTrigger: {
                 trigger: section,
-                start: 'top center',
-                end: 'top top',
-                scrub: scrubValue,
+                start: 'top top',
+                end: 'top+=100 center',
+                scrub: true,
+                //markers: true,
+            },
+        },
+    );
+    // 2️⃣ .image-obj-1: span[3] 진입 후부터 스크롤에 따라 등장 (스크롤 진행도 반응)
+    gsap.to('.image-obj-1', {
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 70%', // 4번째 span이 70% 지점에 도달할 때 시작
+            end: 'bottom bottom', // 상단 30% 지점까지 진행
+            scrub: true,
+        },
+        opacity: 1,
+        y: 0,
+        ease: 'none',
+    });
+
+    // 3️⃣ .image-obj-2: 마지막 span 이후 등장
+    gsap.fromTo(
+        '.image-obj-2',
+        { opacity: 0, y: 50 },
+        {
+            opacity: 1,
+            y: 0,
+            scrollTrigger: {
+                trigger: section,
+                start: 'top 70%',
+                end: 'bottom bottom',
+                scrub: true,
             },
         },
     );
 }
 
-// 큐브 이미지 경로
-const imagePaths = [
-    {
-        src: '/resource/images/ai/k-cube/k-model.png',
-        active: '/resource/images/ai/k-cube/k-model-act.png',
-    },
-    {
-        src: '/resource/images/ai/k-cube/k-rag.png',
-        active: '/resource/images/ai/k-cube/k-rag-act.png',
-    },
-    {
-        src: '/resource/images/ai/k-cube/k-agent.png',
-        active: '/resource/images/ai/k-cube/k-agent-act.png',
-    },
-    {
-        src: '/resource/images/ai/k-cube/k-studio.png',
-        active: '/resource/images/ai/k-cube/k-studio-act.png',
-    },
-    {
-        src: '/resource/images/ai/k-cube/k-rai.png',
-        active: '/resource/images/ai/k-cube/k-rai-act.png',
-    },
-    {
-        src: '/resource/images/ai/k-cube/k-infra.png',
-        active: '/resource/images/ai/k-cube/k-infra-act.png',
-    },
-];
-
-
 function initParallaxDepthSectionAnimation() {
+    const contaier = document.querySelector('.component-section');
+    const cont = document.querySelector('.component-content');
+    const scrollbar = document.querySelector('.component-scrollbar');
+    const indicator = document.querySelector('.component-scrollbar span');
+    const cube = document.querySelectorAll('.cube-wrapper');
+    const items = document.querySelectorAll('.component-item');
+    ScrollTrigger.create({
+        trigger: contaier,
+        start: 'top top',
+        onEnter: () => {
+            if (!contaier?.classList.contains('init')) {
+                console.log('-------------------------');
+                const y = contaier.getBoundingClientRect().top + window.scrollY;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${y}px`;
+                document.body.style.left = '0';
+                document.body.style.right = '0';
+                document.body.style.width = '100%';
+                document.body.dataset.scrollY = y;
+                //document.documentElement.style.overflow = 'hidden';
+                //window.scrollTo(0, y);
+                gsap.fromTo(
+                    '.cube-item',
+                    { opacity: 0, yPercent: -10 },
+                    {
+                        opacity: 1,
+                        yPercent: 0,
+                        duration: 0.4,
+                        stagger: 0.2,
+                        onComplete: () => {
+                            contaier.classList.add('init');
+                            const scrollY = document.body.dataset.scrollY;
+                            document.body.style.position = '';
+                            document.body.style.top = '';
+                            document.body.style.left = '';
+                            document.body.style.right = '';
+                            document.body.style.width = '';
+                            window.scrollTo(0, parseInt(scrollY || '0'));
+                            delete document.body.dataset.scrollY;
+                            //document.documentElement.style.overflow = 'auto';
+                            //void document.documentElement.offsetHeight; // 강제 리플로우
+                            //ScrollTrigger.refresh(); // GSAP 있을 때
+                            setTimeout(() => {
+                                items.forEach((item, index) => {
+                                    ScrollTrigger.create({
+                                        trigger: item,
+                                        start: 'top center',
+                                        end: 'bottom center',
+                                        onEnter: () => updateIndicator(index),
+                                        onEnterBack: () => updateIndicator(index),
+                                    });
+                                });
+                            }, 200);
+                        },
+                    },
+                );
+            }
+        },
+    });
+    /*
+    ScrollTrigger.create({
+        trigger: cont, // 고정 기준이 될 구간 (스크롤 범위)
+        start: 'top top', // 스크롤 트리거 시작 위치
+        end: 'bottom bottom', // 스크롤 트리거 종료 위치 (원하는 만큼 조절)
+        pin: scrollbar, // 고정할 요소 지정
+        pinSpacing: false, // 고정 시 빈 공간(padding) 생기는 것을 막음(필요에 따라 true로 설정)
+    });
+    ScrollTrigger.create({
+        trigger: cont, // 고정 기준이 될 구간 (스크롤 범위)
+        start: 'top top', // 스크롤 트리거 시작 위치
+        end: 'bottom bottom', // 스크롤 트리거 종료 위치 (원하는 만큼 조절)
+        pin: cube, // 고정할 요소 지정
+        pinSpacing: false, // 고정 시 빈 공간(padding) 생기는 것을 막음(필요에 따라 true로 설정)
+    });
+*/
+    function updateIndicator(activeIndex) {
+        // slide-0, slide-1 ... 클래스 중 이전 걸 제거
+        const prevClass = [...indicator.classList].find((cls) => cls.startsWith('slide-'));
+        if (prevClass) indicator.classList.remove(prevClass);
+        indicator.classList.add(`slide-${activeIndex}`);
+        // .component-item에 active 클래스 부여
+        document.querySelectorAll('.component-item').forEach((el, i) => {
+            el.classList.toggle('active', i === activeIndex);
+        });
+        document.querySelectorAll('.cube-item').forEach((el, i) => {
+            let tar = document.querySelector('.component-item.active');
+            let item = Number(tar.dataset.item);
+            if (item === 0) {
+                el.classList.add('active');
+            } else {
+                el.classList.toggle('active', i === item - 1);
+            }
+        });
+    }
+    /*
+    //setTimeout(function () {
+    const getVerticalCenter = (el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top + rect.height / 2;
+    };
+
+    const updateActiveItem = () => {
+        const scrollbarCenter = getVerticalCenter(scrollbar);
+        let activeIndex = -1;
+
+        items.forEach((item, index) => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top <= scrollbarCenter && rect.bottom >= scrollbarCenter) {
+                activeIndex = index;
+            }
+        });
+
+        // .component-item active 처리 (선택)
+        items.forEach((item, idx) => {
+            item.classList.toggle('active', idx === activeIndex);
+        });
+
+        // span 클래스 교체
+        if (activeIndex !== -1) {
+            const prevClass = [...indicator.classList].find((cls) => cls.startsWith('slide-'));
+            if (prevClass) indicator.classList.remove(prevClass);
+            indicator.classList.add(`slide-${activeIndex}`);
+        }
+    };
+
+    window.addEventListener('scroll', updateActiveItem);
+    window.addEventListener('resize', updateActiveItem);
+    //}, 500);
+    */
+    /*
+    const items = document.querySelectorAll('.component-item');
+    const scrollbar = document.querySelector('.component-scrollbar');
+    const indicator = scrollbar.querySelector('span');
+    const getVerticalCenter = (el) => {
+        const rect = el.getBoundingClientRect();
+        return rect.top + rect.height / 2;
+    };
+
+    const checkActiveItem = () => {
+        const scrollbarCenter = getVerticalCenter(scrollbar);
+
+        let activeIndex = -1;
+
+        items.forEach((item, index) => {
+            const itemRect = item.getBoundingClientRect();
+            const itemTop = itemRect.top;
+            const itemBottom = itemRect.bottom;
+
+            if (itemTop <= scrollbarCenter && itemBottom >= scrollbarCenter) {
+                activeIndex = index;
+            }
+        });
+
+        items.forEach((item, index) => {
+            item.classList.toggle('active', index === activeIndex);
+        });
+
+        if (activeIndex !== -1) {
+            const prevClass = [...indicator.classList].find((cls) => cls.startsWith('slide-'));
+            if (prevClass) indicator.classList.remove(prevClass);
+            indicator.classList.add(`slide-${activeIndex}`);
+        }
+    };
+
+    window.addEventListener('scroll', checkActiveItem);
+    window.addEventListener('resize', checkActiveItem);
+    */
+
+    /* //민우님 ver
     const section = document.querySelector('.parallax-depth-section .component-content');
     if (!section || !window.gsap || !window.ScrollTrigger) return;
 
@@ -412,7 +613,7 @@ function initParallaxDepthSectionAnimation() {
                 },
             });
 
-            tl.to('.cube-wrapper', {left: '50%', xPercent: -50, yPercent: -50, duration: 0.3 })
+            tl.to('.cube-wrapper', { left: '50%', xPercent: -50, yPercent: -50, duration: 0.3 })
                 .fromTo(
                     '.cube-item',
                     { opacity: 0, yPercent: -10 },
@@ -426,7 +627,11 @@ function initParallaxDepthSectionAnimation() {
                         },
                     },
                 )
-                .fromTo('.cube-wrapper', { left: '50%', xPercent: -50, yPercent: -50 }, { left: '42%', xPercent: 0, yPercent: -50, duration: 0.3 })
+                .fromTo(
+                    '.cube-wrapper',
+                    { left: '50%', xPercent: -50, yPercent: -50 },
+                    { left: '42%', xPercent: 0, yPercent: -50, duration: 0.3 },
+                )
                 .fromTo(
                     '.list-wrap ul',
                     { opacity: 0, xPercent: 52, yPercent: -12 },
@@ -747,6 +952,7 @@ function initParallaxDepthSectionAnimation() {
     return () => {
         window.removeEventListener('resize', resizeHandler);
     };
+    */
 }
 
 class WheelNavigation {
@@ -1091,10 +1297,4 @@ window.addEventListener('load', function () {
     initParallaxDepthSectionAnimation();
     initMobileMenu();
     initUsecaseSectionAnimation();
-    // (전역 wheel 이벤트는 WheelNavigation 내부로 이동)
 });
-
-// Ensure GSAP ScrollToPlugin is registered
-if (window.gsap && window.ScrollToPlugin) {
-    gsap.registerPlugin(ScrollToPlugin);
-}
