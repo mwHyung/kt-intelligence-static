@@ -823,7 +823,7 @@ body.scroll-lock {
     width: 1.25rem;
     height: 1.25rem;
     background: url('/resource/images/ai/icons/arrow-up-right-white2.svg') no-repeat center center / contain;
-    margin-top: -2px;
+    margin-top: -3px;
 }
 .btn.white.arrow:after {
     background: url('/resource/images/ai/icons/arrow-up-right-black2.svg') no-repeat center center / contain;
@@ -1705,6 +1705,10 @@ body.scroll-lock {
         padding: 1.3rem 2.4rem;
         font-size: 1.7rem;
         line-height: var(--line-height-172);
+    }
+
+    .btn.arrow:after {
+        content: none;
     }
 
     /* 이용약관 */
