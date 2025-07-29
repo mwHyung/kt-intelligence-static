@@ -77,7 +77,7 @@
             <div class="banner-inner logo-bk">
                 <h2>
                     <img
-                        src="/resource/images/ai/solution/agent/banner-text.svg?v=20250717"
+                        src="/resource/images/ai/solution/agent/banner-text.svg?v=20250728"
                         alt="K Agent"
                         width="364"
                         height="96"
@@ -168,13 +168,38 @@
 
                         <!-- 그래프  html 코드 -->
                         <div class="pc-only graph">
-                            <div class="agent-graph-wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                            <div
+                                class="agent-key-graph-wrapper"
+                                data-aos="fade-up"
+                                data-aos-duration="800"
+                                data-aos-easing="ease-out-cubic"
+                            >
+                                <div class="graph-inner">
+                                    <div class="graph-item">
+                                        <!-- 이미지 태그 내부 alt 중복 삽입 오류 -->
+                                        <img
+                                            src="/resource/images/ai/solution/agent/Key Features-graph.png"
+                                            width="100%"
+                                            height="100%"
+                                            alt="AI Agent 상호작용 User Planning / Reasoning Memory Action Action Context-Specific sLM
+                                    Knowledge / File / DB
+                                    (w/ RAG) Enterprise System
+                                    (HR, ERP, CRM 등) Web Search / API / Python
+                                    (검색, 실시간성 정보 등) Short-Team/
+                                    Long-Team
+                                    Chat History
+                                    Task 수행 log
+                                    User Profile"
+                                        />
+                                        <!--// 이미지 태그 내부 alt 중복 삽입 오류 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="agent-graph-wrapper" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                 <div class="agent-graph">
                                     <div class="k-agent-architecture">
-                                        <!-- K Agent 전체 박스 -->
                                         <div class="k-agent-container">
                                             <div class="k-agent-title">K Agent</div>
-                                            <!-- Memory -->
                                             <div class="memory-section">
                                                 <div class="memory-title">Memory</div>
                                                 <div class="memory-types">
@@ -182,7 +207,6 @@
                                                     <div class="memory-type">Long-Term</div>
                                                 </div>
                                             </div>
-                                            <!-- Agent Orchestrator -->
                                             <div class="agent-orchestrator-section">
                                                 <div class="agent-orchestrator-title">Agent Orchestrator</div>
                                                 <div class="orchestrator-steps">
@@ -191,26 +215,21 @@
                                                     <div class="orchestrator-step">Generation</div>
                                                 </div>
                                             </div>
-                                            <!-- Multi-Model Orchestrator -->
                                             <div class="multi-model-orchestrator-section">
                                                 <div class="multi-model-title">Multi-Model Orchestrator</div>
                                             </div>
-                                            <!-- UI/UX -->
                                             <div class="uiux-section">
                                                 <div class="uiux-title">UI/UX</div>
                                             </div>
                                         </div>
-                                        <!-- Query/Response (좌측) -->
                                         <div class="query-response-section">
                                             <div class="query-box">Query</div>
                                             <div class="response-box">Response</div>
                                         </div>
-                                        <!-- Agent Hub (우측) -->
                                         <div class="agent-graph-right">
                                             <div class="agent-hub-section">
                                                 <div class="agent-hub-title">Agent Hub</div>
                                             </div>
-                                            <!-- MCP Hub (우측) -->
                                             <div class="mcp-hub-section">
                                                 <div class="mcp-hub-title">
                                                     MCP Hub<br /><span class="mcp-desc">(Model Context Protocol)</span>
@@ -225,7 +244,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="mobile-show graph">
@@ -310,7 +329,7 @@
                                 </div>
                                 <h3 class="open-wrapper">
                                     Multi-Model Orchestrator
-                                    <span class="open-planned">공개 예정</span>
+                                    <span class="coming-tag sm">공개 예정</span>
                                 </h3>
                                 <p>
                                     사용 목적에 따라 가장 적합한 AI 모델과 자동으로 선택해주는 기능으로, <br />
@@ -338,7 +357,9 @@
                                         <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
                                             >Technology 01</span
                                         >
-                                        <h2 data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Agent Pattern</h2>
+                                        <h2 class="poppins" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+                                            Agent Pattern
+                                        </h2>
                                         <h3 class="sub-big-h3" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                                             AI Agent의 빠른 개발과 배포를 위한
                                             <br class="mo-br" />표준 프레임워크
@@ -470,6 +491,14 @@
                                                 data-aos-duration="800"
                                                 data-aos-easing="ease-out-cubic"
                                             >
+                                                <img src="/resource/images/ai/solution/agent/agent-pattern-diagram.png" alt="" />
+                                            </div>
+                                            <!-- <div
+                                                class="agent-pattern-diagram"
+                                                data-aos="fade-up"
+                                                data-aos-duration="800"
+                                                data-aos-easing="ease-out-cubic"
+                                            >
                                                 <div class="diagram-row">
                                                     <div class="diagram-block agent-types">
                                                         <div class="agent-type">Media Agent</div>
@@ -499,7 +528,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         <div class="mobile-show graph mt-2">
                                             <div
@@ -670,13 +699,14 @@
                             <div class="tabs__panel__anchor" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2">
                                 <div class="tab-section">
                                     <div class="title-wrapper only-title model-page-title-wrapper">
-                                        <span
-                                            class="open-planned top-center"
+                                        <p
+                                            class="coming-tag md mo"
                                             data-aos="fade-up"
                                             data-aos-duration="800"
                                             data-aos-easing="ease-out-cubic"
-                                            >공개 예정</span
                                         >
+                                            공개 예정
+                                        </p>
                                         <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic"
                                             >Technology 02</span
                                         >
@@ -684,10 +714,10 @@
                                             data-aos="fade-up"
                                             data-aos-duration="800"
                                             data-aos-easing="ease-out-cubic"
-                                            class="open-wrapper"
+                                            class="open-wrapper sub poppins"
                                         >
                                             Multi-Model Orchestrator
-                                            <span class="open-planned pc-only">공개 예정</span>
+                                            <span class="coming-tag md pc">공개 예정</span>
                                         </h2>
                                         <h3
                                             class="sub-big-h3 bold"
@@ -850,7 +880,7 @@
                 <div class="content-inner overgrid-inner">
                     <div class="title-wrapper">
                         <span data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">K Agent</span>
-                        <h2 class="" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Use Cases</h2>
+                        <h2 class="poppins" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">Use Cases</h2>
                         <p data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
                             K intelligence의 핵심 기술과 <br class="mo-br" />다양한 활용 사례를 소개합니다.
                         </p>
@@ -976,7 +1006,7 @@
                             </div>
                         </div>
                         <div class="btnWrap" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
-                            <a href="/ai/usecase?v=20250722">
+                            <a href="/ai/usecase?v=20250728">
                                 <button type="button" class="btn sm">전체보기</button>
                             </a>
                         </div>

@@ -1472,12 +1472,6 @@ br.both {
     animation-play-state: paused;
 }
 
-@media (min-width: 1366px) and (max-width: 1536px) {
-    .list-wrap {
-        margin-left: 3.4rem;
-    }
-}
-
 /* 태블릿 */
 @media (min-width: 768px) and (max-width: 1384px) {
     /* 기준 1200px vw변환 */
@@ -1489,7 +1483,6 @@ br.both {
         padding: 0 !important;
     }
 }
-/* 모바일 */
 @media (max-width: 768px) {
     .open-planned {
         font-size: 1.3rem !important;
@@ -2585,8 +2578,7 @@ br.both {
     }
 
     .news-section {
-        padding: 0 2rem;
-        padding-top: 10rem;
+        padding: 10rem 2rem;
     }
 
     .news-inner {
