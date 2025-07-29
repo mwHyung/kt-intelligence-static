@@ -976,7 +976,7 @@ body.scroll-lock {
     line-height: 1.4;
     letter-spacing: var(--letter-spacing-md);
     text-align: center;
-    padding-bottom: 3.75rem;
+    padding-bottom: 6.25rem;
     margin-bottom: 6.25rem;
     border-bottom: 1px solid var(--gray-200-color);
 }

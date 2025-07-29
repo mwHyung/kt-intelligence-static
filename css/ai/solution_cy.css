@@ -21,7 +21,7 @@
 }
 
 .sub-content {
-    padding-top: 13rem;
+    padding-top: 15.125rem;
     padding-bottom: 10rem;
 }
 
@@ -69,7 +69,7 @@
 
 .sub-desc {
     line-height: 172%;
-    color: var(--gray-800-color);
+    color: var(--black-color);
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -481,7 +481,7 @@
 }
 
 .tech-card .card-tags {
-    margin-top: 1.25rem;
+    margin-top: 2rem;
 }
 
 /* .tech-card .card-tags > span:nth-child(1) {
