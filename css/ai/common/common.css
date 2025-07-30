@@ -578,7 +578,7 @@ body.scroll-lock {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.875rem 0;
+    padding: 1.563rem 0;
 }
 
 .sticky-header-list {
@@ -588,48 +588,55 @@ body.scroll-lock {
 }
 
 .sticky-header-list li {
-    font-size: var(--font-size-2xl);
+    padding: 0.5rem 0;
+    color: #dedede;
+    font-size: var(--font-size-lg);
     font-weight: 700;
-    color: var(--gray-500-color);
+    line-height: 1.04;
     transition: color 0.2s;
     cursor: pointer;
-    padding-bottom: 0.2rem;
-    border-bottom: 2px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: all 0.2s ease;
 }
 
 .sticky-header-list li:hover {
     color: var(--black-color);
     font-weight: 700;
-    border-bottom: 2px solid var(--black-color);
-}
-
-.dark-header .sticky-header-list li:hover {
-    color: var(--white-color);
+    border-bottom: 4px solid var(--black-color);
 }
 
 .sticky-header-list li.active {
     color: var(--black-color);
-    border-bottom: 2px solid var(--black-color);
+    border-bottom: 4px solid var(--black-color);
+}
+
+.dark-header .sticky-header-list li {
+    opacity: 0.3;
+    color: var(--white-color);
+}
+
+.dark-header .sticky-header-list li:hover {
+    opacity: 1;
 }
 
 .dark-header .sticky-header-list li.active {
-    color: var(--white-color);
-    border-bottom: 2px solid var(--white-color);
+    opacity: 1;
+    border-bottom: 4px solid var(--white-color);
 }
 
 .dark-header.gray-header .sticky-header-list li.active {
     color: var(--black-color) !important;
-    border-bottom: 2px solid var(--black-color) !important;
+    border-bottom: 4px solid var(--black-color) !important;
 }
 
 .dark-header.gray-header2 .sticky-header-list li.active {
     color: var(--black-color) !important;
-    border-bottom: 2px solid var(--black-color) !important;
+    border-bottom: 4px solid var(--black-color) !important;
 }
 
 .dark-header .sticky-header-list li:hover {
     color: var(--white-color);
-    border-bottom: 2px solid var(--white-color);
+    border-bottom: 4px solid var(--white-color);
 }
 
 /* Footer */

@@ -175,19 +175,19 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 3.75rem;
+    gap: 1.5rem;
     margin-bottom: 1.875rem;
     margin-top: 6.25rem;
 }
 
 .techPage .tabs__tab {
+    padding: 0.5rem 0;
     background: none;
     outline: none;
-    font-size: 1.75rem;
-    line-height: 1.1;
+    font-size: 1.25rem;
+    line-height: 1.04;
     font-weight: 700;
-    color: var(--gray-400-color);
-    padding: 0.5rem 0 0 0;
+    color: #dedede;
     cursor: pointer;
     transition: color 0.2s ease;
     position: relative;
@@ -199,21 +199,23 @@
 
 .tabs__tab--active,
 .tabs__tab:focus,
+.tabs__tab:hover,
 .tabs__tab[aria-selected='true'] {
     color: var(--black-color);
 }
 
 .tabs__tab--active:after,
 .tabs__tab:focus:after,
+.tabs__tab:hover:after,
 .tabs__tab[aria-selected='true']:after {
     display: block;
     content: '';
     background-color: var(--black-color);
-    height: 2px;
+    height: 4px;
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -4px;
 }
 
 .tabs__panel {
@@ -1249,14 +1251,21 @@
     border: 0 !important;
 }
 
+.sticky-header.tab-sticky-header.black-style .sticky-header-list li {
+    color: var(--white-color);
+    opacity: 0.3;
+}
+
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li.active {
     color: var(--white-color);
-    border-bottom: 2px solid var(--white-color);
+    opacity: 1;
+    border-bottom: 4px solid var(--white-color);
 }
 
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li:hover {
     color: var(--white-color);
-    border-bottom: 2px solid var(--white-color);
+    opacity: 1;
+    border-bottom: 4px solid var(--white-color);
 }
 
 .sticky-header.tab-sticky-header .sticky-header-inner:hover {
@@ -4322,6 +4331,7 @@
     .tabs__tab:focus:after,
     .tabs__tab[aria-selected='true']:after {
         bottom: 0rem;
+        height: 2px;
     }
 
     .techPage .tabs::-webkit-scrollbar {
@@ -4465,7 +4475,7 @@
     }
 
     .techPage .tabs__tab {
-        padding: 0;
+        padding: 0 0 0.2rem 0;
     }
 
     .sub-content.techDetailPage {
@@ -5902,5 +5912,9 @@
 
     .open-wrapper {
         gap: 0.8rem !important;
+    }
+
+    .sticky-header.tab-sticky-header.black-style .sticky-header-list li.active {
+        border-width: 2px;
     }
 }
