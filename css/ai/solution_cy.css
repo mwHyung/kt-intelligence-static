@@ -5798,7 +5798,7 @@
 
     .bg-black-style .download-pdfs li a {
         width: fit-content;
-        padding: 0 1.6rem 0 3.8rem;
+        padding: 1rem 1.6rem;
         font-size: 1.3rem;
         font-style: normal;
         font-weight: 400;
