@@ -61,9 +61,10 @@
 }
 
 .sub-title-sm {
+    padding: 0 1rem;
     font-size: var(--font-size-3xl);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: var(--line-height-150);
     text-align: left;
 }
 
@@ -93,6 +94,7 @@
 
 .card-list-horizontal .card .sub-desc {
     margin: 0.75rem 0 2rem;
+    padding: 0 1rem;
     overflow: hidden;
     white-space: normal;
     text-overflow: ellipsis;
@@ -173,19 +175,19 @@
     display: flex;
     align-items: center;
     justify-content: left;
-    gap: 3.75rem;
+    gap: 1.5rem;
     margin-bottom: 1.875rem;
     margin-top: 6.25rem;
 }
 
 .techPage .tabs__tab {
+    padding: 0.5rem 0;
     background: none;
     outline: none;
-    font-size: 1.75rem;
-    line-height: 1.1;
+    font-size: 1.25rem;
+    line-height: 1.04;
     font-weight: 700;
-    color: var(--gray-400-color);
-    padding: 0.5rem 0 0 0;
+    color: #dedede;
     cursor: pointer;
     transition: color 0.2s ease;
     position: relative;
@@ -197,21 +199,23 @@
 
 .tabs__tab--active,
 .tabs__tab:focus,
+.tabs__tab:hover,
 .tabs__tab[aria-selected='true'] {
     color: var(--black-color);
 }
 
 .tabs__tab--active:after,
 .tabs__tab:focus:after,
+.tabs__tab:hover:after,
 .tabs__tab[aria-selected='true']:after {
     display: block;
     content: '';
     background-color: var(--black-color);
-    height: 2px;
+    height: 4px;
     width: 100%;
     position: absolute;
     left: 0;
-    bottom: -3px;
+    bottom: -4px;
 }
 
 .tabs__panel {
@@ -1231,14 +1235,21 @@
     border: 0 !important;
 }
 
+.sticky-header.tab-sticky-header.black-style .sticky-header-list li {
+    color: var(--white-color);
+    opacity: 0.3;
+}
+
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li.active {
     color: var(--white-color);
-    border-bottom: 2px solid var(--white-color);
+    opacity: 1;
+    border-bottom: 4px solid var(--white-color);
 }
 
 .sticky-header.tab-sticky-header.black-style .sticky-header-list li:hover {
     color: var(--white-color);
-    border-bottom: 2px solid var(--white-color);
+    opacity: 1;
+    border-bottom: 4px solid var(--white-color);
 }
 
 .sticky-header.tab-sticky-header .sticky-header-inner:hover {
@@ -2511,9 +2522,14 @@
 
 .orchestrator-diagram {
     width: 100%;
-    border: 1px solid #d9d9d9;
     border-radius: 1.25rem;
-    padding: 3.75rem 5rem 5rem 5rem;
+    /* padding: 3.75rem 5rem 5rem 5rem; */
+}
+
+.orchestrator-diagram > img {
+    width: 65rem;
+    height: auto;
+    object-fit: contain;
 }
 
 .orchestrator-title,
@@ -2694,9 +2710,8 @@
 }
 
 .openPlannd-gray-btn-wrap {
-    margin: 0 auto;
+    margin: 5rem auto 0;
     width: fit-content;
-    margin-top: 5rem;
 }
 
 .openPlannd-gray-big {
@@ -2777,10 +2792,6 @@
     color: var(--gray-900-color);
 }
 
-/* .model-line-up .box-item {
-    background-color: var(--white-color);
-} */
-
 .model-line-up .box-item h4 {
     color: var(--gray-900-color);
 }
@@ -2794,7 +2805,6 @@
 }
 
 .bg-black-style .model-believe-box .box-item {
-    /* border: 1px solid #373737; */
     background-color: var(--gray-950-color);
 }
 
@@ -2812,10 +2822,6 @@
     letter-spacing: var(--letter-spacing-md);
     margin-bottom: 0.75rem;
 }
-
-/* .box-list.white-box .box-item {
-    background-color: var(--white-color);
-} */
 
 .box-item .card-tags {
     margin-top: 1.75rem;
@@ -3419,7 +3425,7 @@
     line-height: 172%;
     letter-spacing: 0%;
     background-color: var(--white-color);
-    padding: 0 0.75rem 0 2.625rem;
+    padding: 0.5rem 0.75rem;
     height: 2.75rem;
     line-height: 2.75rem;
     border-radius: 0.5rem;
@@ -3441,9 +3447,10 @@
     background-size: cover;
     width: 1.25rem;
     height: 1.25rem;
-    position: absolute;
+    margin-right: 0.625rem;
+    /* position: absolute;
     top: 0.75rem;
-    left: 0.75rem;
+    left: 0.75rem; */
 }
 
 .bg-black-style .download-pdfs li span {
@@ -4078,12 +4085,12 @@
     }
 
     .sub-content {
-        padding-top: 12rem;
+        padding-top: 11rem;
         padding-bottom: 10rem;
     }
 
     .sub-content.techPage {
-        padding-top: 12rem;
+        padding-top: 11rem;
     }
 
     .sub-inner {
@@ -4091,7 +4098,7 @@
     }
 
     .sub-conSec {
-        margin-top: 8rem;
+        margin-top: 4rem;
     }
 
     .sub-content p {
@@ -4103,7 +4110,9 @@
     }
 
     .sub-title-wrap p {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
+        line-height: 1.68;
+        letter-spacing: normal;
         word-break: keep-all;
     }
 
@@ -4113,6 +4122,13 @@
         line-height: 156%;
         /* 34.32px */
         letter-spacing: -0.22px;
+    }
+
+    .sub-title-wrap .sub-title {
+        font-size: 3.2rem;
+        line-height: 1.42;
+        letter-spacing: var(--letter-spacing-md);
+        margin-bottom: 0.8rem;
     }
 
     /* Tab */
@@ -4165,10 +4181,10 @@
     }
 
     .techPage .tabs__tab {
-        font-size: 2rem;
+        font-size: 1.6rem;
         font-weight: 700;
-        line-height: 1.4;
-        letter-spacing: -0.2px;
+        line-height: normal;
+        letter-spacing: normal;
     }
 
     .techPage .tabs__panel {
@@ -4236,9 +4252,9 @@
         object-fit: contain;
     }
 
-    .useCasePage .card-list-horizontal .card:nth-child(n + 2) {
+    /* .useCasePage .card-list-horizontal .card:nth-child(n + 2) {
         margin-top: 4rem;
-    }
+    } */
 
     .tech-card .card-img {
         width: 100%;
@@ -4274,6 +4290,10 @@
         margin-top: 0.2rem;
     }
 
+    .useCasePage .card-list-horizontal {
+        gap: 6rem;
+    }
+
     /* resources page */
     .techPage .tabs {
         overflow-x: auto;
@@ -4286,7 +4306,7 @@
         /* Firefox */
         -ms-overflow-style: none;
         /* IE and Edge */
-        margin-top: 8rem;
+        margin-top: 4rem;
         justify-content: left;
         gap: 2.4rem;
     }
@@ -4295,6 +4315,7 @@
     .tabs__tab:focus:after,
     .tabs__tab[aria-selected='true']:after {
         bottom: 0rem;
+        height: 2px;
     }
 
     .techPage .tabs::-webkit-scrollbar {
@@ -4310,12 +4331,13 @@
     .techPage .tech-card a {
         flex-direction: column;
         align-items: flex-start;
+        gap: 2.4rem;
     }
 
     .techPage .tech-card .card-img {
         order: -1;
         width: 100%;
-        margin-bottom: 2.4rem;
+        /* margin-bottom: 2.4rem; */
     }
 
     .techPage .tech-card .card-txts {
@@ -4437,7 +4459,7 @@
     }
 
     .techPage .tabs__tab {
-        padding: 0;
+        padding: 0 0 0.2rem 0;
     }
 
     .sub-content.techDetailPage {
@@ -5008,7 +5030,7 @@
     }
 
     .btn-wrap .last-btn {
-        margin-top: 2.4rem;
+        margin-top: 2.8rem;
     }
 
     .tab-section {
@@ -5016,7 +5038,7 @@
     }
 
     .tab-section.gap10 {
-        gap: 2.4rem;
+        gap: 2rem;
     }
 
     .video-wrapper,
@@ -5441,7 +5463,7 @@
 
     /* model page */
     .comming-soon {
-        margin-top: 7.6rem;
+        margin-top: 8rem;
     }
 
     .comming-soon h3 {
@@ -5679,7 +5701,7 @@
     }
 
     .example-side-item {
-        margin-top: 2.4rem;
+        margin-top: 2rem;
     }
 
     .flex.example-double {
@@ -5786,7 +5808,7 @@
 
     .bg-black-style .download-pdfs li a {
         width: fit-content;
-        padding: 0 1.6rem 0 3.8rem;
+        padding: 1rem 1.6rem;
         font-size: 1.3rem;
         font-style: normal;
         font-weight: 400;
@@ -5874,5 +5896,9 @@
 
     .open-wrapper {
         gap: 0.8rem !important;
+    }
+
+    .sticky-header.tab-sticky-header.black-style .sticky-header-list li.active {
+        border-width: 2px;
     }
 }
