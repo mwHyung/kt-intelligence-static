@@ -31,7 +31,7 @@ function initHeroSectionAnimation() {
                 scrollTrigger: {
                     trigger: '.hero-section',
                     start: 'top top',
-                    end: 'bottom top',
+                    end: 'bottom bottom',
                     scrub: true,
                     onUpdate: (self) => {
                         AOS.refresh();
@@ -48,15 +48,16 @@ function initHeroSectionAnimation() {
             if (window.innerWidth > 1467) {
                 tl.fromTo(text3, { opacity: 0, y: 100, scale: 1 }, { opacity: 1, y: 0, fontSize: '100px', duration: 1 });
                 tl.to(text3, { opacity: 1, fontSize: `${100 * 5}px`, duration: 1 });
+            } else if (window.innerWidth >= 1467 && window.innerWidth < 768) {
+                let baseFontSizeVW = 6.817;
+                tl.fromTo(text3, { opacity: 0, y: 100, scale: 1 }, { opacity: 1, y: 0, fontSize: `${baseFontSizeVW}vw`, duration: 1 });
+                tl.to(text3, { opacity: 1, fontSize: `${baseFontSizeVW * 5}vw`, duration: 1 });
             } else {
+                let baseFontSizeVW = 12.8;
                 tl.fromTo(text3, { opacity: 0, y: 100, scale: 1 }, { opacity: 1, y: 0, fontSize: `${baseFontSizeVW}vw`, duration: 1 });
                 tl.to(text3, { opacity: 1, fontSize: `${baseFontSizeVW * 5}vw`, duration: 1 });
             }
         },
-    });
-    window.addEventListener('resize', () => {
-        baseFontSizePx = parseFloat(getComputedStyle(text3).fontSize);
-        baseFontSizeVW = (baseFontSizePx / window.innerWidth) * 100;
     });
 }
 
