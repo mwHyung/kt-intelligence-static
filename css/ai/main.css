@@ -2093,6 +2093,7 @@ br.both {
         display: flex;
         margin-top: 4rem;
         width: calc(100% + 2rem);
+        padding-right: 2rem;
         overflow: hidden;
     }
 
