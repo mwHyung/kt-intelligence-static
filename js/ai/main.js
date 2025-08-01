@@ -545,6 +545,12 @@ function initParallaxDepthSectionAnimation() {
     }
 
     let resizeHandler;
+    ScrollTrigger.refresh();
+
+    // 모바일 환경에서는 리사이즈 이벤트 처리하지 않음
+    if (window.innerWidth < 768) {
+        return;
+    }
     resizeHandler = () => {
         ScrollTrigger.refresh();
     };
