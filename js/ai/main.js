@@ -543,6 +543,16 @@ function initParallaxDepthSectionAnimation() {
             }
         });
     }
+
+    let resizeHandler;
+    resizeHandler = () => {
+        ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', resizeHandler);
+
+    return () => {
+        window.removeEventListener('resize', resizeHandler);
+    };
 }
 
 function initUsecaseSectionAnimation() {
@@ -609,6 +619,8 @@ window.addEventListener('load', function () {
     initMobileMenu();
     initUsecaseSectionAnimation();
 });
-window.addEventListener('resize', () => {
-    ScrollTrigger.refresh();
-});
+
+// Ensure GSAP ScrollToPlugin is registered
+if (window.gsap && window.ScrollToPlugin) {
+    gsap.registerPlugin(ScrollToPlugin);
+}
