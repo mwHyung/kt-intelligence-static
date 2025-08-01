@@ -459,6 +459,9 @@ function initParallaxDepthSectionAnimation() {
                         });
                     }
                 },
+                onUpdate: (self) => {
+                    AOS.refresh();
+                },
             });
         },
         '(max-width: 768px)': function () {
@@ -482,6 +485,9 @@ function initParallaxDepthSectionAnimation() {
                             },
                         );
                     }
+                },
+                onUpdate: (self) => {
+                    AOS.refresh();
                 },
             });
             var pdsSwiper = null;
