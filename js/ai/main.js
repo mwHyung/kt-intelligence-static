@@ -81,39 +81,18 @@ function countUpDigitsReverse(selector, options = {}) {
     requestAnimationFrame(() => {
         span.style.transform = `translateY(-${totalHeight}em)`;
     });
-    /*
-    if (!el) return;
-    const targetStr = el.dataset.target || '';
-    const duration = options.duration || 1100;
-    el.innerHTML = '';
 
-    for (let i = 0; i < targetStr.length; i++) {
-        const digitTarget = parseInt(targetStr[i], 10);
-        const container = document.createElement('div');
-        container.className = 'countup-digit-container';
-
-        const digitCol = document.createElement('div');
-        digitCol.className = 'countup-digit';
-
-        // 목표값부터 0까지 역순으로 span 생성
-        for (let n = digitTarget; n >= 0; n--) {
-            const span = document.createElement('span');
-            span.textContent = n;
-            digitCol.appendChild(span);
-        }
-
-        container.appendChild(digitCol);
-        el.appendChild(container);
-
-        // 초기 위치는 translateY(0) (목표값 노출)
-        digitCol.style.transform = `translateY(-${digitTarget * 12.5}rem)`;
-        digitCol.style.transition = `transform ${duration}ms cubic-bezier(0.33,1,0.68,1)`;
-
-        setTimeout(() => {
-            digitCol.style.transform = `translateY(0)`; // 아래에서 위로 이동
-        }, 80 * i);
-    }
-    */
+    const text3 = document.getElementById('text-3');
+    ScrollTrigger.create({
+        trigger: '.sub-banner-section',
+        start: 'top top',
+        onEnter: () => {
+            gsap.to(text3, { opacity: 0, duration: 0.5 });
+        },
+        onEnterBack: () => {
+            gsap.to(text3, { opacity: 1, duration: 0.1 });
+        },
+    });
 }
 
 function initIntroSectionAnimation() {
@@ -543,22 +522,23 @@ function initParallaxDepthSectionAnimation() {
             }
         });
     }
-
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
     let resizeHandler;
-    ScrollTrigger.refresh();
-
     // 모바일 환경에서는 리사이즈 이벤트 처리하지 않음
-    if (window.innerWidth < 768) {
-        return;
-    }
-    resizeHandler = () => {
-        ScrollTrigger.refresh();
-    };
-    window.addEventListener('resize', resizeHandler);
+    if (isTouchDevice) {
+        ScrollTrigger.config({
+            autoRefreshEvents: 'DOMContentLoaded,load,resize',
+        });
+    } else {
+        resizeHandler = () => {
+            ScrollTrigger.refresh();
+        };
+        window.addEventListener('resize', resizeHandler);
 
-    return () => {
-        window.removeEventListener('resize', resizeHandler);
-    };
+        return () => {
+            window.removeEventListener('resize', resizeHandler);
+        };
+    }
 }
 
 function initUsecaseSectionAnimation() {
