@@ -659,7 +659,7 @@ br.both {
     flex-direction: column;
     align-items: flex-start;
     position: sticky;
-    top: 180px;
+    top: 11.25rem;
     margin-left: auto;
 }
 .cube-wrapper .cube {
@@ -1566,7 +1566,7 @@ br.both {
     /* parallax-depth-section */
     .component-scrollbar {
         margin-top: 8.75rem;
-        top: 20rem;
+        top: 18rem;
     }
     .list-wrap {
         width: 410px;
